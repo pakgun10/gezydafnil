@@ -192,6 +192,34 @@ async function kelasDiampu(user: any): Promise<number[]> {
   );
 }
 
+/**
+ * Apakah guru mengampu mapel ini (di kelas mana pun). Admin selalu boleh.
+ * Dipakai wizard Pengaturan: guru boleh mengatur rumus + TP untuk mapel
+ * yang diampunya sendiri (perbaikan bug 18 Nov 2026 — sebelumnya
+ * PUT /api/pengaturan dan POST /api/tp admin-only sehingga guru
+ * tertahan di Langkah 2 tanpa pesan apa pun).
+ */
+async function mapelDiampu(user: any, mapelId: number): Promise<boolean> {
+  if (user.role === "admin") return true;
+  const g = await one("SELECT id FROM guru WHERE user_id = ?", [user.id]);
+  if (!g) return false;
+  return !!(await one(
+    "SELECT 1 AS ada FROM guru_mapel WHERE guru_id = ? AND mapel_id = ?",
+    [g.id, mapelId]
+  ));
+}
+
+/** Apakah guru mengampu kelas ini (mapel apa pun). Admin selalu boleh. */
+async function kelasDiampuSatu(user: any, kelasId: number): Promise<boolean> {
+  if (user.role === "admin") return true;
+  const g = await one("SELECT id FROM guru WHERE user_id = ?", [user.id]);
+  if (!g) return false;
+  return !!(await one(
+    "SELECT 1 AS ada FROM guru_mapel WHERE guru_id = ? AND kelas_id = ?",
+    [g.id, kelasId]
+  ));
+}
+
 // ---------- Auth (pola GezyRaport) ----------
 app.post("/api/login", async (c) => {
   const { username, password } = await bacaBody(c);
@@ -294,6 +322,20 @@ app.post("/api/mapel", requireRole("admin"), async (c) => {
 app.get("/api/kelas", requireRole("admin", "guru"), async (c) =>
   c.json(await all("SELECT * FROM kelas ORDER BY nama"))
 );
+// Kelas yang diampu guru (admin: semua). Dipakai dropdown Langkah 4 wizard
+// agar guru hanya melihat/menambah murid di kelasnya sendiri.
+app.get("/api/kelas-saya", requireRole("admin", "guru"), async (c) => {
+  const u = c.get("user") as any;
+  if (u.role === "admin") return c.json(await all("SELECT * FROM kelas ORDER BY nama"));
+  const diampu = await kelasDiampu(u);
+  if (!diampu.length) return c.json([]);
+  return c.json(
+    await all(
+      `SELECT * FROM kelas WHERE id IN (${diampu.map(() => "?").join(",")}) ORDER BY nama`,
+      diampu
+    )
+  );
+});
 app.post("/api/kelas", requireRole("admin"), async (c) => {
   const { nama } = await bacaBody(c);
   if (!nama) return c.json({ error: "Nama kelas wajib diisi" }, 400);
@@ -339,10 +381,12 @@ app.get("/api/tp", requireRole("admin", "guru"), async (c) => {
     )
   );
 });
-app.post("/api/tp", requireRole("admin"), async (c) => {
+app.post("/api/tp", requireRole("admin", "guru"), async (c) => {
   const { mapel_id, tingkat, semester, tahun_ajaran, kode, teks } = await bacaBody(c);
   if (!mapel_id || !tingkat || !kode || !teks)
     return c.json({ error: "Mapel, tingkat, kode, dan teks TP wajib diisi" }, 400);
+  if (!(await mapelDiampu(c.get("user"), Number(mapel_id))))
+    return c.json({ error: "Mapel ini bukan mapel yang Anda ampu." }, 403);
   const urutan = Number(String(kode).replace(/\D/g, "")) || 0;
   await run(
     `INSERT INTO tp (mapel_id, tingkat, semester, tahun_ajaran, kode, teks, urutan)
@@ -353,7 +397,11 @@ app.post("/api/tp", requireRole("admin"), async (c) => {
   void catatLog(c, "simpan_tp", `${kode} (${tingkat})`);
   return c.json({ ok: true });
 });
-app.delete("/api/tp/:id", requireRole("admin"), async (c) => {
+app.delete("/api/tp/:id", requireRole("admin", "guru"), async (c) => {
+  const tp = await one("SELECT mapel_id FROM tp WHERE id = ?", [c.req.param("id")]);
+  if (!tp) return c.json({ error: "TP tidak ditemukan" }, 404);
+  if (!(await mapelDiampu(c.get("user"), tp.mapel_id)))
+    return c.json({ error: "Mapel ini bukan mapel yang Anda ampu." }, 403);
   await run("DELETE FROM tp WHERE id = ?", [c.req.param("id")]);
   void catatLog(c, "hapus_tp", `tp#${c.req.param("id")}`);
   return c.json({ ok: true });
@@ -367,10 +415,12 @@ app.get("/api/pengaturan", requireRole("admin", "guru"), async (c) => {
   const { row, cfg, hariEfektif } = await ambilPengaturan(mapelId, semester, tahun);
   return c.json({ ...cfg, hari_efektif: hariEfektif, tersimpan: !!row });
 });
-app.put("/api/pengaturan", requireRole("admin"), async (c) => {
+app.put("/api/pengaturan", requireRole("admin", "guru"), async (c) => {
   const b = await bacaBody(c);
   const mapelId = Number(b.mapel_id || 0);
   if (!mapelId) return c.json({ error: "mapel_id wajib diisi" }, 400);
+  if (!(await mapelDiampu(c.get("user"), mapelId)))
+    return c.json({ error: "Mapel ini bukan mapel yang Anda ampu." }, 403);
   const semester = b.semester || SEMESTER_DEFAULT;
   const tahun = b.tahun_ajaran || TAHUN_DEFAULT;
   const cfg = lengkapiPengaturan(b as PengaturanHitung);
@@ -437,9 +487,11 @@ app.get("/api/siswa", requireRole("admin", "guru"), async (c) => {
   }
   return c.json(rows);
 });
-app.post("/api/siswa", requireRole("admin"), async (c) => {
+app.post("/api/siswa", requireRole("admin", "guru"), async (c) => {
   const { nisn, nama, lp, kelas_id } = await bacaBody(c);
   if (!nisn || !nama || !kelas_id) return c.json({ error: "NISN, nama, dan kelas wajib diisi" }, 400);
+  if (!(await kelasDiampuSatu(c.get("user"), Number(kelas_id))))
+    return c.json({ error: "Kelas ini bukan kelas yang Anda ampu." }, 403);
   try {
     await run("INSERT INTO siswa (nisn, nama, lp, kelas_id) VALUES (?,?,?,?)", [
       normalisasiNISN(nisn), nama, lp || null, kelas_id,
@@ -450,9 +502,11 @@ app.post("/api/siswa", requireRole("admin"), async (c) => {
   void catatLog(c, "tambah_siswa", `${nama} (${nisn})`);
   return c.json({ ok: true });
 });
-app.post("/api/siswa/import", requireRole("admin"), async (c) => {
+app.post("/api/siswa/import", requireRole("admin", "guru"), async (c) => {
   const { kelas_id, csv } = await bacaBody(c);
   if (!kelas_id || !csv) return c.json({ error: "kelas_id dan isi CSV wajib diisi" }, 400);
+  if (!(await kelasDiampuSatu(c.get("user"), Number(kelas_id))))
+    return c.json({ error: "Kelas ini bukan kelas yang Anda ampu." }, 403);
   const rows = parseCSV(String(csv));
   let masuk = 0, lewati = 0;
   for (const r of rows) {

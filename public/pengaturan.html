@@ -126,7 +126,7 @@ async function muatAwal() {
   const g = await api("/api/guru-saya");
   el("guru-nama").value = g.nama || ""; el("guru-nip").value = g.nip || "";
   mapelList = await api("/api/mapel");
-  kelasList = await api("/api/kelas");
+  kelasList = await api("/api/kelas-saya");
   el("ctx-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
   el("murid-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
   const p = await api(`/api/pengaturan?mapel_id=${mapelList[0]?.id || 0}`);
@@ -136,45 +136,62 @@ async function muatAwal() {
   el("ctx-bonus").value = p.bonusKarakter; el("ctx-hari").value = p.hari_efektif; el("ctx-mode").value = p.modeSkala;
 }
 async function simpanGuru() {
-  await api("/api/guru-saya", { method: "PUT", body: JSON.stringify({ nama: el("guru-nama").value.trim(), nip: el("guru-nip").value.trim() }) });
-  el("status-1").textContent = "Tersimpan.";
-  tampilLangkah(2);
+  try {
+    await api("/api/guru-saya", { method: "PUT", body: JSON.stringify({ nama: el("guru-nama").value.trim(), nip: el("guru-nip").value.trim() }) });
+    el("status-1").textContent = "Tersimpan.";
+    tampilLangkah(2);
+  } catch (e) { el("status-1").textContent = "Gagal menyimpan: " + (e.message || e); }
 }
 async function simpanKonteks() {
-  await api("/api/pengaturan", { method: "PUT", body: JSON.stringify({
-    mapel_id: Number(el("ctx-mapel").value), semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(),
-    rendah: Number(el("ctx-rendah").value), tinggi: Number(el("ctx-tinggi").value),
-    bobotS: Number(el("ctx-bs").value), bobotAsts: Number(el("ctx-ba").value), bobotAsat: Number(el("ctx-bat").value),
-    ambang: Number(el("ctx-ambang").value), batasTh: Number(el("ctx-batasth").value), patokTh: Number(el("ctx-patokth").value),
-    bonusKarakter: Number(el("ctx-bonus").value), hari_efektif: Number(el("ctx-hari").value), modeSkala: el("ctx-mode").value }) });
-  el("status-2").textContent = "Tersimpan.";
-  tampilLangkah(3);
+  try {
+    await api("/api/pengaturan", { method: "PUT", body: JSON.stringify({
+      mapel_id: Number(el("ctx-mapel").value), semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(),
+      rendah: Number(el("ctx-rendah").value), tinggi: Number(el("ctx-tinggi").value),
+      bobotS: Number(el("ctx-bs").value), bobotAsts: Number(el("ctx-ba").value), bobotAsat: Number(el("ctx-bat").value),
+      ambang: Number(el("ctx-ambang").value), batasTh: Number(el("ctx-batasth").value), patokTh: Number(el("ctx-patokth").value),
+      bonusKarakter: Number(el("ctx-bonus").value), hari_efektif: Number(el("ctx-hari").value), modeSkala: el("ctx-mode").value }) });
+    el("status-2").textContent = "Tersimpan.";
+    tampilLangkah(3);
+  } catch (e) {
+    // PERBAIKAN bug 18 Nov 2026: sebelumnya gagal simpan diam-diam (dulu
+    // 403 admin-only) sehingga guru tertahan di Langkah 2 tanpa pesan.
+    el("status-2").textContent = "Gagal menyimpan: " + (e.message || e);
+  }
 }
 async function muatTp() {
   const tps = await api(`/api/tp?mapel_id=${el("ctx-mapel").value}&tingkat=${el("tp-tingkat").value}&semester=${el("ctx-semester").value}&tahun_ajaran=${encodeURIComponent(el("ctx-tahun").value)}`);
   el("daftar-tp").innerHTML = tps.length ? tps.map(t => `<div class="baris"><span><b>${esc(t.kode)}</b> — ${esc(t.teks)}</span><button class="sekunder" onclick="hapusTp(${t.id})">Hapus</button></div>`).join("") : "<p class='muted'>Belum ada TP untuk tingkat ini.</p>";
 }
 async function simpanTp() {
-  await api("/api/tp", { method: "POST", body: JSON.stringify({ mapel_id: Number(el("ctx-mapel").value), tingkat: el("tp-tingkat").value, semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(), kode: el("tp-kode").value, teks: el("tp-teks").value.trim() }) });
-  el("status-3").textContent = "TP tersimpan."; el("tp-teks").value = "";
-  muatTp();
+  try {
+    await api("/api/tp", { method: "POST", body: JSON.stringify({ mapel_id: Number(el("ctx-mapel").value), tingkat: el("tp-tingkat").value, semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(), kode: el("tp-kode").value, teks: el("tp-teks").value.trim() }) });
+    el("status-3").textContent = "TP tersimpan."; el("tp-teks").value = "";
+    muatTp();
+  } catch (e) { el("status-3").textContent = "Gagal menyimpan TP: " + (e.message || e); }
 }
-async function hapusTp(id) { await api("/api/tp/" + id, { method: "DELETE" }); muatTp(); }
+async function hapusTp(id) {
+  try { await api("/api/tp/" + id, { method: "DELETE" }); muatTp(); }
+  catch (e) { el("status-3").textContent = "Gagal menghapus TP: " + (e.message || e); }
+}
 async function muatMurid() {
   const kid = el("murid-kelas").value;
   const rows = await api(`/api/siswa?kelas_id=${kid}`);
   el("daftar-murid").innerHTML = rows.length ? `<p>${rows.length} murid:</p>` + rows.map(s => `<div class="baris"><span>${esc(s.nama)}</span><span class="muted">${esc(s.nisn)} · ${esc(s.lp || "")}</span></div>`).join("") : "<p class='muted'>Belum ada murid di kelas ini.</p>";
 }
 async function tambahMurid() {
-  await api("/api/siswa", { method: "POST", body: JSON.stringify({ nisn: el("m-nisn").value.trim(), nama: el("m-nama").value.trim(), lp: el("m-lp").value, kelas_id: Number(el("murid-kelas").value) }) });
-  el("status-4").textContent = "Murid ditambahkan.";
-  el("m-nisn").value = ""; el("m-nama").value = "";
-  muatMurid();
+  try {
+    await api("/api/siswa", { method: "POST", body: JSON.stringify({ nisn: el("m-nisn").value.trim(), nama: el("m-nama").value.trim(), lp: el("m-lp").value, kelas_id: Number(el("murid-kelas").value) }) });
+    el("status-4").textContent = "Murid ditambahkan.";
+    el("m-nisn").value = ""; el("m-nama").value = "";
+    muatMurid();
+  } catch (e) { el("status-4").textContent = "Gagal menambah murid: " + (e.message || e); }
 }
 async function imporCsv() {
-  const r = await api("/api/siswa/import", { method: "POST", body: JSON.stringify({ kelas_id: Number(el("murid-kelas").value), csv: el("csv-murid").value }) });
-  el("status-csv").textContent = `Masuk ${r.masuk}, dilewati ${r.lewati}.`;
-  muatMurid();
+  try {
+    const r = await api("/api/siswa/import", { method: "POST", body: JSON.stringify({ kelas_id: Number(el("murid-kelas").value), csv: el("csv-murid").value }) });
+    el("status-csv").textContent = `Masuk ${r.masuk}, dilewati ${r.lewati}.`;
+    muatMurid();
+  } catch (e) { el("status-csv").textContent = "Gagal impor: " + (e.message || e); }
 }
 (async () => { await butuhLogin(); await muatAwal(); })();
 el("murid-kelas").addEventListener("change", muatMurid);

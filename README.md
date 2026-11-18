@@ -131,7 +131,10 @@ Ada dua mode (pengaturan per mapel+semester, default **`murni`**):
     kesalahan (nomor baris + alasan). Impor murid dari DAFNIL.xlsx lewat
     `bun run seed` (atau `scripts/extract-dafnil.py` + seed).
 - **Batas guru**: guru hanya melihat/mengisi nilai untuk mapel & kelas yang
-  diampunya (tabel `guru_mapel`); CRUD master data hanya admin.
+  diampunya (tabel `guru_mapel`); CRUD master data hanya admin. Pengecualian
+  lewat wizard Pengaturan: guru boleh menyimpan rumus & TP untuk mapel yang
+  diampunya, dan menambah murid di kelas yang diampunya — di luar itu server
+  menolak dengan 403.
 - **Admin**: kelola akun guru, ganti kata sandi sendiri, Backup & Restore JSON
   (termasuk hash kata sandi), Log Aktivitas.
 
