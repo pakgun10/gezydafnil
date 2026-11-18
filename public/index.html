@@ -18,7 +18,7 @@
   <a href="/admin.html" id="menu-admin">Admin</a>
   <a href="#" onclick="keluar();return false;">Keluar</a>
 </nav>
-<main>
+<main id="konten" hidden>
   <div class="kartu">
     <h2>Semester Ganjil 2026/2027</h2>
     <div class="baris"><span>Total murid</span><b id="stat-murid">…</b></div>
@@ -46,17 +46,28 @@
 <script src="/js/common.js"></script>
 <script>
 (async () => {
-  await butuhLogin();
-  const d = await api("/api/dashboard");
-  el("stat-murid").textContent = d.murid;
-  el("stat-kelas").textContent = d.kelas;
-  el("stat-mapel").textContent = d.mapel;
-  el("stat-guru").textContent = d.guru;
-  el("progres").innerHTML = d.progres.map((p) => {
-    const persen = p.total ? Math.round((p.terisi / p.total) * 100) : 0;
-    return `<div class="baris"><span>Kelas ${esc(p.kelas)}</span><b>${p.terisi}/${p.total} (${persen}%)</b></div>
-    <div class="progres"><div style="width:${persen}%"></div></div>`;
-  }).join("") || "<p class='muted'>Belum ada kelas.</p>";
+  try {
+    await butuhLogin();
+    const d = await api("/api/dashboard");
+    el("stat-murid").textContent = d.murid;
+    el("stat-kelas").textContent = d.jumlahKelas;
+    el("stat-mapel").textContent = d.jumlahMapel;
+    el("stat-guru").textContent = d.guru;
+    el("progres").innerHTML = d.progres.map((p) => {
+      const persen = p.total ? Math.round((p.terisi / p.total) * 100) : 0;
+      return `<div class="baris"><span>Kelas ${esc(p.kelas)}</span><b>${p.terisi}/${p.total} (${persen}%)</b></div>
+      <div class="progres"><div style="width:${persen}%"></div></div>`;
+    }).join("") || "<p class='muted'>Belum ada kelas.</p>";
+    // Baru tampilkan isi bila data sudah terisi — cegah "…" berkedip.
+    el("konten").hidden = false;
+  } catch (e) {
+    // 401 sudah dialihkan ke login oleh api()/butuhLogin. Gagal lain:
+    // tampilkan pesan, bukan halaman kosong.
+    if (!String(e && e.message || "").includes("Belum login")) {
+      el("progres").textContent = "Gagal memuat: " + (e && e.message ? e.message : e);
+      el("konten").hidden = false;
+    }
+  }
 })();
 </script>
 </body>

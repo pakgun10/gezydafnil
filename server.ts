@@ -258,7 +258,19 @@ app.get("/api/dashboard", requireRole("admin", "guru"), async (c) => {
       progres.push({ kelas: k.nama, terisi: h.terisi, total: h.total });
     }
   }
-  return c.json({ murid, kelas, mapel, guru, mapel: mapelAktif, kelas: kelasRows, progres });
+  return c.json({
+    murid,
+    guru,
+    progres,
+    // PERBAIKAN bug 18 Nov 2026: sebelumnya kunci `kelas` dan `mapel` ditulis
+    // dua kali (jumlah lalu daftar) sehingga jumlah tertimpa array objek dan
+    // beranda menampilkan "[object Object]". Kini jumlah dan daftar punya
+    // kunci berbeda.
+    jumlahKelas: kelas,
+    jumlahMapel: mapel,
+    daftarKelas: kelasRows,
+    daftarMapel: mapelAktif,
+  });
 });
 
 // ---------- Konteks: mapel & kelas ----------
@@ -1320,7 +1332,21 @@ app.post("/api/admin/import/:jenis", requireRole("admin"), async (c) => {
 });
 
 // ---------- Static frontend ----------
-app.get("/", (c) => new Response(Bun.file("./public/index.html")));
+// PERBAIKAN bug 18 Nov 2026: halaman HTML (kecuali login) hanya disajikan
+// bila sudah login. Sebelumnya beranda sempat tampil dengan "…" / "Memuat…"
+// lalu dialihkan — karena file statis dikirim dulu, baru script memeriksa
+// login. Kini server mengalihkan ke /login.html sebelum halaman dikirim.
+app.get("/", async (c) => {
+  if (!(await getSessionUser(c))) return c.redirect("/login.html");
+  return new Response(Bun.file("./public/index.html"));
+});
+app.use("/*", async (c, next) => {
+  const p = new URL(c.req.url).pathname;
+  if (p.endsWith(".html") && p !== "/login.html" && !(await getSessionUser(c))) {
+    return c.redirect("/login.html");
+  }
+  await next();
+});
 app.use("/*", serveStatic({ root: "./public" }));
 
 const port = Number(process.env.PORT || 3103);
