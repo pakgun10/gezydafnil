@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Admin — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" class="aktif" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="kartu">
+    <h2>Kelola Akun Guru</h2>
+    <p class="muted">Username dibuat dari nama (cth. <code>siti.asiyah</code>). <b>Kata sandi awal = username</b> (pola GezyRaport) — guru wajib menggantinya setelah login pertama.</p>
+    <label for="a-nama">Nama guru</label><input id="a-nama">
+    <label for="a-nip">NIP</label><input id="a-nip" inputmode="numeric">
+    <label for="a-user">Username (kosong = dibuat dari nama)</label><input id="a-user">
+    <label for="a-peran">Peran</label>
+    <select id="a-peran"><option value="guru">Guru</option><option value="admin">Admin</option></select>
+    <p class="status" id="status-akun"></p>
+    <button onclick="tambahAkun()">Tambah Akun</button>
+    <div id="daftar-akun" style="margin-top:12px"></div>
+  </div>
+  <div class="kartu">
+    <h2>Ganti Kata Sandi Saya</h2>
+    <label for="p-lama">Kata sandi lama</label><input id="p-lama" type="password">
+    <label for="p-baru">Kata sandi baru (min. 6 karakter)</label><input id="p-baru" type="password">
+    <p class="status" id="status-sandi"></p>
+    <button onclick="gantiSandi()">Ganti Kata Sandi</button>
+  </div>
+  <div class="kartu">
+    <h2>Backup &amp; Restore (JSON)</h2>
+    <p class="muted">Backup berisi seluruh data termasuk akun (hash kata sandi ikut tersimpan). Simpan file backup di tempat aman.</p>
+    <p><a class="tombol" href="/api/admin/backup" download>⬇ Unduh Backup JSON</a></p>
+    <label for="restore-file">Pulihkan dari file backup</label>
+    <input id="restore-file" type="file" accept=".json,application/json">
+    <p class="status" id="status-restore"></p>
+    <button class="bahaya" onclick="pulihkan()">Pulihkan (menimpa semua data!)</button>
+  </div>
+  <div class="kartu">
+    <h2>Log Aktivitas</h2>
+    <div id="log">Memuat…</div>
+  </div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+async function muatAkun() {
+  const rows = await api("/api/admin/users");
+  el("daftar-akun").innerHTML = rows.map(u => `<div class="baris"><span><b>${esc(u.username)}</b> (${esc(u.role)})${u.guru_nama ? " — " + esc(u.guru_nama) : ""}</span>
+    <span><button class="sekunder" onclick="resetSandi(${u.id},'${esc(u.username)}')">Reset sandi</button>
+    <button class="sekunder" onclick="hapusAkun(${u.id},'${esc(u.username)}')">Hapus</button></span></div>`).join("");
+}
+async function tambahAkun() {
+  const r = await api("/api/admin/users", { method: "POST", body: JSON.stringify({ nama: el("a-nama").value.trim(), nip: el("a-nip").value.trim(), username: el("a-user").value.trim(), role: el("a-peran").value }) });
+  el("status-akun").textContent = `Akun ${r.username} dibuat. Kata sandi awal: ${r.password_awal}.`;
+  el("a-nama").value = ""; el("a-nip").value = ""; el("a-user").value = "";
+  muatAkun();
+}
+async function resetSandi(id, username) {
+  const r = await api(`/api/admin/users/${id}/reset`, { method: "POST" });
+  alert(`Kata sandi ${username} direset menjadi: ${r.password_baru}`);
+  muatAkun();
+}
+async function hapusAkun(id, username) {
+  if (!confirm(`Hapus akun ${username}?`)) return;
+  await api(`/api/admin/users/${id}`, { method: "DELETE" });
+  muatAkun();
+}
+async function gantiSandi() {
+  await api("/api/me/password", { method: "POST", body: JSON.stringify({ lama: el("p-lama").value, baru: el("p-baru").value }) });
+  el("status-sandi").textContent = "Kata sandi diganti.";
+  el("p-lama").value = ""; el("p-baru").value = "";
+}
+async function pulihkan() {
+  const f = el("restore-file").files[0];
+  if (!f) { el("status-restore").textContent = "Pilih file backup dulu."; return; }
+  if (!confirm("Pulihkan akan MENIMPA semua data saat ini. Lanjutkan?")) return;
+  const data = JSON.parse(await f.text());
+  await api("/api/admin/restore", { method: "POST", body: JSON.stringify(data) });
+  el("status-restore").textContent = "Dipulihkan. Muat ulang halaman.";
+  muatAkun(); muatLog();
+}
+async function muatLog() {
+  const rows = await api("/api/admin/log?limit=50");
+  el("log").innerHTML = rows.map(l => `<div class="baris"><span>${esc(l.waktu.slice(0, 19).replace("T", " "))} — <b>${esc(l.aksi)}</b> ${esc(l.detail || "")}</span><span class="muted">${esc(l.username || "")}</span></div>`).join("") || "<p class='muted'>Belum ada log.</p>";
+}
+(async () => { const u = await butuhLogin(); if (u.role !== "admin") { location.href = "/"; return; } await muatAkun(); await muatLog(); })();
+</script>
+</body>
+</html>

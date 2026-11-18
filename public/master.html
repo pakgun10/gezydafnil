@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master Data — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Master Data (admin) — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" class="aktif" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <p class="peringatan">Halaman ini <b>hanya untuk admin</b>. Guru tidak bisa CRUD master data — guru hanya mengisi nilai untuk mapel &amp; kelas yang diampunya.</p>
+  <div class="langkah" id="tab-bar">
+    <span data-tab="guru" class="aktif">Guru</span><span data-tab="murid">Murid</span><span data-tab="kelas">Kelas</span><span data-tab="mapel">Mapel</span><span data-tab="periode">Periode</span><span data-tab="tp">TP</span><span data-tab="pengaturan">Pengaturan</span>
+  </div>
+
+  <!-- GURU -->
+  <section id="tab-guru">
+    <div class="kartu">
+      <h2>Guru</h2>
+      <div id="daftar-guru">Memuat…</div>
+      <h3>Tambah / ubah guru</h3>
+      <input type="hidden" id="g-id">
+      <label for="g-nama">Nama</label><input id="g-nama">
+      <label for="g-nip">NIP</label><input id="g-nip" inputmode="numeric">
+      <label for="g-user">Username (kosong = dibuat dari nama)</label><input id="g-user">
+      <label for="g-pass">Kata sandi (kosong = tidak diubah / awal = username)</label><input id="g-pass" type="password">
+      <label for="g-peran">Peran</label><select id="g-peran"><option value="guru">Guru</option><option value="admin">Admin</option></select>
+      <label>Mapel yang diampu (centang kelas × mapel)</label>
+      <div id="g-tugas"></div>
+      <p class="status" id="status-guru"></p>
+      <button onclick="simpanGuru()">Simpan Guru</button>
+      <button class="sekunder" onclick="resetFormGuru()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-guru"></div>
+  </section>
+
+  <!-- MURID -->
+  <section id="tab-murid" hidden>
+    <div class="kartu">
+      <h2>Murid</h2>
+      <label for="m-kelas">Kelas</label><select id="m-kelas"></select>
+      <div id="daftar-murid">Memuat…</div>
+      <h3>Tambah / ubah murid</h3>
+      <input type="hidden" id="m-id">
+      <label for="m-nisn">NISN (teks)</label><input id="m-nisn" inputmode="numeric">
+      <label for="m-nama">Nama</label><input id="m-nama">
+      <label for="m-lp">L/P</label><select id="m-lp"><option value="">—</option><option>L</option><option>P</option></select>
+      <label for="m-kelas-form">Kelas (pindah kelas lewat sini)</label><select id="m-kelas-form"></select>
+      <p class="status" id="status-murid"></p>
+      <button onclick="simpanMurid()">Simpan Murid</button>
+      <button class="sekunder" onclick="resetFormMurid()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-murid"></div>
+  </section>
+
+  <!-- KELAS -->
+  <section id="tab-kelas" hidden>
+    <div class="kartu">
+      <h2>Kelas</h2>
+      <div id="daftar-kelas">Memuat…</div>
+      <h3>Tambah / ubah kelas</h3>
+      <input type="hidden" id="k-id">
+      <label for="k-nama">Nama kelas (cth. 7.9)</label><input id="k-nama">
+      <label for="k-tingkat">Tingkat</label><select id="k-tingkat"><option>7</option><option>8</option><option>9</option></select>
+      <label for="k-wali">Wali kelas (opsional)</label><select id="k-wali"><option value="">— tanpa wali —</option></select>
+      <p class="status" id="status-kelas"></p>
+      <button onclick="simpanKelas()">Simpan Kelas</button>
+      <button class="sekunder" onclick="resetFormKelas()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-kelas"></div>
+  </section>
+
+  <!-- MAPEL -->
+  <section id="tab-mapel" hidden>
+    <div class="kartu">
+      <h2>Mapel</h2>
+      <div id="daftar-mapel">Memuat…</div>
+      <h3>Tambah / ubah mapel</h3>
+      <input type="hidden" id="mp-id">
+      <label for="mp-nama">Nama</label><input id="mp-nama">
+      <label for="mp-kode">Kode (cth. MTK)</label><input id="mp-kode">
+      <label for="mp-aktif">Aktif</label><select id="mp-aktif"><option value="1">Ya</option><option value="0">Tidak</option></select>
+      <p class="status" id="status-mapel"></p>
+      <button onclick="simpanMapel()">Simpan Mapel</button>
+      <button class="sekunder" onclick="resetFormMapel()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-mapel"></div>
+  </section>
+
+  <!-- PERIODE -->
+  <section id="tab-periode" hidden>
+    <div class="kartu">
+      <h2>Periode (Semester / Tahun Pelajaran)</h2>
+      <div id="daftar-periode">Memuat…</div>
+      <h3>Tambah / ubah periode</h3>
+      <input type="hidden" id="p-id">
+      <label for="p-semester">Semester</label><select id="p-semester"><option>Ganjil</option><option>Genap</option></select>
+      <label for="p-tahun">Tahun Ajaran</label><input id="p-tahun" value="2026/2027">
+      <label for="p-aktif">Aktif</label><select id="p-aktif"><option value="1">Ya (jadikan periode berjalan)</option><option value="0">Tidak</option></select>
+      <p class="status" id="status-periode"></p>
+      <button onclick="simpanPeriode()">Simpan Periode</button>
+      <button class="sekunder" onclick="resetFormPeriode()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-periode"></div>
+  </section>
+
+  <!-- TP -->
+  <section id="tab-tp" hidden>
+    <div class="kartu">
+      <h2>Tujuan Pembelajaran (TP)</h2>
+      <div class="grid-dua">
+        <div><label for="tp-mapel">Mapel</label><select id="tp-mapel"></select></div>
+        <div><label for="tp-tingkat">Tingkat</label><select id="tp-tingkat"><option>7</option><option>8</option><option>9</option></select></div>
+      </div>
+      <div id="daftar-tp">Memuat…</div>
+      <h3>Tambah / ubah TP</h3>
+      <input type="hidden" id="tp-id">
+      <label for="tp-kode">Kode (S1–S5)</label><select id="tp-kode"><option>S1</option><option>S2</option><option>S3</option><option>S4</option><option>S5</option></select>
+      <label for="tp-teks">Teks TP</label><textarea id="tp-teks"></textarea>
+      <p class="status" id="status-tp"></p>
+      <button onclick="simpanTp()">Simpan TP</button>
+      <button class="sekunder" onclick="resetFormTp()">Bersihkan Form</button>
+    </div>
+    <div class="kartu" id="io-tp"></div>
+  </section>
+
+  <!-- PENGATURAN -->
+  <section id="tab-pengaturan" hidden>
+    <div class="kartu">
+      <h2>Pengaturan Konversi</h2>
+      <p class="muted">Satu baris per mapel + semester + tahun ajaran. Mengubahnya mengubah NA &amp; deskripsi yang dihitung (NA tidak disimpan permanen).</p>
+      <div id="daftar-pengaturan">Memuat…</div>
+      <p class="muted">Ubah pengaturan lewat <a href="/pengaturan.html">Pengaturan → Langkah 2</a>, atau impor CSV di bawah ini.</p>
+    </div>
+    <div class="kartu" id="io-pengaturan"></div>
+  </section>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+let mapelList = [], kelasList = [], guruList = [];
+let tabAktif = "guru";
+
+// ---------- util UI ----------
+function ioBox(jenis, judul) {
+  return `<h2>Export / Import — ${judul}</h2>
+  <p><a class="tombol sekunder" href="/api/admin/export/${jenis}" download>⬇ Export CSV</a>
+  <a class="tombol sekunder" href="/api/admin/template/${jenis}" download>⬇ Template CSV</a></p>
+  <label for="csv-${jenis}">Tempel isi CSV untuk diimpor</label>
+  <textarea id="csv-${jenis}" placeholder="Salin dari file CSV, atau unduh template dulu"></textarea>
+  <p class="status" id="status-io-${jenis}"></p>
+  <button onclick="imporCsv('${jenis}')">Impor CSV</button>
+  <div id="hasil-io-${jenis}"></div>`;
+}
+function pasangIo(jenis, judul) { el("io-" + jenis).innerHTML = ioBox(jenis, judul); }
+async function imporCsv(jenis) {
+  const csv = el("csv-" + jenis).value;
+  if (!csv.trim()) { el("status-io-" + jenis).textContent = "Tempel dulu isi CSV."; return; }
+  const r = await api(`/api/admin/import/${jenis}`, { method: "POST", body: JSON.stringify({ csv }) });
+  el("status-io-" + jenis).textContent = `Masuk ${r.masuk}, diubah ${r.diubah}, gagal ${r.gagal.length}.`;
+  el("hasil-io-" + jenis).innerHTML = r.gagal.length
+    ? "<p class='galat'>Baris gagal (ditolak, baris lain tetap masuk):</p>" + r.gagal.map(g => `<div>Baris ${g.baris}: ${esc(g.alasan)}</div>`).join("")
+    : "<p class='status'>Semua baris berhasil.</p>";
+  muatTab(tabAktif);
+}
+function tampilTab(nama) {
+  tabAktif = nama;
+  document.querySelectorAll("#tab-bar span").forEach(s => s.classList.toggle("aktif", s.dataset.tab === nama));
+  document.querySelectorAll("main section").forEach(s => { s.hidden = s.id !== "tab-" + nama; });
+  muatTab(nama);
+}
+document.querySelectorAll("#tab-bar span").forEach(s => s.addEventListener("click", () => tampilTab(s.dataset.tab)));
+async function muatTab(nama) {
+  if (nama === "guru") await muatGuru();
+  if (nama === "murid") await muatMurid();
+  if (nama === "kelas") await muatKelas();
+  if (nama === "mapel") await muatMapel();
+  if (nama === "periode") await muatPeriode();
+  if (nama === "tp") await muatTp();
+  if (nama === "pengaturan") await muatPengaturan();
+}
+async function muatDasar() {
+  mapelList = await api("/api/mapel");
+  kelasList = await api("/api/kelas");
+}
+
+// ---------- GURU ----------
+async function muatGuru() {
+  guruList = await api("/api/admin/guru");
+  el("daftar-guru").innerHTML = guruList.map(g => `<div class="baris"><span><b>${esc(g.nama)}</b> (${esc(g.username)}, ${esc(g.role)})${g.nip ? " · " + esc(g.nip) : ""}<br><span class="muted">${(g.tugas || []).map(t => esc(t.mapel_kode) + ":" + esc(t.kelas_nama)).join("; ") || "belum ada tugas mengajar"}</span></span>
+    <span><button class="sekunder" onclick="editGuru(${g.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusGuru(${g.id},'${esc(g.nama)}')">Hapus</button></span></div>`).join("") || "<p class='muted'>Belum ada guru.</p>";
+  el("g-tugas").innerHTML = mapelList.map(m => `<b>${esc(m.nama)}</b><br>` + kelasList.map(k =>
+    `<label style="display:inline-block;margin:2px 8px 2px 0;font-weight:400"><input type="checkbox" class="cb-tugas" value="${m.id}:${k.id}" style="width:auto"> ${esc(k.nama)}</label>`).join("") + "<br>").join("");
+  el("k-wali").innerHTML = `<option value="">— tanpa wali —</option>` + guruList.map(g => `<option value="${g.id}">${esc(g.nama)} (${esc(g.username)})</option>`).join("");
+}
+function tugasTerpilih() {
+  return [...document.querySelectorAll(".cb-tugas:checked")].map(c => { const [mapel_id, kelas_id] = c.value.split(":").map(Number); return { mapel_id, kelas_id }; });
+}
+function resetFormGuru() {
+  ["g-id","g-nama","g-nip","g-user","g-pass"].forEach(id => el(id).value = "");
+  el("g-peran").value = "guru";
+  document.querySelectorAll(".cb-tugas").forEach(c => c.checked = false);
+}
+async function simpanGuru() {
+  const id = el("g-id").value;
+  const body = { nama: el("g-nama").value.trim(), nip: el("g-nip").value.trim(), username: el("g-user").value.trim(), password: el("g-pass").value, role: el("g-peran").value, tugas: tugasTerpilih() };
+  if (id) { await api(`/api/admin/guru/${id}`, { method: "PUT", body: JSON.stringify(body) }); el("status-guru").textContent = "Guru diubah."; }
+  else { const r = await api("/api/admin/guru", { method: "POST", body: JSON.stringify(body) }); el("status-guru").textContent = `Guru dibuat: ${r.username}, kata sandi awal: ${r.password_awal}.`; }
+  resetFormGuru(); muatGuru();
+}
+function editGuru(id) {
+  const g = guruList.find(x => x.id === id);
+  el("g-id").value = g.id; el("g-nama").value = g.nama; el("g-nip").value = g.nip || "";
+  el("g-user").value = g.username; el("g-pass").value = ""; el("g-peran").value = g.role;
+  const punya = new Set((g.tugas || []).map(t => `${t.mapel_id}:${t.kelas_id}`));
+  document.querySelectorAll(".cb-tugas").forEach(c => c.checked = punya.has(c.value));
+  window.scrollTo({ top: 0 });
+}
+async function hapusGuru(id, nama) {
+  if (!confirm(`Hapus guru ${nama}? Bila masih mengampu kelas/nilai, penghapusan ditolak.`)) return;
+  try { await api(`/api/admin/guru/${id}`, { method: "DELETE" }); el("status-guru").textContent = "Guru dihapus."; }
+  catch (e) { alert(e.message); }
+  muatGuru();
+}
+
+// ---------- MURID ----------
+async function muatMurid() {
+  const kid = el("m-kelas").value;
+  const rows = await api(`/api/siswa?kelas_id=${kid}`);
+  el("daftar-murid").innerHTML = `<p>${rows.length} murid:</p>` + rows.map(s => `<div class="baris"><span>${esc(s.nama)}<br><span class="muted">${esc(s.nisn)} · ${esc(s.lp || "")}</span></span>
+    <span><button class="sekunder" onclick="editMurid(${s.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusMurid(${s.id},'${esc(s.nama)}')">Hapus</button></span></div>`).join("") || "<p class='muted'>Belum ada murid.</p>";
+  el("m-kelas-form").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  el("m-kelas-form").value = kid;
+}
+function resetFormMurid() { ["m-id","m-nisn","m-nama"].forEach(id => el(id).value = ""); el("m-lp").value = ""; }
+async function simpanMurid() {
+  const id = el("m-id").value;
+  const body = { nisn: el("m-nisn").value.trim(), nama: el("m-nama").value.trim(), lp: el("m-lp").value, kelas_id: Number(el("m-kelas-form").value) };
+  if (id) { await api(`/api/siswa/${id}`, { method: "PUT", body: JSON.stringify(body) }); el("status-murid").textContent = "Murid diubah."; }
+  else { await api("/api/siswa", { method: "POST", body: JSON.stringify(body) }); el("status-murid").textContent = "Murid ditambahkan."; }
+  resetFormMurid(); muatMurid();
+}
+async function editMurid(id) {
+  const rows = await api(`/api/siswa?kelas_id=${el("m-kelas").value}`);
+  const s = rows.find(x => x.id === id);
+  el("m-id").value = s.id; el("m-nisn").value = s.nisn; el("m-nama").value = s.nama; el("m-lp").value = s.lp || "";
+  el("m-kelas-form").value = s.kelas_id;
+  window.scrollTo({ top: 0 });
+}
+async function hapusMurid(id, nama) {
+  if (!confirm(`Hapus murid ${nama}?`)) return;
+  try { await api(`/api/siswa/${id}`, { method: "DELETE" }); el("status-murid").textContent = "Murid dihapus."; }
+  catch (e) { alert(e.message); }
+  muatMurid();
+}
+
+// ---------- KELAS ----------
+async function muatKelas() {
+  const rows = kelasList;
+  el("daftar-kelas").innerHTML = rows.map(k => {
+    const wali = guruList.find(g => g.id === k.wali_guru_id);
+    return `<div class="baris"><span><b>${esc(k.nama)}</b> (tingkat ${esc(k.tingkat)})${wali ? " · wali: " + esc(wali.nama) : ""}</span>
+    <span><button class="sekunder" onclick="editKelas(${k.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusKelas(${k.id},'${esc(k.nama)}')">Hapus</button></span></div>`;
+  }).join("");
+}
+function resetFormKelas() { el("k-id").value = ""; el("k-nama").value = ""; el("k-tingkat").value = "7"; el("k-wali").value = ""; }
+async function simpanKelas() {
+  const id = el("k-id").value;
+  const body = { nama: el("k-nama").value.trim(), tingkat: el("k-tingkat").value, wali_guru_id: el("k-wali").value === "" ? null : Number(el("k-wali").value) };
+  if (id) { await api(`/api/kelas/${id}`, { method: "PUT", body: JSON.stringify(body) }); el("status-kelas").textContent = "Kelas diubah."; }
+  else { await api("/api/kelas", { method: "POST", body: JSON.stringify(body) }); el("status-kelas").textContent = "Kelas ditambahkan."; }
+  resetFormKelas(); kelasList = await api("/api/kelas"); muatKelas(); muatGuru();
+}
+function editKelas(id) {
+  const k = kelasList.find(x => x.id === id);
+  el("k-id").value = k.id; el("k-nama").value = k.nama; el("k-tingkat").value = k.tingkat; el("k-wali").value = k.wali_guru_id || "";
+  window.scrollTo({ top: 0 });
+}
+async function hapusKelas(id, nama) {
+  if (!confirm(`Hapus kelas ${nama}?`)) return;
+  try { await api(`/api/kelas/${id}`, { method: "DELETE" }); el("status-kelas").textContent = "Kelas dihapus."; }
+  catch (e) { alert(e.message); }
+  kelasList = await api("/api/kelas"); muatKelas();
+}
+
+// ---------- MAPEL ----------
+async function muatMapel() {
+  el("daftar-mapel").innerHTML = mapelList.map(m => `<div class="baris"><span><b>${esc(m.nama)}</b> (${esc(m.kode)}) — ${m.aktif ? "aktif" : "nonaktif"}</span>
+    <span><button class="sekunder" onclick="editMapel(${m.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusMapel(${m.id},'${esc(m.nama)}')">Hapus</button></span></div>`).join("");
+}
+function resetFormMapel() { el("mp-id").value = ""; el("mp-nama").value = ""; el("mp-kode").value = ""; el("mp-aktif").value = "1"; }
+async function simpanMapel() {
+  const id = el("mp-id").value;
+  const body = { nama: el("mp-nama").value.trim(), kode: el("mp-kode").value.trim(), aktif: Number(el("mp-aktif").value) };
+  if (id) { await api(`/api/mapel/${id}`, { method: "PUT", body: JSON.stringify(body) }); el("status-mapel").textContent = "Mapel diubah."; }
+  else { await api("/api/mapel", { method: "POST", body: JSON.stringify(body) }); el("status-mapel").textContent = "Mapel ditambahkan."; }
+  resetFormMapel(); mapelList = await api("/api/mapel"); muatMapel();
+}
+function editMapel(id) {
+  const m = mapelList.find(x => x.id === id);
+  el("mp-id").value = m.id; el("mp-nama").value = m.nama; el("mp-kode").value = m.kode; el("mp-aktif").value = m.aktif ? "1" : "0";
+  window.scrollTo({ top: 0 });
+}
+async function hapusMapel(id, nama) {
+  if (!confirm(`Hapus mapel ${nama}?`)) return;
+  try { await api(`/api/mapel/${id}`, { method: "DELETE" }); el("status-mapel").textContent = "Mapel dihapus."; }
+  catch (e) { alert(e.message); }
+  mapelList = await api("/api/mapel"); muatMapel();
+}
+
+// ---------- PERIODE ----------
+let periodeList = [];
+async function muatPeriode() {
+  periodeList = await api("/api/admin/periode");
+  el("daftar-periode").innerHTML = periodeList.map(p => `<div class="baris"><span><b>${esc(p.semester)} ${esc(p.tahun_ajaran)}</b>${p.aktif ? " — aktif" : ""}</span>
+    <span><button class="sekunder" onclick="editPeriode(${p.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusPeriode(${p.id})">Hapus</button></span></div>`).join("");
+}
+function resetFormPeriode() { el("p-id").value = ""; el("p-semester").value = "Ganjil"; el("p-tahun").value = "2026/2027"; el("p-aktif").value = "0"; }
+async function simpanPeriode() {
+  const id = el("p-id").value;
+  const body = { semester: el("p-semester").value, tahun_ajaran: el("p-tahun").value.trim(), aktif: Number(el("p-aktif").value) };
+  if (id) { await api(`/api/admin/periode/${id}`, { method: "PUT", body: JSON.stringify(body) }); el("status-periode").textContent = "Periode diubah."; }
+  else { await api("/api/admin/periode", { method: "POST", body: JSON.stringify(body) }); el("status-periode").textContent = "Periode ditambahkan."; }
+  resetFormPeriode(); muatPeriode();
+}
+function editPeriode(id) {
+  const p = periodeList.find(x => x.id === id);
+  el("p-id").value = p.id; el("p-semester").value = p.semester; el("p-tahun").value = p.tahun_ajaran; el("p-aktif").value = p.aktif ? "1" : "0";
+  window.scrollTo({ top: 0 });
+}
+async function hapusPeriode(id) {
+  if (!confirm("Hapus periode ini?")) return;
+  try { await api(`/api/admin/periode/${id}`, { method: "DELETE" }); el("status-periode").textContent = "Periode dihapus."; }
+  catch (e) { alert(e.message); }
+  muatPeriode();
+}
+
+// ---------- TP ----------
+async function muatTp() {
+  const tps = await api(`/api/tp?mapel_id=${el("tp-mapel").value}&tingkat=${el("tp-tingkat").value}&semester=Ganjil&tahun_ajaran=2026%2F2027`);
+  el("daftar-tp").innerHTML = tps.length ? tps.map(t => `<div class="baris"><span><b>${esc(t.kode)}</b> — ${esc(t.teks)}</span>
+    <span><button class="sekunder" onclick="editTp(${t.id})">Ubah</button>
+    <button class="sekunder" onclick="hapusTp(${t.id})">Hapus</button></span></div>`).join("") : "<p class='muted'>Belum ada TP.</p>";
+}
+function resetFormTp() { el("tp-id").value = ""; el("tp-teks").value = ""; }
+async function simpanTp() {
+  const id = el("tp-id").value;
+  if (id) { await api(`/api/tp/${id}`, { method: "PUT", body: JSON.stringify({ kode: el("tp-kode").value, teks: el("tp-teks").value.trim() }) }); el("status-tp").textContent = "TP diubah."; }
+  else {
+    await api("/api/tp", { method: "POST", body: JSON.stringify({ mapel_id: Number(el("tp-mapel").value), tingkat: el("tp-tingkat").value, semester: "Ganjil", tahun_ajaran: "2026/2027", kode: el("tp-kode").value, teks: el("tp-teks").value.trim() }) });
+    el("status-tp").textContent = "TP tersimpan.";
+  }
+  resetFormTp(); muatTp();
+}
+async function editTp(id) {
+  const tps = await api(`/api/tp?mapel_id=${el("tp-mapel").value}&tingkat=${el("tp-tingkat").value}&semester=Ganjil&tahun_ajaran=2026%2F2027`);
+  const t = tps.find(x => x.id === id);
+  el("tp-id").value = t.id; el("tp-kode").value = t.kode; el("tp-teks").value = t.teks;
+  window.scrollTo({ top: 0 });
+}
+async function hapusTp(id) {
+  if (!confirm("Hapus TP ini?")) return;
+  await api(`/api/tp/${id}`, { method: "DELETE" });
+  muatTp();
+}
+
+// ---------- PENGATURAN ----------
+async function muatPengaturan() {
+  const rows = await api("/api/admin/pengaturan");
+  el("daftar-pengaturan").innerHTML = rows.map(p => `<div class="baris"><span><b>${esc(p.mapel_nama)}</b> ${esc(p.semester)} ${esc(p.tahun_ajaran)}<br><span class="muted">skala ${p.rendah}–${p.tinggi} · bobot ${p.bobot_s}/${p.bobot_asts}/${p.bobot_asat} · ambang ${p.ambang} · batas TH ${p.batas_th} · hari efektif ${p.hari_efektif} · mode ${esc(p.mode_skala)}</span></span>
+    <span><button class="sekunder" onclick="hapusPengaturan(${p.id})">Hapus</button></span></div>`).join("") || "<p class='muted'>Belum ada pengaturan tersimpan (dipakai default).</p>";
+}
+async function hapusPengaturan(id) {
+  if (!confirm("Hapus pengaturan ini? (Kembali ke default.)")) return;
+  await api(`/api/admin/pengaturan/${id}`, { method: "DELETE" });
+  muatPengaturan();
+}
+
+// ---------- init ----------
+(async () => {
+  const u = await butuhLogin();
+  if (u.role !== "admin") { location.href = "/"; return; }
+  await muatDasar();
+  el("m-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  el("tp-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
+  pasangIo("guru", "Guru");
+  pasangIo("murid", "Murid");
+  pasangIo("kelas", "Kelas");
+  pasangIo("mapel", "Mapel");
+  pasangIo("periode", "Periode");
+  pasangIo("tp", "TP");
+  pasangIo("pengaturan", "Pengaturan");
+  await muatGuru();
+})();
+el("m-kelas").addEventListener("change", muatMurid);
+el("tp-mapel").addEventListener("change", muatTp);
+el("tp-tingkat").addEventListener("change", muatTp);
+</script>
+</body>
+</html>

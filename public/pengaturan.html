@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pengaturan — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Pengaturan awal — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html" class="aktif">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="langkah"><span data-l="1" class="aktif">1 · Guru</span><span data-l="2">2 · Konteks</span><span data-l="3">3 · TP</span><span data-l="4">4 · Murid</span></div>
+
+  <div class="kartu" id="langkah-1">
+    <h2>Langkah 1 — Profil Guru</h2>
+    <label for="guru-nama">Nama Guru</label>
+    <input id="guru-nama" placeholder="cth. Gunanto, S.Pd.">
+    <label for="guru-nip">NIP Guru</label>
+    <input id="guru-nip" inputmode="numeric" placeholder="cth. 198001012005011001">
+    <p class="muted">NIP hanya identitas di kop/cetak — bukan kata sandi login.</p>
+    <p class="status" id="status-1"></p>
+    <button onclick="simpanGuru()">Simpan &amp; Lanjut →</button>
+  </div>
+
+  <div class="kartu" id="langkah-2" hidden>
+    <h2>Langkah 2 — Konteks Ajar &amp; Rumus</h2>
+    <label for="ctx-mapel">Mapel</label>
+    <select id="ctx-mapel"></select>
+    <div class="grid-dua">
+      <div><label for="ctx-semester">Semester</label>
+        <select id="ctx-semester"><option>Ganjil</option><option>Genap</option></select></div>
+      <div><label for="ctx-tahun">Tahun Pelajaran</label>
+        <input id="ctx-tahun" value="2026/2027"></div>
+    </div>
+    <div class="grid-dua">
+      <div><label for="ctx-rendah">Nilai Terendah (skala)</label><input id="ctx-rendah" type="number" value="70"></div>
+      <div><label for="ctx-tinggi">Nilai Tertinggi (skala)</label><input id="ctx-tinggi" type="number" value="95"></div>
+    </div>
+    <div class="grid-tiga">
+      <div><label for="ctx-bs">Bobot RT-S</label><input id="ctx-bs" type="number" step="0.01" value="0.7"></div>
+      <div><label for="ctx-ba">Bobot ASTS</label><input id="ctx-ba" type="number" step="0.01" value="0.15"></div>
+      <div><label for="ctx-bat">Bobot ASAT</label><input id="ctx-bat" type="number" step="0.01" value="0.15"></div>
+    </div>
+    <div class="grid-tiga">
+      <div><label for="ctx-ambang">Ambang deskripsi</label><input id="ctx-ambang" type="number" value="85"></div>
+      <div><label for="ctx-batasth">Batas TH (hari)</label><input id="ctx-batasth" type="number" value="10"></div>
+      <div><label for="ctx-patokth">Patok NA bila TH lewat</label><input id="ctx-patokth" type="number" value="70"></div>
+    </div>
+    <div class="grid-dua">
+      <div><label for="ctx-bonus">Bonus Karakter A</label><input id="ctx-bonus" type="number" value="10"></div>
+      <div><label for="ctx-hari">Hari efektif / semester</label><input id="ctx-hari" type="number" value="110"></div>
+    </div>
+    <label for="ctx-mode">Mode skala (MIN/MAX)</label>
+    <select id="ctx-mode">
+      <option value="excel">Excel — sama persis dengan file DAFNIL.xlsx (default)</option>
+      <option value="murni">Murni — MIN/MAX hanya dari nilai yang terisi</option>
+    </select>
+    <p class="muted">Mode <b>Murni</b> mengubah NA (mis. Aditya 65,2 → 86, bukan 88). Jangan diganti sebelum Pak Gun memutuskan — lihat README, Pertanyaan #1.</p>
+    <p class="status" id="status-2"></p>
+    <button onclick="simpanKonteks()">Simpan &amp; Lanjut →</button>
+    <button class="sekunder" onclick="tampilLangkah(1)">← Kembali</button>
+  </div>
+
+  <div class="kartu" id="langkah-3" hidden>
+    <h2>Langkah 3 — Tujuan Pembelajaran (TP)</h2>
+    <p class="muted">TP per mapel + tingkat + semester. Kode S1–S5, teks bebas, boleh kurang dari 5.</p>
+    <div class="grid-dua">
+      <div><label for="tp-tingkat">Tingkat</label>
+        <select id="tp-tingkat"><option>7</option><option>8</option><option>9</option></select></div>
+      <div><label for="tp-kode">Kode</label>
+        <select id="tp-kode"><option>S1</option><option>S2</option><option>S3</option><option>S4</option><option>S5</option></select></div>
+    </div>
+    <label for="tp-teks">Teks TP</label>
+    <textarea id="tp-teks" placeholder="cth. menentukan hasil operasi hitung bilangan bulat."></textarea>
+    <p class="status" id="status-3"></p>
+    <button onclick="simpanTp()">Simpan TP</button>
+    <button class="sekunder" onclick="tampilLangkah(2)">← Kembali</button>
+    <div id="daftar-tp" style="margin-top:12px"></div>
+    <p><button class="sekunder" onclick="tampilLangkah(4)">Lanjut ke Murid →</button></p>
+  </div>
+
+  <div class="kartu" id="langkah-4" hidden>
+    <h2>Langkah 4 — Daftar Murid</h2>
+    <label for="murid-kelas">Kelas</label>
+    <select id="murid-kelas"></select>
+    <div id="daftar-murid">Pilih kelas.</div>
+    <h3>Tambah murid</h3>
+    <label for="m-nisn">NISN (teks — nol di depan tidak hilang)</label>
+    <input id="m-nisn" inputmode="numeric">
+    <label for="m-nama">Nama</label>
+    <input id="m-nama">
+    <label for="m-lp">L/P</label>
+    <select id="m-lp"><option value="">—</option><option>L</option><option>P</option></select>
+    <p class="status" id="status-4"></p>
+    <button onclick="tambahMurid()">Tambah Murid</button>
+    <h3>Impor CSV</h3>
+    <p class="muted">Format per baris: <code>NISN,Nama,L/P</code> — baris pertama boleh header, akan dilewati bila NISN-nya bukan angka/teks.</p>
+    <textarea id="csv-murid" placeholder="0132505002,ADITYA PRATAMA,L"></textarea>
+    <p class="status" id="status-csv"></p>
+    <button class="sekunder" onclick="imporCsv()">Impor ke Kelas Terpilih</button>
+    <p><button class="sekunder" onclick="tampilLangkah(3)">← Kembali</button>
+    <a class="tombol" href="/input.html">Selesai → Input Nilai</a></p>
+  </div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+let mapelList = [], kelasList = [];
+function tampilLangkah(n) {
+  [1,2,3,4].forEach(i => { el("langkah-"+i).hidden = i !== n; });
+  document.querySelectorAll(".langkah span").forEach(s => s.classList.toggle("aktif", Number(s.dataset.l) === n));
+  if (n === 3) muatTp();
+  if (n === 4) muatMurid();
+}
+async function muatAwal() {
+  const g = await api("/api/guru-saya");
+  el("guru-nama").value = g.nama || ""; el("guru-nip").value = g.nip || "";
+  mapelList = await api("/api/mapel");
+  kelasList = await api("/api/kelas");
+  el("ctx-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
+  el("murid-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  const p = await api(`/api/pengaturan?mapel_id=${mapelList[0]?.id || 0}`);
+  el("ctx-rendah").value = p.rendah; el("ctx-tinggi").value = p.tinggi;
+  el("ctx-bs").value = p.bobotS; el("ctx-ba").value = p.bobotAsts; el("ctx-bat").value = p.bobotAsat;
+  el("ctx-ambang").value = p.ambang; el("ctx-batasth").value = p.batasTh; el("ctx-patokth").value = p.patokTh;
+  el("ctx-bonus").value = p.bonusKarakter; el("ctx-hari").value = p.hari_efektif; el("ctx-mode").value = p.modeSkala;
+}
+async function simpanGuru() {
+  await api("/api/guru-saya", { method: "PUT", body: JSON.stringify({ nama: el("guru-nama").value.trim(), nip: el("guru-nip").value.trim() }) });
+  el("status-1").textContent = "Tersimpan.";
+  tampilLangkah(2);
+}
+async function simpanKonteks() {
+  await api("/api/pengaturan", { method: "PUT", body: JSON.stringify({
+    mapel_id: Number(el("ctx-mapel").value), semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(),
+    rendah: Number(el("ctx-rendah").value), tinggi: Number(el("ctx-tinggi").value),
+    bobotS: Number(el("ctx-bs").value), bobotAsts: Number(el("ctx-ba").value), bobotAsat: Number(el("ctx-bat").value),
+    ambang: Number(el("ctx-ambang").value), batasTh: Number(el("ctx-batasth").value), patokTh: Number(el("ctx-patokth").value),
+    bonusKarakter: Number(el("ctx-bonus").value), hari_efektif: Number(el("ctx-hari").value), modeSkala: el("ctx-mode").value }) });
+  el("status-2").textContent = "Tersimpan.";
+  tampilLangkah(3);
+}
+async function muatTp() {
+  const tps = await api(`/api/tp?mapel_id=${el("ctx-mapel").value}&tingkat=${el("tp-tingkat").value}&semester=${el("ctx-semester").value}&tahun_ajaran=${encodeURIComponent(el("ctx-tahun").value)}`);
+  el("daftar-tp").innerHTML = tps.length ? tps.map(t => `<div class="baris"><span><b>${esc(t.kode)}</b> — ${esc(t.teks)}</span><button class="sekunder" onclick="hapusTp(${t.id})">Hapus</button></div>`).join("") : "<p class='muted'>Belum ada TP untuk tingkat ini.</p>";
+}
+async function simpanTp() {
+  await api("/api/tp", { method: "POST", body: JSON.stringify({ mapel_id: Number(el("ctx-mapel").value), tingkat: el("tp-tingkat").value, semester: el("ctx-semester").value, tahun_ajaran: el("ctx-tahun").value.trim(), kode: el("tp-kode").value, teks: el("tp-teks").value.trim() }) });
+  el("status-3").textContent = "TP tersimpan."; el("tp-teks").value = "";
+  muatTp();
+}
+async function hapusTp(id) { await api("/api/tp/" + id, { method: "DELETE" }); muatTp(); }
+async function muatMurid() {
+  const kid = el("murid-kelas").value;
+  const rows = await api(`/api/siswa?kelas_id=${kid}`);
+  el("daftar-murid").innerHTML = rows.length ? `<p>${rows.length} murid:</p>` + rows.map(s => `<div class="baris"><span>${esc(s.nama)}</span><span class="muted">${esc(s.nisn)} · ${esc(s.lp || "")}</span></div>`).join("") : "<p class='muted'>Belum ada murid di kelas ini.</p>";
+}
+async function tambahMurid() {
+  await api("/api/siswa", { method: "POST", body: JSON.stringify({ nisn: el("m-nisn").value.trim(), nama: el("m-nama").value.trim(), lp: el("m-lp").value, kelas_id: Number(el("murid-kelas").value) }) });
+  el("status-4").textContent = "Murid ditambahkan.";
+  el("m-nisn").value = ""; el("m-nama").value = "";
+  muatMurid();
+}
+async function imporCsv() {
+  const r = await api("/api/siswa/import", { method: "POST", body: JSON.stringify({ kelas_id: Number(el("murid-kelas").value), csv: el("csv-murid").value }) });
+  el("status-csv").textContent = `Masuk ${r.masuk}, dilewati ${r.lewati}.`;
+  muatMurid();
+}
+(async () => { await butuhLogin(); await muatAwal(); })();
+el("murid-kelas").addEventListener("change", muatMurid);
+el("tp-tingkat").addEventListener("change", muatTp);
+el("ctx-mapel").addEventListener("change", async () => {
+  const p = await api(`/api/pengaturan?mapel_id=${el("ctx-mapel").value}`);
+  el("ctx-mode").value = p.modeSkala;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+[
+ {
+  "nama": "ADITYA PRATAMA",
+  "s": [
+   45,
+   78,
+   70
+  ],
+  "asts": 62,
+  "asat": 74,
+  "nr": 65.2,
+  "na": 88,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2",
+   "S3"
+  ],
+  "rendah": [
+   "S1"
+  ]
+ },
+ {
+  "nama": "ADJIE MAHESSA GALIH",
+  "s": [
+   88,
+   89,
+   87
+  ],
+  "asts": 89,
+  "asat": 88,
+  "nr": 88.15,
+  "na": 95,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S1",
+   "S2",
+   "S3"
+  ],
+  "rendah": []
+ },
+ {
+  "nama": "AFIF SYADID WAFIDIN",
+  "s": [
+   56,
+   67,
+   70
+  ],
+  "asts": 62,
+  "asat": 69,
+  "nr": 64.45,
+  "na": 70,
+  "th": 30,
+  "karakter": null,
+  "tinggi": [
+   "S2",
+   "S3"
+  ],
+  "rendah": [
+   "S1"
+  ]
+ },
+ {
+  "nama": "AGUSTIANA MONIKA WIBOWO",
+  "s": [
+   77,
+   45,
+   65
+  ],
+  "asts": 61,
+  "asat": 55,
+  "nr": 60.8,
+  "na": 97,
+  "th": null,
+  "karakter": "A",
+  "tinggi": [
+   "S1",
+   "S3"
+  ],
+  "rendah": [
+   "S2"
+  ]
+ },
+ {
+  "nama": "AHMAD VITO DARMAWAN",
+  "s": [
+   54,
+   34,
+   66
+  ],
+  "asts": 44,
+  "asat": 50,
+  "nr": 49.8,
+  "na": 94,
+  "th": null,
+  "karakter": "A",
+  "tinggi": [
+   "S3"
+  ],
+  "rendah": [
+   "S1",
+   "S2"
+  ]
+ },
+ {
+  "nama": "AISYAH TRI ADIBA",
+  "s": [
+   43,
+   84,
+   56
+  ],
+  "asts": 64,
+  "asat": 70,
+  "nr": 62.8,
+  "na": 88,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2"
+  ],
+  "rendah": [
+   "S1",
+   "S3"
+  ]
+ },
+ {
+  "nama": "ALFARIEL FAJAR RIANSYAH",
+  "s": [
+   23,
+   77,
+   47
+  ],
+  "asts": 50,
+  "asat": 62,
+  "nr": 51.1,
+  "na": 84,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2"
+  ],
+  "rendah": [
+   "S1",
+   "S3"
+  ]
+ },
+ {
+  "nama": "ALFIRA ANGGI MAHARANI",
+  "s": [
+   12,
+   76,
+   34
+  ],
+  "asts": 44,
+  "asat": 55,
+  "nr": 43.55,
+  "na": 82,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2"
+  ],
+  "rendah": [
+   "S1",
+   "S3"
+  ]
+ },
+ {
+  "nama": "ALVADA LILIS SURYANI",
+  "s": [
+   13,
+   32,
+   35
+  ],
+  "asts": 23,
+  "asat": 34,
+  "nr": 27.45,
+  "na": 78,
+  "th": null,
+  "karakter": null,
+  "tinggi": [],
+  "rendah": [
+   "S1",
+   "S2",
+   "S3"
+  ]
+ },
+ {
+  "nama": "ANISA NURAINI",
+  "s": [
+   24,
+   71,
+   23
+  ],
+  "asts": 48,
+  "asat": 47,
+  "nr": 41.55,
+  "na": 82,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2"
+  ],
+  "rendah": [
+   "S1",
+   "S3"
+  ]
+ },
+ {
+  "nama": "AZKA DZIKRI ALFARIZI",
+  "s": [
+   35,
+   72,
+   56
+  ],
+  "asts": 54,
+  "asat": 64,
+  "nr": 55.5,
+  "na": 86,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2"
+  ],
+  "rendah": [
+   "S1",
+   "S3"
+  ]
+ },
+ {
+  "nama": "BAHTIAR ABI AL GHANI",
+  "s": [
+   34,
+   56,
+   78
+  ],
+  "asts": 45,
+  "asat": 67,
+  "nr": 56,
+  "na": 86,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S3"
+  ],
+  "rendah": [
+   "S1",
+   "S2"
+  ]
+ },
+ {
+  "nama": "BRIGITA ERDHIANI",
+  "s": [
+   56,
+   39,
+   81
+  ],
+  "asts": 48,
+  "asat": 60,
+  "nr": 57.5,
+  "na": 86,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S3"
+  ],
+  "rendah": [
+   "S1",
+   "S2"
+  ]
+ },
+ {
+  "nama": "BRILLYAN BRAMANTYO",
+  "s": [
+   78,
+   48,
+   91
+  ],
+  "asts": 63,
+  "asat": 70,
+  "nr": 70.35,
+  "na": 90,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S1",
+   "S3"
+  ],
+  "rendah": [
+   "S2"
+  ]
+ },
+ {
+  "nama": "DERA KHOIRUNISA",
+  "s": [
+   90,
+   57,
+   45
+  ],
+  "asts": 74,
+  "asat": 51,
+  "nr": 63.55,
+  "na": 88,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S1"
+  ],
+  "rendah": [
+   "S2",
+   "S3"
+  ]
+ },
+ {
+  "nama": "DESTA MAHARDIKA",
+  "s": [
+   45,
+   76,
+   70
+  ],
+  "asts": 61,
+  "asat": 73,
+  "nr": 64.9,
+  "na": 88,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2",
+   "S3"
+  ],
+  "rendah": [
+   "S1"
+  ]
+ },
+ {
+  "nama": "ELSY VERNANDA",
+  "s": [
+   34,
+   87,
+   77
+  ],
+  "asts": 61,
+  "asat": 82,
+  "nr": 67.65,
+  "na": 89,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S2",
+   "S3"
+  ],
+  "rendah": [
+   "S1"
+  ]
+ },
+ {
+  "nama": "FANIRA KHANZA AZAHRA",
+  "s": [
+   67,
+   67,
+   84
+  ],
+  "asts": 67,
+  "asat": 76,
+  "nr": 72.55,
+  "na": 91,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S1",
+   "S2",
+   "S3"
+  ],
+  "rendah": []
+ },
+ {
+  "nama": "IFAL PRATAMA",
+  "s": [
+   32,
+   35,
+   65
+  ],
+  "asts": 34,
+  "asat": 50,
+  "nr": 43.4,
+  "na": 82,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S3"
+  ],
+  "rendah": [
+   "S1",
+   "S2"
+  ]
+ },
+ {
+  "nama": "ILHAM YAFI MAULANA",
+  "s": [
+   44,
+   23,
+   67
+  ],
+  "asts": 34,
+  "asat": 45,
+  "nr": 43.35,
+  "na": 82,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S3"
+  ],
+  "rendah": [
+   "S1",
+   "S2"
+  ]
+ },
+ {
+  "nama": "JUAN FARREL ASSIDQII",
+  "s": [
+   56,
+   34,
+   45
+  ],
+  "asts": 45,
+  "asat": 40,
+  "nr": 44.25,
+  "na": 82,
+  "th": null,
+  "karakter": null,
+  "tinggi": [],
+  "rendah": [
+   "S1",
+   "S2",
+   "S3"
+  ]
+ },
+ {
+  "nama": "KINANDO HERSA PUTRA",
+  "s": [
+   78,
+   45,
+   58
+  ],
+  "asts": 62,
+  "asat": 52,
+  "nr": 59.1,
+  "na": 87,
+  "th": null,
+  "karakter": null,
+  "tinggi": [
+   "S1"
+  ],
+  "rendah": [
+   "S2",
+   "S3"
+  ]
+ }
+]

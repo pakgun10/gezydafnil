@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masuk — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Daftar Nilai &amp; Deskripsi Raport — SMP Negeri 1 Punggur</p></header>
+<main>
+  <div class="kartu">
+    <h2>Masuk</h2>
+    <p class="peringatan"><b>Akun bawaan:</b> username <code>admin</code>, kata sandi <code>admin123</code>.<br>
+    <b>Segera ganti kata sandi admin setelah login pertama</b> (Admin → Kelola Guru). Jangan dipakai di produksi apa adanya.</p>
+    <form id="form-login">
+      <label for="username">Username</label>
+      <input id="username" autocomplete="username" required>
+      <label for="password">Kata sandi</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <p class="galat" id="galat"></p>
+      <button class="penuh" type="submit">Masuk</button>
+    </form>
+    <p class="muted">Login memakai username + kata sandi (pola GezyRaport). NIP guru <b>bukan</b> kata sandi — NIP hanya data identitas.</p>
+  </div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+document.getElementById("form-login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  el("galat").textContent = "";
+  try {
+    await api("/api/login", { method: "POST", body: JSON.stringify({ username: el("username").value.trim(), password: el("password").value }) });
+    location.href = "/";
+  } catch (err) { el("galat").textContent = err.message; }
+});
+</script>
+</body>
+</html>

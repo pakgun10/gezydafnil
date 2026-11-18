@@ -1,0 +1,5038 @@
+{
+  "mapel": "Matematika",
+  "semester": "Ganjil",
+  "tahun_ajaran": "2026/2027",
+  "hari_efektif": 110,
+  "tp_kelas_7": [
+    {
+      "kode": "S1",
+      "teks": "menentukan hasil operasi hitung bilangan bulat."
+    },
+    {
+      "kode": "S2",
+      "teks": "menyelesaikan permasalahan bilangan bulat."
+    },
+    {
+      "kode": "S3",
+      "teks": "menyelesaikan permasalahan kontekstual yang terkait literasi finansial"
+    }
+  ],
+  "murid": [
+    {
+      "nisn": "0132505002",
+      "nama": "ADITYA PRATAMA",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0132506124",
+      "nama": "ADJIE MAHESSA GALIH",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0137279479",
+      "nama": "AFIF SYADID WAFIDIN",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0132086408",
+      "nama": "AGUSTIANA MONIKA WIBOWO",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0133299979",
+      "nama": "AHMAD VITO DARMAWAN",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0133573015",
+      "nama": "AISYAH TRI ADIBA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0137298368",
+      "nama": "ALFARIEL FAJAR RIANSYAH",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0139270210",
+      "nama": "ALFIRA ANGGI MAHARANI",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0145702317",
+      "nama": "ALVADA LILIS SURYANI",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0137369036",
+      "nama": "ANISA NURAINI",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0139297067",
+      "nama": "AZKA DZIKRI ALFARIZI",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0139718276",
+      "nama": "BAHTIAR ABI AL GHANI",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0147482646",
+      "nama": "BRIGITA ERDHIANI",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0135480736",
+      "nama": "BRILLYAN BRAMANTYO",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0131918541",
+      "nama": "DERA KHOIRUNISA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "3132710861",
+      "nama": "DESTA MAHARDIKA",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0132873816",
+      "nama": "ELSY VERNANDA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0135820128",
+      "nama": "FANIRA KHANZA AZAHRA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "3130468892",
+      "nama": "IFAL PRATAMA",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0148456926",
+      "nama": "ILHAM YAFI MAULANA",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0131265638",
+      "nama": "JUAN FARREL ASSIDQII",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "3147673398",
+      "nama": "KINANDO HERSA PUTRA",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0147106061",
+      "nama": "LITA APRILIA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0137957795",
+      "nama": "Muhamad Alfa Rizki",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "3162313257",
+      "nama": "MUHAMMAD MARCELLO",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0131386393",
+      "nama": "NADHIFA SALSABILA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0137708183",
+      "nama": "NANANG WIDIANTO",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0139319437",
+      "nama": "PUTU BHIMASENA ARIYANTO",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "3129375809",
+      "nama": "R. VINO ENZI FERNANDO",
+      "lp": "L",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0145813585",
+      "nama": "SAQILA NUR AZAhWA",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0135315386",
+      "nama": "TALITA HASNA UMAIRA SAHRI",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0134812564",
+      "nama": "ZIFARA AMANDA AL MUNAF",
+      "lp": "P",
+      "kelas": "7.1"
+    },
+    {
+      "nisn": "0138205064",
+      "nama": "Abdul Sabara Gunawan",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0146034471",
+      "nama": "ABINAYA ALKHALIFI MEIZA ARYANTO",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0137228872",
+      "nama": "ADILA NOVIANTARI PALUPI",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0131308954",
+      "nama": "AFDALA FADLY ROBBY",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "3136729250",
+      "nama": "AFIKA FELA SUFA ANDARANI",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0122377082",
+      "nama": "AHMAD ZULFA AHSANI",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0132898075",
+      "nama": "ALVARO ARAN PRANAJA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0135343511",
+      "nama": "BISMA ADHA ASIDIQ",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0137539134",
+      "nama": "DZAKIYYA KHAIRA SAKHI",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0132149993",
+      "nama": "FAJRIA NISA RAMADANI",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0133409151",
+      "nama": "FATAN ALIF FACHRI",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0149962667",
+      "nama": "FATHINA AZALIA PUTRI",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0136584866",
+      "nama": "FAVIAN FARAZ ADEYASTHA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0135893553",
+      "nama": "HANIF ALWI",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0133669114",
+      "nama": "JIHAN KHOLIFATUL QOIR",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0143035683",
+      "nama": "LUTHFI SAKTI ZAIDAN",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0131621158",
+      "nama": "FAREL ALFI ALFANDI",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0126791195",
+      "nama": "MIFTAHUL RIZKI APRIANSYAH",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138025869",
+      "nama": "NADHIRA KHAIRUNNISA",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "3147815250",
+      "nama": "NAURA HASNA ANNIDA HARUN",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0139934151",
+      "nama": "PUJI ANDRA YUDHA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0133182458",
+      "nama": "PUTRA SADEWA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0131127316",
+      "nama": "RACHEL NAUFAL JABRIEL",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138593694",
+      "nama": "RHEZA NUR MUIZZ",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "3132020587",
+      "nama": "RIANA NATASYA",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0148783198",
+      "nama": "SAVINA NAZILLATUL ASNA",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138620656",
+      "nama": "SYAHDAN FARHANDIKA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138136084",
+      "nama": "TIARA AGUSTIN",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0131967300",
+      "nama": "TSALWA ATHIYA HANA",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138138105",
+      "nama": "VINO ADITYA WIJAYA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0131172429",
+      "nama": "YOSEF ADI SYAPUTRA",
+      "lp": "L",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0145286860",
+      "nama": "ZAZKIA AZZA ALIFVIA",
+      "lp": "P",
+      "kelas": "7.2"
+    },
+    {
+      "nisn": "0138242877",
+      "nama": "ADAM RAFIF AL ZHAFRAN",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0137391927",
+      "nama": "ADHYASTA DANISH PRASRAYA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0148936753",
+      "nama": "ADIA RAFA FATINA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136457256",
+      "nama": "AINA THALITA ZAHRA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133841908",
+      "nama": "ALBILUTHFY FAHRI",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136548434",
+      "nama": "ANISA TRI SALSABILA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136990016",
+      "nama": "Anwarudin Ahmad",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133823340",
+      "nama": "CALISTA NAZWA SAPUTRI",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0148551449",
+      "nama": "EVAN SAKHI ZAIDAN",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0149340085",
+      "nama": "FAJAR ADITYA JAYA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0132351147",
+      "nama": "GRISELDA QWIN AURELLIA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0135894228",
+      "nama": "IBRAHIM DWI SAPUTRA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136072673",
+      "nama": "KEVIN ABDILLAH PRATAMA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133986909",
+      "nama": "KEVIN CANDRA WINATA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133270241",
+      "nama": "M WAHYU NOVIAN ALFANDI",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0137464771",
+      "nama": "MADENA CAVALLEN",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136745942",
+      "nama": "MUHAMAD NOFA HIDAYATULLOH",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0136371814",
+      "nama": "NAIMA AZKA NATHANIA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0135093000",
+      "nama": "NAUFAL KENZIE ALVARO",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "3134502488",
+      "nama": "NAVA AULIA RAMADHANI",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133360928",
+      "nama": "NAYLA RAHMADHANI",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0137769201",
+      "nama": "RAHMAT AGAM ATHAILAH",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0135514296",
+      "nama": "RAKESH FADLY ARZIKI",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "3167226542",
+      "nama": "REZA ALFIANSYAH",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0142951813",
+      "nama": "RIZAL ARYA WIGUNA",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0126757920",
+      "nama": "RYAN RAIS",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0142565469",
+      "nama": "SYAKIRA KURNIA SYACH",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "3134845634",
+      "nama": "SYAQILA DERISTA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "3138084868",
+      "nama": "ZAHRA SYIFAUL JINAN",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0133412322",
+      "nama": "ZAKI RAMADHANI",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "3133597507",
+      "nama": "ZIDNA RIZKO KAMALI",
+      "lp": "L",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0149329763",
+      "nama": "ZULFA LIYANA NASUHA",
+      "lp": "P",
+      "kelas": "7.3"
+    },
+    {
+      "nisn": "0141837074",
+      "nama": "ADITYA RISKI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0138754135",
+      "nama": "ADRIAN BAGAS PIZZARO",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0134417634",
+      "nama": "AFFANDI ALL GHIFAHRI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0138549549",
+      "nama": "AIKO ZHAFIRA AFSHEENA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0132439003",
+      "nama": "ALIFIA PUTRY.S",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0123785361",
+      "nama": "ALVI PUTRA WIBISONO",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "3143747064",
+      "nama": "ANNUR AMALINA ZARIFAH",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0132902865",
+      "nama": "ASKA ALDRIC PRATISTA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0137369840",
+      "nama": "BABYLIA VINCEN EDNUANSYAH",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "3138475824",
+      "nama": "DHAVY ADITYA PRATAMA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0135641432",
+      "nama": "ERVIANA KURNIA NINGSIH",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0134903633",
+      "nama": "FAHREZA ADI PRATAMA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0137954510",
+      "nama": "FIOLA NASWA SALSABILA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "3132372593",
+      "nama": "FITRI KARDILA RAMADHANI",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0131688066",
+      "nama": "ILZAM BIMA ALKAFI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0131341935",
+      "nama": "ISNAINI BADRYYAH",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0133223829",
+      "nama": "KELLEN TANTRA ANGGANA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0145690370",
+      "nama": "MUHAMAD HAIKAL AL HABSYI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "3134667499",
+      "nama": "MUHAMAD MAULANA SAFEI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0135972134",
+      "nama": "MUHAMMAD ADI SAPUTRA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "3124483094",
+      "nama": "MUHAMMAD RIZKY TAMIMI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0131127541",
+      "nama": "NATA GANY ARTA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0147211773",
+      "nama": "NAUWRA RACHELIA NINDRA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0138719774",
+      "nama": "NAYLA ARSYA GRISELDA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0132692295",
+      "nama": "PRATDITYA ARKAAN ARDHANI",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0131765043",
+      "nama": "QUEENLY RAMADHANI",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0139564879",
+      "nama": "RADITIA HAFIS SAFARUDIN",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0136058976",
+      "nama": "RAFA MAHENDRA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0146937855",
+      "nama": "RAJWAA GHAITSAA SOFYAN",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0134203309",
+      "nama": "RASYA PRAYOGA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0146588147",
+      "nama": "RHADITYA PRATAMA",
+      "lp": "L",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0133352302",
+      "nama": "ZAHRA DIWA ASFIA",
+      "lp": "P",
+      "kelas": "7.4"
+    },
+    {
+      "nisn": "0137920731",
+      "nama": "ABIDZAR ZAFRAN MAULANA",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0135904789",
+      "nama": "ADINDA NAZWA ANGGRAINI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0123956484",
+      "nama": "ADITIA EXEL PRAYOGA",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0138577815",
+      "nama": "AKHDHAN FADIL MAULANA",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0146255358",
+      "nama": "ALLENT RAAJU ARYAAKA",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137646406",
+      "nama": "ASIFA FADILATUNISA",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0133237939",
+      "nama": "CELVIN RANDRA ALFARO",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0131385141",
+      "nama": "CHRISTIAN PAUL NABABAN",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137220373",
+      "nama": "CHUSNIA ZAHWA AULIA",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0132061106",
+      "nama": "DAFFA ARYA RAASYID",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0133259192",
+      "nama": "DAVEO ALVARO GABRIEL",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0138145206",
+      "nama": "DEYLA PUTRI MAHARANI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137265302",
+      "nama": "FABIAN DINDA OKTA MAHARANI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0145248307",
+      "nama": "INAYATUL ASNA",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0132982170",
+      "nama": "INDRA GUSNANDAR",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0132193571",
+      "nama": "Khalisha Indah Ayu Pertiwi",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0136822311",
+      "nama": "LATIFATUL MUNAWAROH",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0135581778",
+      "nama": "LUKMAN ABDI PRASETYO",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0136501288",
+      "nama": "MUHAMAD ARYA IRAWAN",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137547339",
+      "nama": "MUHAMMAD ADLI NURFAIZ",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0131300106",
+      "nama": "MUHAMMAD RASYID AMRULLOH",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0142151824",
+      "nama": "NASYA ZAHRANI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0131319263",
+      "nama": "PRABU AZZAMY AS SHAUQIY",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0127097044",
+      "nama": "RAFA DESTRIANO",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0142776012",
+      "nama": "RASYID ANNAFI",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "3141140626",
+      "nama": "RENATA RAMADANI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0131687323",
+      "nama": "RIDHA ERYANA HAPSARI",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137155003",
+      "nama": "RISKA AURA WILLY",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0137606818",
+      "nama": "RIZKY RAMADANI",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "3133898470",
+      "nama": "SANDRIA NAURA NOVHARINDA",
+      "lp": "P",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "3139989956",
+      "nama": "TIO PRAYUDHA",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0129754043",
+      "nama": "YOHANES RAYNDRA KURNIAWAN",
+      "lp": "L",
+      "kelas": "7.5"
+    },
+    {
+      "nisn": "0133843832",
+      "nama": "ALIF NUR HIDAYAT",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0146530274",
+      "nama": "ALOISIUS GIANLUIGI BUFFON",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0134748617",
+      "nama": "ALVINA RASYA QUEENERA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0133456563",
+      "nama": "AURA DEWI YULIANA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "3131476977",
+      "nama": "AZKA ZUHROTU NAFSI",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0139307689",
+      "nama": "CAHAYA FITRI WULANDARI",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0131127265",
+      "nama": "Celvin Alfero Putra",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0137622786",
+      "nama": "CRISENSIA SHERYL VITALYTA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0145471960",
+      "nama": "DITA AMALIA ZAHWA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0148530123",
+      "nama": "DWI CHANDRA FAUZANTARA",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0139054470",
+      "nama": "FAIZ REZA ARISQI",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0134470871",
+      "nama": "FALAH DANIESH AMSYAR",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0134868368",
+      "nama": "FALIH DANIESH AMSYAR",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0149085868",
+      "nama": "FEBY CANTIKA SARI",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0146389151",
+      "nama": "FERDINAN SETIAWAN",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0137047463",
+      "nama": "IRSYAD DIEGO PURSIMAYTU",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0141771235",
+      "nama": "JESI MELIANA SARI",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0135866943",
+      "nama": "KEYLA LAURAYA VHYANDRA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0144999838",
+      "nama": "KHANSA TALITA ULFA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "3132407629",
+      "nama": "M.IQBAL FAIZ",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "3133966045",
+      "nama": "MUHAMAD RAFFA JUNIOR",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0143079886",
+      "nama": "NADHIF VICKY APRILIAN",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0147063826",
+      "nama": "NAFISA WARDANI",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0131807217",
+      "nama": "NARENDRA AL ULYA",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0136528343",
+      "nama": "OKTAVIA AISHA ZAHRA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0141268928",
+      "nama": "REIZA YULIAN SAPUTRA",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "3152933289",
+      "nama": "RENO ARDIYANTO",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0141037476",
+      "nama": "RIYANI MUTIA AZZAHRA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0138586086",
+      "nama": "RIZKI MARCEL ARDILANO",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0138853776",
+      "nama": "SYAQILA FATIKA",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0132993211",
+      "nama": "YULIA RAMADHANI",
+      "lp": "P",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0142207454",
+      "nama": "ZAIDAAN OKTAN ALDIANO",
+      "lp": "L",
+      "kelas": "7.6"
+    },
+    {
+      "nisn": "0138025850",
+      "nama": "AHMAD DAVA AL QORNI",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131440621",
+      "nama": "AMIRA DILA FAHAMA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0134059898",
+      "nama": "ARYA RIZKI SAPUTRA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0147825111",
+      "nama": "DAFFA ARYA GHOSAN",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "3131796780",
+      "nama": "DAFFA NUR ALIF",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0136007666",
+      "nama": "DAYANA BATRISYA AL FALAQ",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0137075135",
+      "nama": "DENISA BINTANG SAFIRA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0135935390",
+      "nama": "DENUAR ATHA WIJAYA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131089802",
+      "nama": "DION PRASTYO ADI",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131225499",
+      "nama": "FARHAN ZIDNA FAQIH",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0133732898",
+      "nama": "FARUQ ADHA SAPUTRA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0137629597",
+      "nama": "HANGGA YUDA BRAWIJAYA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "3130848776",
+      "nama": "IRA MELY SAPUTRI",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0142520555",
+      "nama": "JACKA ADI DWI SAPUTRA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0136993924",
+      "nama": "JULIAN RIFKI SAPUTRA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131170554",
+      "nama": "KHANSA ALIFAH ZAHIRAH",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "3154179308",
+      "nama": "KHANSA ALIFIANDRA SHEYKA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131671203",
+      "nama": "LETICIA SANDRA SKOLASTIKA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "3143968221",
+      "nama": "MUHAMMAD FATHAN AL AUFAR",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0143080712",
+      "nama": "MUHAMMAD IRHAMNA MUKHLIS",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0136000107",
+      "nama": "MUHAMMAD NAFI HASAN",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0133780457",
+      "nama": "NADINE LATIFFATUL UMAYA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0132663978",
+      "nama": "NESYA RAYANA SAKIB",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0138116707",
+      "nama": "NIKEN AYU NABILA",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0153129234",
+      "nama": "PRATAMA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0131598821",
+      "nama": "PRATYODHA ILHAM WIJAYA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "3145895335",
+      "nama": "SALMA AL FARISY",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0136241776",
+      "nama": "SANDY SATRIA RAMADHAN",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0141534013",
+      "nama": "SURYA DINATA",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0134912068",
+      "nama": "TASILA ATHAR",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0149112865",
+      "nama": "THEOPHILUS CHRISTIAN ALVARO TRIASBUDI",
+      "lp": "L",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0133059492",
+      "nama": "ZAHWA RAMADHANI",
+      "lp": "P",
+      "kelas": "7.7"
+    },
+    {
+      "nisn": "0139304119",
+      "nama": "ALTA FADHIL SAPUTRA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0139321629",
+      "nama": "ANISA NURUL JANAH",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0133449098",
+      "nama": "ANNASYA ALIFFIA",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0141230968",
+      "nama": "AQILA CHOIRUN NISA",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3169519784",
+      "nama": "AQILA PUTRI SARAGIH",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0131710096",
+      "nama": "AQILA SALSABILA",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0131858371",
+      "nama": "AQILA SALSABILA IRAWAN",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0131115246",
+      "nama": "ARIKA FATINA",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0122639294",
+      "nama": "AURIN AYU PUTRI",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0133159010",
+      "nama": "AZHAR RIFAT ASSYUROTHY",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0131418322",
+      "nama": "Delisha Zhafirah Virlangga",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0134500355",
+      "nama": "DEMIAN ARGA OKTORA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3132642443",
+      "nama": "FADIL KURNIAWAN",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0124640853",
+      "nama": "M. KHOIRUL ANWAR PRATAMA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3130623125",
+      "nama": "FERNANDO",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0128458000",
+      "nama": "IMAM RIFQI MUDAIM",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0144254665",
+      "nama": "KEKE AULIA",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0136168262",
+      "nama": "KHUZAIMAH",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3132546685",
+      "nama": "KINANTI FAUZIYYAH AFIFAH",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0134544756",
+      "nama": "MAXIMILIANUS CLEOAJI PANDUWIATA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0136823092",
+      "nama": "NAJWA BELA SETIAWAN",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0134956209",
+      "nama": "QIYANU RAFA FEBRIANOZA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0137433754",
+      "nama": "RAFKA YUDISTIRA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0138269563",
+      "nama": "RAKA YUDANTA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0148961561",
+      "nama": "REVAN MAHARDHIKA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0139056201",
+      "nama": "REYHAN ALDRIAN FIRMANSYAH",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0142080412",
+      "nama": "RIZKY ADITIYA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0132664412",
+      "nama": "RIZKY NUROHMAH",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0145623806",
+      "nama": "SHILA ZAHRA WULANDARI",
+      "lp": "P",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3144972303",
+      "nama": "TIGER RANGGA WIJAYA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0132137679",
+      "nama": "VINO ALFRIZHI PRADANA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "3136561364",
+      "nama": "YUNUS PUTRA SAELENDRA",
+      "lp": "L",
+      "kelas": "7.8"
+    },
+    {
+      "nisn": "0125774157/10127",
+      "nama": "AFIFA AZRA SALSABILA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3126790134/10130",
+      "nama": "AFIQA KHALIZA EFFENDI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0129906263/10133",
+      "nama": "AHMAD FAIZ ZULFA",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3127692458/10167",
+      "nama": "ARFA SYAFIQ WIBOWO",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0122959308/10177",
+      "nama": "AURA ZIVARA CAHYA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0127753983/10180",
+      "nama": "AZAHRA KHOIRUNNISA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0136226716/10188",
+      "nama": "CALLULA MAHARANI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0128916525/10198",
+      "nama": "DENNIS RADITYA RAMADHAN",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0131552644/10199",
+      "nama": "DESTIA DARA ANJANI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3126502925/10201",
+      "nama": "DHEA ELSA KIRANA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0124613417/10202",
+      "nama": "DIMAS DIAN DIAREANA",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0127284121/10203",
+      "nama": "DINDA AFIQA FITRIANI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0123788428/10230",
+      "nama": "GILBERT FELLAINI FRANZZY",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3124356658/10240",
+      "nama": "INTAN NUR AYU",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0122851189/10244",
+      "nama": "JOVANCA VINDI ALVIANO",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0121282996/10246",
+      "nama": "KALILA AGUSTIN RAMADHANI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0129159395/10252",
+      "nama": "KEVIN AFRIZAL PERDANA",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0125254792/10304",
+      "nama": "NAFFIS RAIHAN PRASTYA",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0138105595/10308",
+      "nama": "NARENDRA ANNAFIS",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0139674690/10319",
+      "nama": "NOVA ERIKA PUTRI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0128517339/10320",
+      "nama": "NOVIA TRI ADINTA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0127162640/10327",
+      "nama": "RAFA AFIANO",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0129677299/10334",
+      "nama": "RAMDHAN BAGUS PRATAMA",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0123714793/10337",
+      "nama": "REIHAN AUFAR CHIANU",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0126634420/10340",
+      "nama": "RESTI OCTAVIA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0137996669/10342",
+      "nama": "REVY MARISKA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0131922126/10344",
+      "nama": "RHEA DHIA MAHESWARI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0121489083/10352",
+      "nama": "RIZKY NOVRIANSYAH",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3134723168/10357",
+      "nama": "SALSABILA NADHIFA",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0124344325/10360",
+      "nama": "SATRIA REZA ADE SUTRISNO",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0138024698/10364",
+      "nama": "SIDNAN RAFA ALGHIFARI",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0128396836/10372",
+      "nama": "TRISTAN RADITYA RAMADAN",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0124155827/10374",
+      "nama": "VICKY WAHYU RAMADHANI",
+      "lp": "L",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "0134580317/10375",
+      "nama": "VIKY INDRA SETIAWATI",
+      "lp": "P",
+      "kelas": "8.1"
+    },
+    {
+      "nisn": "3135388449/10116",
+      "nama": "ABIMANYU CHESTA RASENDRIYA S",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0132758162/10121",
+      "nama": "ADINDA KUMARA TUNGGA DEWI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0122977840/10129",
+      "nama": "AFIKA KHOLIFATUN NISA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0126717594/10144",
+      "nama": "ALFIN SETYA RAMADHAN",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0142371870/10148",
+      "nama": "ALIFIA AJENG APRILIANI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0122130325/10161",
+      "nama": "ANJAS ALVAN AZMI",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0128891443/10164",
+      "nama": "APTANA BISMA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0121373667/10173",
+      "nama": "ATHANASIUS YONANTA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3124299788/10178",
+      "nama": "AYUNDA SILVA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3132286145/10179",
+      "nama": "AYYA ELENA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3124054642/10182",
+      "nama": "AZKA NAUFAL MUFLIH",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0122290464/10184",
+      "nama": "BHUMI ABIMANYU IRAWAN",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3123369255/10187",
+      "nama": "CALISTA ZAHRA SABELA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0128572534/10191",
+      "nama": "CLARA GANIS SAPUTRI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0131571654/10197",
+      "nama": "DEFITA FEBRIYANI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0128471767/10205",
+      "nama": "DWI AULIA RAHMA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0137481251/10212",
+      "nama": "FAHRI EZA FANNANI",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0124639279/10213",
+      "nama": "FAIZ AHMAD AFANDI",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0123391834/10221",
+      "nama": "FERDINANT DWI ERLANGGA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0126697467/10222",
+      "nama": "FERGI GUARDIOLA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0128343270/10226",
+      "nama": "FREDY APRILIO",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0134020253/10259",
+      "nama": "KINANDRA KANAYA PERDANA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0127270473/10262",
+      "nama": "LEDYANA DWI RAMADHINI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0127066002/10277",
+      "nama": "MRAFA FARID ALFARIZI",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0128061648/10324",
+      "nama": "QAULI ZASKIA PUTRI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3139626902/10331",
+      "nama": "RAFQA PRATAMA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0124211162/10350",
+      "nama": "RIZKY AZHAR SAPUTRA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3129663112/10351",
+      "nama": "RIZKY DWI SAPUTRA",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0126440138/10368",
+      "nama": "SYAFIA ANINDITA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0129915242/10369",
+      "nama": "SYIFA AULIA",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0135377856/10373",
+      "nama": "VIA AGUNG PRASETYO",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0129052696/10379",
+      "nama": "YEVITA LINTANG SAPUTRI",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0133165864/10384",
+      "nama": "ZASKIA HANIFAH",
+      "lp": "P",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "0134206827/10389",
+      "nama": "ZULFIKAR NUR HIDAYAH",
+      "lp": "L",
+      "kelas": "8.2"
+    },
+    {
+      "nisn": "3128937214/10120",
+      "nama": "ADILLA KHALILA SYBIL",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0136570784/10135",
+      "nama": "AHMAD NUR KHOLID",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "3123729486/10139",
+      "nama": "AKSA DINATA",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0136040018/10147",
+      "nama": "ALIFA AURELLIA ZAHRA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0128593400/10185",
+      "nama": "BILQIS AILA AGATHA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0122507461/10194",
+      "nama": "DAFFA ARYO SENO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0167376586/10200",
+      "nama": "DEWI SEKAR ARUM",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0123826096/10204",
+      "nama": "DIRA NATASYA ANANDA RATIN",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "3134865934/10214",
+      "nama": "FAJAR ARDIANSYAH",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0121430462/10215",
+      "nama": "FARAH AMELIA SABRINA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124920203/10220",
+      "nama": "FENDI ALVIANO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124633876/10223",
+      "nama": "FIRMAN PURWADI",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0128706948/10225",
+      "nama": "FLORIANUS CHRISTANTO ABDI SEJATI",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0138889570/10232",
+      "nama": "HANUM ARSANA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "3133513244/10235",
+      "nama": "ICHSAN RIFKI SAPUTRA",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0135479454/10237",
+      "nama": "ILHAM NUR RASYID",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0135228580/10243",
+      "nama": "JESIKA NOVITASARI",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0128957393/10250",
+      "nama": "KELVIN ARDIANSYAH",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0126501293/10251",
+      "nama": "KENZO NIZAM ALVARO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0123599267/10253",
+      "nama": "KEVIN APRILIO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0137764504/10271",
+      "nama": "MEY DWI ATIKA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0125280006/10273",
+      "nama": "MISSEL PUTRI ANGGRAINI",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124438627/10289",
+      "nama": "MUHAMMAD ILHAM SANJAYA",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0123502131/10303",
+      "nama": "NAELA NADA SAFITRI",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0125081662/10338",
+      "nama": "RENDI SAPUTRA",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0126486354/10339",
+      "nama": "RENDY RIVALDO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124811684/10356",
+      "nama": "SALSA SHAFIRA PUTRI",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0123505292/10365",
+      "nama": "SIRILLA KHAILA SUKMA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124473307/10366",
+      "nama": "SIVA ALFATUNNISA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0117945482/10370",
+      "nama": "TALITA KUMAIRA ASANTI",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "3120330803/10380",
+      "nama": "YUNANTO ADI PRASTYO",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0129255296/10382",
+      "nama": "ZAHRA PUTRI AMANDA",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0123341040/10387",
+      "nama": "ZULFA KHOIRIYAH",
+      "lp": "P",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0124331475/10388",
+      "nama": "ZULFAN ZAIS MULINGGAR",
+      "lp": "L",
+      "kelas": "8.3"
+    },
+    {
+      "nisn": "0136529252/10117",
+      "nama": "ABRAHAM ALEXY PRATAMA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0129461118/10132",
+      "nama": "AHLIL ILMIL KHOIR",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0136001082/10136",
+      "nama": "AIGA SABRINA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0121564487/10150",
+      "nama": "ALKALIFI RAMADHAN PRADANA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0131709962/10153",
+      "nama": "AMANDA ADELIA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3120668732/10155",
+      "nama": "AMELLIA PUSPITASARI",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0115075158/10158",
+      "nama": "ANGELIN AYIN CANTIKA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3125226741/10166",
+      "nama": "ARDI JAYA SAPUTRA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0111390678/10169",
+      "nama": "ARJUNA OKTA PRATAMA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3121842158/10176",
+      "nama": "AURA RAMADHANI",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0121543689/10186",
+      "nama": "BILQIS SYAQILLA SYIFANA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3124641582/10210",
+      "nama": "FADIL AZAHWAN",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0128701747/10211",
+      "nama": "FADLI RULI GUSTAMA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0123360021/10216",
+      "nama": "FARAZ AZRIEL ARASYID",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3125372045/10218",
+      "nama": "FEBBY CHINTIA LOVEANA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0127495911/10231",
+      "nama": "GRATIA CLARISA RAFFELINA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0126385305/10234",
+      "nama": "HIDAYAH NURAINI",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0124058413/10238",
+      "nama": "IMELDA A YUDIA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0124030685/10239",
+      "nama": "INDRA TRI ADETYA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0125723870/10242",
+      "nama": "JELITA MA'RIFATULLAH",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0122154198/10256",
+      "nama": "KHAYLA ZAHSY SALSABILA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3148138147/10267",
+      "nama": "LUTFIA PUTRI SALSABILLA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3126099754/10268",
+      "nama": "M FATAR NAIMAL MUSYOFA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0123111373/10274",
+      "nama": "MOHAMAD ARFA GHAISAN",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3122108415/10275",
+      "nama": "MOHAMMAD FADIL ROZAQ",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0117266936/10279",
+      "nama": "MUHAMAD ENGGAR HEANSYAH",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0125773572/10282",
+      "nama": "MUHAMAD ZALA SULTONIA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3122369921/10310",
+      "nama": "NAUFAL AZHAR",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3127028681/10330",
+      "nama": "RAFHA PADIL PRIAMBADA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0125244444/10335",
+      "nama": "RANIA LOLITA PUTRI",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0127975642/10343",
+      "nama": "REYHAN PRADITA",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0139594448/10355",
+      "nama": "SALMA FEBRIANA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0137483802/10362",
+      "nama": "SHAKIRA NASYA WIJAYA",
+      "lp": "P",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "0121032157/10381",
+      "nama": "YUSKA ZACKY MUBAROK",
+      "lp": "L",
+      "kelas": "8.4"
+    },
+    {
+      "nisn": "3120653025/10124",
+      "nama": "ADITYA NOUFAL ABIYYU",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0121749679/10125",
+      "nama": "ADRIEL BOHDAN CRISTIANUS",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3128015891/10131",
+      "nama": "AFRILIA AINUN NISA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0135771072/10137",
+      "nama": "AISY AKMA ALAM GIRABDAD",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0126433614/10142",
+      "nama": "ALDO ADI SAPUTRA",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0126893724/10143",
+      "nama": "ALFIAN ANDI PRATAMA",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3122308317/10146",
+      "nama": "ALI BAYHAQI MUNZIR",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0122030593/10157",
+      "nama": "ANDIKA HADI PRASTYO",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0128863195/10192",
+      "nama": "CLARA SYAFIRA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0127436666/10196",
+      "nama": "DARA AULIYA KINANTI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0127157370/10207",
+      "nama": "ELISABET NOVA NOLA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0121587483/10241",
+      "nama": "ISNAINI KHAIRUNNISA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0124369080/10257",
+      "nama": "KHIRANI KIDZANIA PRAMESWARI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3131649507/10269",
+      "nama": "MALIHA SYAHIRA RAHMADANI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0128642897/10284",
+      "nama": "MUHAMMAD AZKA HIDAYAT",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0127854460/10285",
+      "nama": "MUHAMMAD AZKA NUR ALFIANSYAH",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0121737340/10286",
+      "nama": "MUHAMMAD DEFA SYAIFULOH",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0138156612/10287",
+      "nama": "MUHAMMAD DZAKY ATTA'ULLAH",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0125859658/10293",
+      "nama": "MUHAMMAD SYAFI'I",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0122851802/10305",
+      "nama": "NAILA FITRIAYANI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0134125065/10307",
+      "nama": "NAIRA ERLA CAHYA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3122524488/10309",
+      "nama": "NATASYA AURA OLIVIA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0128796182/10312",
+      "nama": "NAYLA KHOLIVIA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0122418715/10315",
+      "nama": "NAYRA EKA CHANDRA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0133236991/10322",
+      "nama": "PALUPI DHEA SARI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0113231455/10333",
+      "nama": "RAMA DANI",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0125308367/10336",
+      "nama": "REHAN ZAKIANSYAH",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3125961709/10346",
+      "nama": "RIFQI HADZAMI",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0126385406/10347",
+      "nama": "RINI AMELIA PUTRI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0128540819/10358",
+      "nama": "SASKIA AZRYLIA KARISTA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "3124151424/10361",
+      "nama": "SHAFANIA TRIZKANIA AINIDA",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0126857527/10377",
+      "nama": "VINO REACKHA HANAVI",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0128194414/10378",
+      "nama": "WILLIYAM GIFIANO",
+      "lp": "L",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0129129520/10386",
+      "nama": "ZIA ASYAFA RAMADHANI",
+      "lp": "P",
+      "kelas": "8.5"
+    },
+    {
+      "nisn": "0127954908/10119",
+      "nama": "ADELIA NADIFA PUTRI",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0125250380/10128",
+      "nama": "AFIKA HIDAYATUL MAULA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0133741723/10138",
+      "nama": "AJENG FAJAR INTAN",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0123609044/10141",
+      "nama": "ALBIAN SYAH PRATAMA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0131157220/10152",
+      "nama": "ALVINO FAREL ADMAJA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0125628645/10160",
+      "nama": "ANIS ZAHWA ALIFAH",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0124170429/10162",
+      "nama": "ANNISA ANEAHIRA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0129867036/10170",
+      "nama": "ARKHANATA OLIVER SEKA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0125229745/10189",
+      "nama": "CHANDRA WINATA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0123697639/10208",
+      "nama": "ENDITO ERICK PRASETYO",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3124007989/10227",
+      "nama": "FRENZA ABI RAMADHAN",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0121716488/10228",
+      "nama": "GADING GUMELANG",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0104297266/10236",
+      "nama": "ILHAM NADI PRATAMA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3123972259/10247",
+      "nama": "KASASA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0125048538/10261",
+      "nama": "LAURA FEBRIANI",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0137492482/10263",
+      "nama": "LEONA AJWA TIVANI",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0132103641/10264",
+      "nama": "LEVI EVAN CAHYALUKMA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0127986731/10280",
+      "nama": "MUHAMAD NAUFAL AKBAR",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0129458625/10283",
+      "nama": "MUHAMMAD AKBAR AL MALIK",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0139366089/10291",
+      "nama": "MUHAMMAD NAUFAL JASIR",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0136902351/10292",
+      "nama": "MUHAMMAD REYHAN",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3124341033/10295",
+      "nama": "MUHAMMAD ZEFAN SAYLENDRA",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3136325127/10297",
+      "nama": "MUHAMMAD ZYDAN ALMUZAKI",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0128117663/10299",
+      "nama": "MUTIARA RAHMADANI",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0137549634/10300",
+      "nama": "NABILA CAHYA ANSYARIA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0124363929/10302",
+      "nama": "NADZWA TALIA JASTIN",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3127174452/10306",
+      "nama": "NAIMA SALSABILA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0123135111/10318",
+      "nama": "NISSA ANINDYA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0124589322/10326",
+      "nama": "RADELLA ELZA GINANDA PUTRI",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0125866261/10341",
+      "nama": "REVA ZEE NAYLA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0124357801/10359",
+      "nama": "SATRIA PRAYOGI",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0128612026/10363",
+      "nama": "SHIFANIA TRIZKANIA AINIDA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "0123409751/10371",
+      "nama": "TAUFIK ROZAQ",
+      "lp": "L",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3138135059/10383",
+      "nama": "ZAHWA TUNNISA",
+      "lp": "P",
+      "kelas": "8.6"
+    },
+    {
+      "nisn": "3125111184/10123",
+      "nama": "ADITYA FATRIANSYAH",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0122613801/10134",
+      "nama": "AHMAD KELVIN SAPUTRA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0124782110/10140",
+      "nama": "AL'AINA PUTRI AISYAH",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3136738743/10145",
+      "nama": "ALFINA CAHAYA BINTA SHALEHA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3129628550/10149",
+      "nama": "ALIFIA RIFANA PUTRI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0117282876/10156",
+      "nama": "ANDIKA DWI RIZKYI",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0121743251/10159",
+      "nama": "ANGGA CAHYA SAPUTRA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3124526750/10163",
+      "nama": "ANNISA OKTAVIANA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0129991698/10165",
+      "nama": "AQILLA ZHAVIRA ANDRIANI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0123992714/10174",
+      "nama": "AUFAR ELANO BY HAFIZI",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0123525767/10175",
+      "nama": "AURA OKTA PRATIWI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3126887952/10190",
+      "nama": "CHIKA RESTINA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3126910647/10209",
+      "nama": "FA'IZAH QUROTUN HUSNA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0124729080/10217",
+      "nama": "FATHAN AL NIZAM AHMAD",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0135082324/10219",
+      "nama": "FEBRYANO ADI YANSYAH",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3134284915/10224",
+      "nama": "FITRI AULIA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0124247100/10229",
+      "nama": "GHANARIO AZRIELLA ARRASYID",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0136870203/10233",
+      "nama": "HESTI PERMATA SARI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0122322035/10245",
+      "nama": "JUANDA AHMAD KADAFI",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0122839115/10248",
+      "nama": "KAYLA TANSA UMMA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3125331209/10260",
+      "nama": "KINAYA HERSA PUTRI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0121398800/10272",
+      "nama": "MFAHRI ANIZAR",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0133248593/10281",
+      "nama": "MUHAMAD ZAKI NURHANSYAH",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0125484659/10288",
+      "nama": "MUHAMMAD HANIF SYAPUTRA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3124992365/10296",
+      "nama": "MUHAMMAD ZIDAN PRATAMA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0125555574/10313",
+      "nama": "NAYLA SAQILA SARY",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0137331217/10314",
+      "nama": "NAYLA SIFA JUWINDA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3126268176/10325",
+      "nama": "QEISHA ANGELLINA SAPUTRI",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0137441985/10345",
+      "nama": "RIAN ILYAS SAPUTRA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0129350640/10348",
+      "nama": "RIZKI DUWI SAPUTRA",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0126662738/10349",
+      "nama": "RIZKI ROMADON",
+      "lp": "L",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3122689447/10376",
+      "nama": "VINCENSIA ABELYA RASYA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "3122752447/10385",
+      "nama": "ZASKIYA ADIA MECA",
+      "lp": "P",
+      "kelas": "8.7"
+    },
+    {
+      "nisn": "0133236576/10115",
+      "nama": "ABI MAULANA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0127365201/10118",
+      "nama": "ADE JAYA KURNIAWAN",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0121132459/10122",
+      "nama": "ADINDA SAFIRA ADIALOVA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0126416826/10126",
+      "nama": "AFFAN NUR MAJID",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0133165871/10168",
+      "nama": "ARIF RAHMAN HAKIM",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0123566494/10171",
+      "nama": "ASTRIA ALVIANDRA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0121321155/10172",
+      "nama": "ASYIFA PUTRI ANDREA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0127278553/10181",
+      "nama": "AZIZIA MEZZALUNA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0127583825/10183",
+      "nama": "BENEDICTA HANIN CRISTIANI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0135389703/10193",
+      "nama": "CLESIA ASTILA RAHMA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3124576010/10195",
+      "nama": "DANIEL MENDROFA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0138761204/10206",
+      "nama": "EGI PRATAMA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0125783142/10249",
+      "nama": "KEILLA RAMADANI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0131764518/10254",
+      "nama": "KEYZA AYRELLIO RADHITYA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0134364183/10255",
+      "nama": "KHANZA NERAZZURI ANDPHI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3120814689/10258",
+      "nama": "KHOLIF ASROFI",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3132943031/10265",
+      "nama": "LUTFI SALMA MAHARANI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0125071563/10266",
+      "nama": "LUTFIA NADIA RAHMA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0123873552/10270",
+      "nama": "MARIA CLEOSA ANINDYA PUTRI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0123227335/10276",
+      "nama": "MONICA MAHARANI ZAHRA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0124494530/10290",
+      "nama": "MUHAMMAD MA'RUF",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0124597833/10294",
+      "nama": "MUHAMMAD ZACKY MUBAROK",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0127199188/10298",
+      "nama": "MUSTIKA PUTRI NUR ANGGRAINI",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0128012478/10301",
+      "nama": "NABILATUZ ZAHRA",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3121487368/10311",
+      "nama": "NAUFAN NAISWANA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0122808210/10316",
+      "nama": "NICKO SAPUTRA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0121969939/10317",
+      "nama": "NIRLAWATI ESTU",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0123674323/10321",
+      "nama": "NURUL TRI HIDAYAH",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0129909465/10323",
+      "nama": "PERSIE RAM CANDRA",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3139001896/10328",
+      "nama": "RAFA AL FAZRI",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0129208887/10329",
+      "nama": "RAFEL ARDIANSYAH",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "3124827416/10332",
+      "nama": "RAJABI'UN KHAHFI",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0124950197/10354",
+      "nama": "SAHDA MIRZA PASCA RESTU",
+      "lp": "P",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0121733399/10367",
+      "nama": "STEVEN JULIO",
+      "lp": "L",
+      "kelas": "8.8"
+    },
+    {
+      "nisn": "0114174260/9856",
+      "nama": "AHMAD RAFFI SETIAWAN",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0127407665/9857",
+      "nama": "AINA TALITA ZAHRA",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0113115667/9859",
+      "nama": "Akhdan Nabil Musyaffa",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0127903729/9860",
+      "nama": "ALDIANO IRZI NUGRAHA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "3118499182/9867",
+      "nama": "ALVI DWIANTO",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0123004505/9883",
+      "nama": "ARIFA NUR FAIZA",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0128229394/9890",
+      "nama": "ASHYFA NASWA SALSABILA",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0122585399/9894",
+      "nama": "AVIKA NAYRA PUTRI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0127239149/9900",
+      "nama": "CERLIN DIAN SUSANTI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0126148638/9911",
+      "nama": "DELFI NURAINI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0129391413/9912",
+      "nama": "DELINA APRIANTI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0128424245/9915",
+      "nama": "DEVAN KURNIANDO",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0119862555/9920",
+      "nama": "Dicky Berliano",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0125735761/9930",
+      "nama": "ERINA NUR ANGGRAINI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0113525259/9932",
+      "nama": "Fabia Pratita Gardin",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0122021303/10101",
+      "nama": "Galuh Chandra Kirana",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0121120604/9954",
+      "nama": "HANAN MA'RUF",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0118959476/9957",
+      "nama": "IBNU KHOIRUL SYAAMIL",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0128554594/9963",
+      "nama": "Jibril Akmal Al- Gazi",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0116527182/9967",
+      "nama": "Keola Maritza Baetyta Santoso",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0128749560/9970",
+      "nama": "KEYNIA ALIKA PUTRI",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0113249164/9971",
+      "nama": "KEYTANIUS AQILANO",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0119830832/9975",
+      "nama": "KICHI SALWA AZZAHRA",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0123007504/9996",
+      "nama": "MUHAMMAD AMMAR MAULANA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0117388467/9997",
+      "nama": "MUHAMMAD DZAKWAN AL-ADHA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0129738925/10027",
+      "nama": "NUR LATIF",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0111268507/10048",
+      "nama": "REVAN ALVINODINATA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0126215663/10049",
+      "nama": "REZA ADI PRATAMA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0112839191/10052",
+      "nama": "RICHIE DANISH ANGGARA",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "3111459748/10063",
+      "nama": "RYUKEI KHAIRIY ARKAAN",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0125344654/10065",
+      "nama": "SEKAR ARUM",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "3119443081/10084",
+      "nama": "Willyantra Septiano",
+      "lp": "L",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0121667497/10097",
+      "nama": "ZULFANI AZIZAH",
+      "lp": "P",
+      "kelas": "9.1"
+    },
+    {
+      "nisn": "0125038904/9847",
+      "nama": "AFIKA ZAHIRA LESTARI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0121851447/9852",
+      "nama": "AGUS RAMADHANI",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0121728487/9865",
+      "nama": "ALISSYA ZEFIRA CHANIA YULIANSYAH",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0112558037/9866",
+      "nama": "ALIYA PRAMUDITA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3124907821/9869",
+      "nama": "ALYA AZZAHRA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0119275366/9875",
+      "nama": "ANNISA RAHMA DEWI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0114495158/9884",
+      "nama": "Ariq Rafi Hidayat",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0123209567/9885",
+      "nama": "ARIZAL ALBAQI",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0111599979/9886",
+      "nama": "ARKA MARMORA",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0125527990/9891",
+      "nama": "AULIA PUTRI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0116032760/9910",
+      "nama": "DELA WIDYA ZAHRA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0113632991/9922",
+      "nama": "Dika Ramadhan Pratama",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0112346785/9928",
+      "nama": "ELSA NAZWA MEIENDITA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3111575010/9931",
+      "nama": "EXCAL AGIL PAULSEN PRASETYO",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0103139481/9945",
+      "nama": "FREDERIKUS DENIS SAPUTRA",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0116711004/9962",
+      "nama": "ISNAN RAHMADANI",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0111053621/9972",
+      "nama": "Kheiza Yonada Sefila Key",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0117822257/9984",
+      "nama": "MAYA APRILIA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0128828943/10001",
+      "nama": "MUHAMAD RAIS FIRMANSAH",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0115270860/",
+      "nama": "MUHAMMAD AVICENNA YUSUF",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0113444101/10003",
+      "nama": "MUHAMMAD RIZKY",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0129489230/10005",
+      "nama": "MUHAMMAD TAUFIK ANGGARESTA",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3124155912/10008",
+      "nama": "MUSTOFA",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3113144626/10018",
+      "nama": "NATASYA AYU ANJANI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0102101789/10023",
+      "nama": "NICO JULIAN MUHAMAD RAVIQ",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0126058828/10024",
+      "nama": "NILA SARI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3111681178/10032",
+      "nama": "PENI DWI MARTINA SARI",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0112124559/10107",
+      "nama": "Rival Adhitia",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0126593041/10083",
+      "nama": "VINO CAVALLO",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0112362977/10088",
+      "nama": "YAUMUL ISTIANA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0126292020/10090",
+      "nama": "YOSIA RIONALDO NABABAN",
+      "lp": "L",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0118444446/10094",
+      "nama": "ZESICA AHLIFATUL ZAHRA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "0128913922/10095",
+      "nama": "ZIVANA CITRA AURORA",
+      "lp": "P",
+      "kelas": "9.2"
+    },
+    {
+      "nisn": "3127202131/9853",
+      "nama": "AHMAD ANDIKA RIZKI",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0121545370/9863",
+      "nama": "ALIFAH GALENA MALCA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0115099004/10154",
+      "nama": "AMANDA REGINA PUTRI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0119984773/9876",
+      "nama": "ANTONIUS ARDHANI ARYA SAPUTRA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0119349785/9887",
+      "nama": "ARUMI SAPUTRI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "3118920293/9888",
+      "nama": "AS SYAM ALFARAS",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0128863736/9895",
+      "nama": "AVIKA PERMATA SARI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "3113147642/9898",
+      "nama": "BAGUS RISQI SRI HARDIYANSYAH",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0111597852/9917",
+      "nama": "DHAVIN ZULIAN PRATAMA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0116015601/9923",
+      "nama": "DIKA RAMDANI",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0115403444/9926",
+      "nama": "DONY ILIYASAH",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0113521949/9943",
+      "nama": "FIRDA SHEZARIA RAHMAWATI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "3129615855/9944",
+      "nama": "FLORENTINA KLEISYA CARISTA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0117877155/9955",
+      "nama": "HANIF RIZKI MUBAROK",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0124422532/9965",
+      "nama": "KAYLA FIRZA WIJAYA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0125794106/10103",
+      "nama": "KAYLA JIHAN AL MERITSA PUTRI P.",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0119461726/9985",
+      "nama": "MEISYA PUTRI DIANA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0129763364/9994",
+      "nama": "MUHAMMAD AL FAIS FABRIZIO",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0127976592/10010",
+      "nama": "MUTIARA APRILIA MAUDY",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0124228970/10019",
+      "nama": "NAYA RIVA AZAHRA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0117262466/10026",
+      "nama": "NINO ADILLA PANGESTU",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0117107596/10034",
+      "nama": "PUTRA PRATAMA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0121982196/10038",
+      "nama": "RAMA MAULANA ALFAZA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0108090657/10045",
+      "nama": "Rendy Trijaya",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0115000219/10054",
+      "nama": "RIDHO SETIAWAN",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0122648582/10060",
+      "nama": "RISKY RADITYA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0122904166/10108",
+      "nama": "RIVANA SYAIRA PUTRI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0118297703/10061",
+      "nama": "RIZKI RAMADHAN",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "3113998756/10072",
+      "nama": "SINTIYA INAYATUL WARDANI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0101365644/10074",
+      "nama": "SUCI DEWI ANGGRAINI",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0112984483/10078",
+      "nama": "TSANY CAHAYA ANASTASIA",
+      "lp": "P",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0116262410/10089",
+      "nama": "YEHESKIEL ADITIYA",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "3102103623/10096",
+      "nama": "ZULFA AHZAN MAHLUQI",
+      "lp": "L",
+      "kelas": "9.3"
+    },
+    {
+      "nisn": "0112799086/9846",
+      "nama": "ADLI ZAHWAN RAFIF",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0128173167/9850",
+      "nama": "AGENG MUHAMMAD",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "3122182692/9854",
+      "nama": "AHMAD MAULANA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0112983545/10098",
+      "nama": "ALFINO ANDIKA PUTRA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0115365899/9870",
+      "nama": "AMELIA PUTRI ANGGRAINI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "3114959846/9871",
+      "nama": "ANAYA DWI LEILANI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0112354871/9874",
+      "nama": "ANNISA DINI NURHAFIZAH",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0125655678/9880",
+      "nama": "ARDIAN AKMAL KURNIANTO",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0115002913/9881",
+      "nama": "ARGA ADITIA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0119134089/9905",
+      "nama": "CITRA AULIA SINAR DIANDRA",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0116588414/9908",
+      "nama": "DARA AGISTA PUTRI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0113840853/9927",
+      "nama": "DWI FITRIANI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0125933701/9933",
+      "nama": "FAHMI FRANANDA YUDITYA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "3127684342/9935",
+      "nama": "FAIZ FIZLA ANANTA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0122575106/9946",
+      "nama": "FRIDOLIN BEATO PEDRO",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0112977084/10102",
+      "nama": "IKE AGUSTINA",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0126375831/9966",
+      "nama": "Keisha Aurelia Saputri",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0117673470/9982",
+      "nama": "M RAFFI YULIANTO",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0118767062/9999",
+      "nama": "MUHAMMAD FARIJJ EFENDI",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0122636366/10006",
+      "nama": "MUHAMMAD ZIDAN RIFA'I",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0111829483/10014",
+      "nama": "Naila Hafshah Dias Putri",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0125813651/10106",
+      "nama": "Niki Putriana",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0123306235/10033",
+      "nama": "PRANAJA HADYAN AMILZA WIRATAMA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0118776831/10040",
+      "nama": "Rasya Pasha Islami",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0112279246/10044",
+      "nama": "REIHAN FATLUM ALFARIS",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0102788118/10046",
+      "nama": "REVA WIRATMOKO",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0113926970/10068",
+      "nama": "SHELFIANA WATI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0115416591/10069",
+      "nama": "SIFA KHAIRUNNISA",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0124859240/10070",
+      "nama": "SILVIA ERNI SHOLIKHAH",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0116909667/10075",
+      "nama": "SYIFA RAMADHAN FATMASARI",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0122665021/10077",
+      "nama": "TRISTAN FERNANDA",
+      "lp": "L",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0127212795/10114",
+      "nama": "Zanneta Qirania Audrey",
+      "lp": "P",
+      "kelas": "9.4"
+    },
+    {
+      "nisn": "0115505611/9844",
+      "nama": "ABDUL ROKHIM",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0129693704/9858",
+      "nama": "AISYAH APRILIYANI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0122440508/9878",
+      "nama": "ARAVA ARYA HAMADA",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0117127553/9892",
+      "nama": "AURA AJENG DEWI SUKMA",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3125968693/9893",
+      "nama": "AVARA ASYHA VANIYA",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3129446674/9897",
+      "nama": "AZKA YUSPETER NURSHODIQ",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0129577653/9907",
+      "nama": "DAFFA NUR ROHMAN",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0117938321/9918",
+      "nama": "DHEANISHA AZZAHRA",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0113790720/9936",
+      "nama": "FAJRI DWI PRASETYO",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0113101234/9937",
+      "nama": "FATMA AULIA PUTRI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0125778598/9941",
+      "nama": "FEMAS ADLY SAPUTRA",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0129229761/10111",
+      "nama": "FINA AQILAH SYAZWINA",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0112807037/9947",
+      "nama": "GADING SAPUTRA",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0157281343/9950",
+      "nama": "GREGORIA PUTRI AYUNINGTYAS",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0114322020/9953",
+      "nama": "HAMDAN MUBAROK",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0114932756/9961",
+      "nama": "INDAH PURNAMA SARI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3121606008/9978",
+      "nama": "LISA AULIA PUTRI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3117057883/10105",
+      "nama": "M. Arya Dwi Sampurna",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3126504230/9981",
+      "nama": "M. KEVIN DWI SAPUTRA",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0118581997/9991",
+      "nama": "MUHAMAD FERDIANSYAH",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0122990318/10004",
+      "nama": "MUHAMMAD RIZQY FADILLAH",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0112847701/10011",
+      "nama": "NABILA AISYAH BELLA",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0127165562/10017",
+      "nama": "Nasya Arista Yasmin",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0125865050/10020",
+      "nama": "NAYLA LUTFIATUL.H",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0118505380/10035",
+      "nama": "RADI NUR CAHYO",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0116586147/10050",
+      "nama": "REZA ALVIANSYAH",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0112190112/10053",
+      "nama": "RIDHO RAMADHAN",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0127512166/10058",
+      "nama": "Rio Dani Pratama",
+      "lp": "L",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0116408374/10071",
+      "nama": "SILVIA NUR HUSNAINI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0121892076/10082",
+      "nama": "VINCENSIA VALEN PRATIWI",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0124725748/10087",
+      "nama": "Yasmin Sifau Qolbi",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "3123412941/10091",
+      "nama": "ZAHFA AULIA NUR KHASANAH",
+      "lp": "P",
+      "kelas": "9.5"
+    },
+    {
+      "nisn": "0129992741/9848",
+      "nama": "Afka Devi Elfa Renata",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0103505124/9861",
+      "nama": "ALFIZA DWI HENDRAWAN",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0115512130/9862",
+      "nama": "ALIF PUTRA WIJAYA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0128730783/9864",
+      "nama": "ALIKA ASMAUL USNA",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0112829107/9873",
+      "nama": "ANGELINA CHIKA RAMADANI",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0114229973/9877",
+      "nama": "AQSA DINAR LIASTAMA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0125475938/9879",
+      "nama": "ARDANISA SUNDANI",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0119458659/10099",
+      "nama": "AZAKY MALIK ZIDAN",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0129266291/10100",
+      "nama": "AZRIL PRASETYA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "3122710465/9899",
+      "nama": "CAHAYA PUTRI AISYAH",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0112692623/9904",
+      "nama": "Citra Aulia",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0119324138/9914",
+      "nama": "DETA AULIA ANJANI",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0118779373/9916",
+      "nama": "DEVANDRA KHOIR ATTHALLAH R.",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0119782044/9952",
+      "nama": "HAIKAL RAMADHAN",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0124990773/9969",
+      "nama": "KEVIN ARDIANSYAH",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0116233676/9973",
+      "nama": "KHOIRUL HUDA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0121983728/9974",
+      "nama": "Kiara Zemma Asya Kirana",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0113012202/9977",
+      "nama": "LAURENSIUS ZIAN ANANG K.",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0122015688/9987",
+      "nama": "MONIKA AULIA SAFITA PUTRI",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0121622014/9988",
+      "nama": "MUHAMAD ALFINO EKA PUTRA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0118379819/9993",
+      "nama": "MUHAMAD ZIDAN LATIF",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0125577686/9995",
+      "nama": "Muhammad Aldian Alamsyah",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0117501760/9998",
+      "nama": "MUHAMMAD FAISAL AKBAR",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0129899374/10015",
+      "nama": "NAJWA LATIFATUL ALYA",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0121957174/10022",
+      "nama": "NEYSA AULIA WIBOWO",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "3114172052/10030",
+      "nama": "Olivia Maharani",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0115613043/10042",
+      "nama": "RAYLA TIARAZAHWA CANTIKA",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0119875230/10066",
+      "nama": "SEKAR CAHAYA RAMADAN",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0129334338/10067",
+      "nama": "SELLA ALICIA PUTRI",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0118884383/10085",
+      "nama": "WISNU ANOM SAPUTRA",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0125655194/10086",
+      "nama": "YADEN ILHAM ARROZZAQ",
+      "lp": "L",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0121783778/10093",
+      "nama": "ZAHWA PUTRI FANESA",
+      "lp": "P",
+      "kelas": "9.6"
+    },
+    {
+      "nisn": "0111596568/9845",
+      "nama": "ADISTY ANGGRAINI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0117673125/9855",
+      "nama": "AHMAD RAFFA MUFLIH",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0113278122/9882",
+      "nama": "ARGATA ZULYO RAMADANI",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0128597164/9889",
+      "nama": "ASAFA GHINA PUTRI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0114905190/9901",
+      "nama": "CHILLA AZ-ZAHRA",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0114374344/9902",
+      "nama": "Chindy Dona Utami Putri",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0118251314/9924",
+      "nama": "DIMAS FAJAR PRATAMA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0111464033/9938",
+      "nama": "Fatqia Ramadani",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0115789420/9948",
+      "nama": "GALANG SETIAWAN",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0113770828/9958",
+      "nama": "ICA PURNAMA SARI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0101710823/9959",
+      "nama": "IGNASIUS DAVIS SAPUTRA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0116470594/9964",
+      "nama": "Julia Rizki Nurfadila",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0107636994/10104",
+      "nama": "LIONEL CRISTIAN SIMARMATA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0107267564/9979",
+      "nama": "LORENTINUS SATRIA SETIAWAN",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0106163918/9980",
+      "nama": "M. DARMA NUSA KUSUMA YUDHA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0117672489/9983",
+      "nama": "MARGARETHA KIARA RAIA",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0117598707/9989",
+      "nama": "MUHAMAD FAHRI HIDAYAT",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0103394953/9990",
+      "nama": "MUHAMAD FARIZ ALAMSYAH",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0123195036/9992",
+      "nama": "MUHAMAD JERIKO KADAFI",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0111094974/10000",
+      "nama": "MUHAMMAD MUSLIH",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0111914347/10009",
+      "nama": "MUTI'AH HAFIS AZAHRA",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0128338638/10013",
+      "nama": "NADA AYU PUSPITA",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0119292867/10016",
+      "nama": "NAPSIAH",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0126929471/10025",
+      "nama": "NINDI SALIA PUTRI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0126763949/10028",
+      "nama": "OCTA RIYANTI DWI SURYANI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0116769654/10037",
+      "nama": "RAKA ELFACHREZA DWIKA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0113318190/10039",
+      "nama": "RASTI MARSANDA PUTRI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0119916655/10041",
+      "nama": "RASYID NOVRI PRAYOGA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "3112916816/10043",
+      "nama": "REHAN ROMADONI",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "3118871581/10051",
+      "nama": "REZA ANGGARA PUTRA FARDIANSYAH",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0118340758/10056",
+      "nama": "RIFQI RASYA FADHILA",
+      "lp": "L",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "3128468115/10064",
+      "nama": "SALMA AINUR ROHMAH",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0117763299/10080",
+      "nama": "VANESSA EBITRIASARI",
+      "lp": "P",
+      "kelas": "9.7"
+    },
+    {
+      "nisn": "0129037087/10151",
+      "nama": "ALVARO NARARYA MAHENDRA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0115214985/9868",
+      "nama": "Alvino Putra Pratama",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0113069576/9872",
+      "nama": "ANDIRA MELANY",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0124637381/9896",
+      "nama": "AZKA PRIMA SETIA BUDI",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0128010246/9903",
+      "nama": "Chintya Sevennia Gultom",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0111114980/9906",
+      "nama": "CITRA SINTIA LESTARI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0116518217/9909",
+      "nama": "DEANDRA CHIKA VERLYA",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0115730873/9913",
+      "nama": "DENDRA SAPUTRA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "3127513530/9919",
+      "nama": "DICKI FIRMANSYAH",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0123189356/9921",
+      "nama": "DIKA ANANTA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0119327700/9925",
+      "nama": "DIO MEILANA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0122872807/9929",
+      "nama": "ELYZIA NAYAKA ALIFA",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0128244406/9939",
+      "nama": "FAUZAN SAKTI ADRIAN RIZKY",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0124323243/9940",
+      "nama": "FAUZIAH ZAHRA SHABRINA",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0115923029/9942",
+      "nama": "FIFIN AMANDA CHOIRUNISA",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0126541958/9951",
+      "nama": "HAFIZ EKA CAHYA PUTRA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0112914401/9956",
+      "nama": "HANIFA FITRIANI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0119806272/9960",
+      "nama": "IGNATIUS KRISTIAN SAPUTRA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0118197783/9986",
+      "nama": "MISBAHUL KHOIRI",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0116993079/10002",
+      "nama": "MUHAMAD RIFKY MAULANA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "3114174249/10007",
+      "nama": "MUSTAJIBU DA'WAH KHOLIFAH",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0124754301/10012",
+      "nama": "NABILLA CALISTA ABELIAN",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0124370687/10021",
+      "nama": "NESYA SELVIANA PUTRI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0114708395/10029",
+      "nama": "OKTA PUTRA PRATAMA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0117379562/10031",
+      "nama": "PASCALIKA AJENG PRIANDINI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0114273372/10036",
+      "nama": "RAJATA ALFHARIZI",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0128683003/10047",
+      "nama": "REVALITA NUR BAITI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0125430129/10059",
+      "nama": "RIRIN RAFELIA HANDAYANI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0124848942/10062",
+      "nama": "RUFITA ASKIA PUTRI",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0118731533/10073",
+      "nama": "STEFANA NATALI WIBOWO",
+      "lp": "P",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0118809292/10076",
+      "nama": "TEOFELUS RANDIKA SETIAWAN",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0118502028/10081",
+      "nama": "VANO RAMADHAN WIJAYA",
+      "lp": "L",
+      "kelas": "9.8"
+    },
+    {
+      "nisn": "0112530766/10092",
+      "nama": "ZAHRA AYU FEBRIANA DISMA",
+      "lp": "P",
+      "kelas": "9.8"
+    }
+  ],
+  "nilai_kelas_7_1": [
+    {
+      "nisn": "0132505002",
+      "s1": 45,
+      "s2": 78,
+      "s3": 70,
+      "s4": null,
+      "s5": null,
+      "asts": 62,
+      "asat": 74,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0132506124",
+      "s1": 88,
+      "s2": 89,
+      "s3": 87,
+      "s4": null,
+      "s5": null,
+      "asts": 89,
+      "asat": 88,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0137279479",
+      "s1": 56,
+      "s2": 67,
+      "s3": 70,
+      "s4": null,
+      "s5": null,
+      "asts": 62,
+      "asat": 69,
+      "th": 30,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0132086408",
+      "s1": 77,
+      "s2": 45,
+      "s3": 65,
+      "s4": null,
+      "s5": null,
+      "asts": 61,
+      "asat": 55,
+      "th": null,
+      "karakter": "A",
+      "catatan": null
+    },
+    {
+      "nisn": "0133299979",
+      "s1": 54,
+      "s2": 34,
+      "s3": 66,
+      "s4": null,
+      "s5": null,
+      "asts": 44,
+      "asat": 50,
+      "th": null,
+      "karakter": "A",
+      "catatan": null
+    },
+    {
+      "nisn": "0133573015",
+      "s1": 43,
+      "s2": 84,
+      "s3": 56,
+      "s4": null,
+      "s5": null,
+      "asts": 64,
+      "asat": 70,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0137298368",
+      "s1": 23,
+      "s2": 77,
+      "s3": 47,
+      "s4": null,
+      "s5": null,
+      "asts": 50,
+      "asat": 62,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0139270210",
+      "s1": 12,
+      "s2": 76,
+      "s3": 34,
+      "s4": null,
+      "s5": null,
+      "asts": 44,
+      "asat": 55,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0145702317",
+      "s1": 13,
+      "s2": 32,
+      "s3": 35,
+      "s4": null,
+      "s5": null,
+      "asts": 23,
+      "asat": 34,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0137369036",
+      "s1": 24,
+      "s2": 71,
+      "s3": 23,
+      "s4": null,
+      "s5": null,
+      "asts": 48,
+      "asat": 47,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0139297067",
+      "s1": 35,
+      "s2": 72,
+      "s3": 56,
+      "s4": null,
+      "s5": null,
+      "asts": 54,
+      "asat": 64,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0139718276",
+      "s1": 34,
+      "s2": 56,
+      "s3": 78,
+      "s4": null,
+      "s5": null,
+      "asts": 45,
+      "asat": 67,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0147482646",
+      "s1": 56,
+      "s2": 39,
+      "s3": 81,
+      "s4": null,
+      "s5": null,
+      "asts": 48,
+      "asat": 60,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0135480736",
+      "s1": 78,
+      "s2": 48,
+      "s3": 91,
+      "s4": null,
+      "s5": null,
+      "asts": 63,
+      "asat": 70,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0131918541",
+      "s1": 90,
+      "s2": 57,
+      "s3": 45,
+      "s4": null,
+      "s5": null,
+      "asts": 74,
+      "asat": 51,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "3132710861",
+      "s1": 45,
+      "s2": 76,
+      "s3": 70,
+      "s4": null,
+      "s5": null,
+      "asts": 61,
+      "asat": 73,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0132873816",
+      "s1": 34,
+      "s2": 87,
+      "s3": 77,
+      "s4": null,
+      "s5": null,
+      "asts": 61,
+      "asat": 82,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0135820128",
+      "s1": 67,
+      "s2": 67,
+      "s3": 84,
+      "s4": null,
+      "s5": null,
+      "asts": 67,
+      "asat": 76,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "3130468892",
+      "s1": 32,
+      "s2": 35,
+      "s3": 65,
+      "s4": null,
+      "s5": null,
+      "asts": 34,
+      "asat": 50,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0148456926",
+      "s1": 44,
+      "s2": 23,
+      "s3": 67,
+      "s4": null,
+      "s5": null,
+      "asts": 34,
+      "asat": 45,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "0131265638",
+      "s1": 56,
+      "s2": 34,
+      "s3": 45,
+      "s4": null,
+      "s5": null,
+      "asts": 45,
+      "asat": 40,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    },
+    {
+      "nisn": "3147673398",
+      "s1": 78,
+      "s2": 45,
+      "s3": 58,
+      "s4": null,
+      "s5": null,
+      "asts": 62,
+      "asat": 52,
+      "th": null,
+      "karakter": null,
+      "catatan": null
+    }
+  ]
+}

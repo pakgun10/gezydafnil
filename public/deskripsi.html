@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deskripsi — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Deskripsi Raport — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html" class="aktif">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="kartu">
+    <div class="grid-dua">
+      <div><label for="pilih-mapel">Mapel</label><select id="pilih-mapel"></select></div>
+      <div><label for="pilih-kelas">Kelas</label><select id="pilih-kelas"></select></div>
+    </div>
+    <label for="cari">Cari nama murid</label>
+    <input id="cari" placeholder="ketik nama…" oninput="tampil()">
+    <p class="muted" id="info-lingkup"></p>
+  </div>
+  <div id="daftar"></div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+let data = null;
+async function muat() {
+  data = await api(`/api/nilai?mapel_id=${el("pilih-mapel").value}&kelas_ids=${el("pilih-kelas").value}`);
+  el("info-lingkup").textContent = `Lingkup: kelas ${data.kelas.map(k => k.nama).join(", ")} · mode skala ${data.pengaturan.modeSkala} · ambang deskripsi ${data.pengaturan.ambang}`;
+  tampil();
+}
+function tampil() {
+  const q = (el("cari").value || "").toLowerCase();
+  const rows = (data?.rows || []).filter(r => !q || r.siswa.nama.toLowerCase().includes(q));
+  el("daftar").innerHTML = rows.map((r) => {
+    const h = r.hasil;
+    return `<div class="kartu">
+      <div class="baris"><h3>${esc(r.siswa.nama)}</h3><b>NA ${h.na ?? "—"}${h.predikat ? " · " + esc(h.predikat) : ""}</b></div>
+      ${h.deskripsi ? `<div class="deskripsi">${esc(h.deskripsi)}</div>` : `<p class="muted">Belum ada deskripsi — isi dulu nilai S-nya di Input Nilai.</p>`}
+      <p class="muted">CHAR: ${h.char} karakter · Tertinggi: ${h.tpTertinggi.join(", ") || "—"} · Terendah: ${h.tpTerendah.join(", ") || "—"}</p>
+      ${r.nilai.catatan ? `<p class="muted">Catatan: ${esc(r.nilai.catatan)}</p>` : ""}
+      <button class="sekunder" onclick="salin(this, ${r.siswa.id})">Salin Deskripsi</button>
+      <a class="tombol sekunder" href="/input.html">Ubah Nilai</a>
+    </div>`;
+  }).join("") || "<p class='muted'>Tidak ada murid.</p>";
+}
+async function salin(btn, siswaId) {
+  const r = (data.rows || []).find(x => x.siswa.id === siswaId);
+  if (!r || !r.hasil.deskripsi) return;
+  try { await navigator.clipboard.writeText(r.hasil.deskripsi); btn.textContent = "Disalin ✓"; }
+  catch { btn.textContent = "Gagal menyalin — salin manual"; }
+  setTimeout(() => { btn.textContent = "Salin Deskripsi"; }, 2000);
+}
+(async () => {
+  await butuhLogin();
+  const mapelList = await api("/api/mapel");
+  const kelasList = await api("/api/kelas");
+  el("pilih-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
+  el("pilih-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  const simpan = bacaLokal("dafnil-input", null);
+  if (simpan) {
+    if (mapelList.some(m => m.id === simpan.mapelId)) el("pilih-mapel").value = simpan.mapelId;
+    if (kelasList.some(k => k.id === simpan.kelasId)) el("pilih-kelas").value = simpan.kelasId;
+  }
+  await muat();
+})();
+el("pilih-mapel").addEventListener("change", muat);
+el("pilih-kelas").addEventListener("change", muat);
+</script>
+</body>
+</html>

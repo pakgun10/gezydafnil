@@ -1,0 +1,48 @@
+/* GezyDafnil — mobile-first, polos & cepat (gaya MVP GezyAsko/GezyRaport). */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f4f6f8; color: #1c2733; font-size: 16px; line-height: 1.45; }
+a { color: #0b5cad; }
+header.top { background: #0b3d66; color: #fff; padding: 12px 16px; position: sticky; top: 0; z-index: 10; }
+header.top h1 { margin: 0; font-size: 19px; }
+header.top p { margin: 2px 0 0; font-size: 13px; opacity: .85; }
+nav.menu { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 12px; background: #fff; border-bottom: 1px solid #d8dee3; position: sticky; top: 56px; z-index: 9; }
+nav.menu a { padding: 8px 12px; border-radius: 999px; text-decoration: none; color: #0b3d66; border: 1px solid #c9d4dd; font-size: 14px; font-weight: 600; }
+nav.menu a.aktif { background: #0b3d66; color: #fff; border-color: #0b3d66; }
+main { max-width: 720px; margin: 0 auto; padding: 14px 12px 40px; }
+.kartu { background: #fff; border: 1px solid #d8dee3; border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+.kartu h2, .kartu h3 { margin: 0 0 8px; font-size: 17px; }
+.muted { color: #5b6b7a; font-size: 13px; }
+label { display: block; font-weight: 600; font-size: 14px; margin: 10px 0 4px; }
+input, select, textarea { width: 100%; padding: 11px 12px; font-size: 16px; border: 1px solid #b9c6d0; border-radius: 9px; background: #fff; color: inherit; }
+input[type="number"] { font-variant-numeric: tabular-nums; }
+textarea { min-height: 90px; resize: vertical; }
+button, .tombol { display: inline-block; padding: 11px 18px; font-size: 16px; font-weight: 700; border: 0; border-radius: 9px; background: #0b5cad; color: #fff; cursor: pointer; text-decoration: none; text-align: center; }
+button.sekunder, .tombol.sekunder { background: #e8edf1; color: #0b3d66; }
+button.bahaya { background: #b3261e; }
+button:disabled { opacity: .55; }
+button.penuh { width: 100%; margin-top: 10px; }
+.grid-nilai { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.grid-nilai label, .grid-dua label { margin: 6px 0 3px; font-size: 13px; }
+.grid-dua { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.grid-tiga { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.pil { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; background: #e3f0e3; color: #1d5c1d; }
+.pil.kurang { background: #fde8e8; color: #8c1d1d; }
+.pil.cukup { background: #fff3cd; color: #6d4c00; }
+.baris { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.nilai-besar { font-size: 30px; font-weight: 800; }
+.progres { height: 10px; background: #e2e8ec; border-radius: 999px; overflow: hidden; }
+.progres > div { height: 100%; background: #1d7a3d; }
+.tombol-nav { display: flex; gap: 8px; margin-top: 12px; }
+.tombol-nav button { flex: 1; }
+.status { font-size: 13px; color: #1d7a3d; min-height: 18px; }
+.galat { color: #b3261e; font-size: 14px; }
+.deskripsi { background: #f7f9fb; border: 1px dashed #b9c6d0; border-radius: 9px; padding: 10px 12px; white-space: pre-wrap; }
+table.rekap { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.rekap th, table.rekap td { border-bottom: 1px solid #e2e8ec; padding: 8px 6px; text-align: left; vertical-align: top; }
+.pembungkus-tabel { overflow-x: auto; }
+.peringatan { background: #fff3cd; border: 1px solid #e0a800; border-radius: 9px; padding: 10px 12px; font-size: 14px; }
+.langkah { display: flex; gap: 6px; margin-bottom: 12px; }
+.langkah span { flex: 1; text-align: center; padding: 7px 4px; border-radius: 8px; background: #e8edf1; font-size: 13px; font-weight: 700; color: #5b6b7a; }
+.langkah span.aktif { background: #0b3d66; color: #fff; }
+footer { text-align: center; color: #5b6b7a; font-size: 12px; padding: 18px; }
+@media (max-width: 420px) { .grid-nilai { grid-template-columns: repeat(3, 1fr); } }

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input Nilai — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Input Nilai — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html" class="aktif">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="kartu">
+    <div class="grid-dua">
+      <div><label for="pilih-mapel">Mapel</label><select id="pilih-mapel"></select></div>
+      <div><label for="pilih-kelas">Kelas</label><select id="pilih-kelas"></select></div>
+    </div>
+    <label>Lingkup konversi (MIN/MAX)</label>
+    <div id="lingkup-gabung"></div>
+    <p class="muted">Default: kelas ini saja. Centang beberapa kelas satu tingkat untuk gabungan (mis. 7.1+7.2). NA dihitung ulang dari nilai mentah setiap kali lingkup berubah.</p>
+    <label for="cari">Cari nama murid</label>
+    <input id="cari" placeholder="ketik nama…" oninput="tampilKartu()">
+    <div class="baris" style="margin-top:10px"><span id="progres-teks">…</span><b id="progres-persen"></b></div>
+    <div class="progres"><div id="progres-bar" style="width:0%"></div></div>
+  </div>
+  <div id="kartu-murid"></div>
+  <div class="tombol-nav">
+    <button class="sekunder" id="btn-prev" onclick="geser(-1)">← Sebelumnya</button>
+    <button id="btn-next" onclick="geser(1)">Berikutnya →</button>
+  </div>
+  <p style="text-align:center"><a class="tombol sekunder" href="/deskripsi.html">Lihat Deskripsi →</a></p>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+let data = null, idx = 0, mapelList = [], kelasList = [];
+function lingkupKelas() {
+  const dicentang = [...document.querySelectorAll(".cb-gabung:checked")].map(c => Number(c.value));
+  return dicentang.length ? dicentang : [Number(el("pilih-kelas").value)];
+}
+async function muat() {
+  const mapelId = Number(el("pilih-mapel").value);
+  const kelasIds = lingkupKelas();
+  data = await api(`/api/nilai?mapel_id=${mapelId}&kelas_ids=${kelasIds.join(",")}`);
+  simpanLokal("dafnil-input", { mapelId, kelasId: Number(el("pilih-kelas").value), kelasIds });
+  const terisi = data.terisi, total = data.total;
+  el("progres-teks").textContent = `${terisi}/${total} terisi (NR terhitung)`;
+  el("progres-persen").textContent = total ? Math.round((terisi / total) * 100) + "%" : "";
+  el("progres-bar").style.width = (total ? Math.round((terisi / total) * 100) : 0) + "%";
+  if (idx >= data.rows.length) idx = 0;
+  tampilKartu();
+}
+function tampilKartu() {
+  const q = (el("cari").value || "").toLowerCase();
+  const wadah = el("kartu-murid");
+  if (!data || !data.rows.length) { wadah.innerHTML = "<p class='muted'>Belum ada murid di lingkup ini.</p>"; return; }
+  let daftar = data.rows;
+  if (q) daftar = daftar.filter(r => r.siswa.nama.toLowerCase().includes(q));
+  if (!daftar.length) { wadah.innerHTML = "<p class='muted'>Tidak ada murid yang cocok.</p>"; return; }
+  const r = daftar[Math.min(idx, daftar.length - 1)];
+  const n = r.nilai, h = r.hasil;
+  const tps = data.tp;
+  wadah.innerHTML = `<div class="kartu">
+    <div class="baris"><h2>${esc(r.siswa.nama)}</h2><span class="muted">${esc(r.siswa.kelas_nama)} · ${esc(r.siswa.nisn)} · ${esc(r.siswa.lp || "")}</span></div>
+    <p class="muted">Murid ${daftar.indexOf(r) + 1} dari ${daftar.length} di lingkup ini</p>
+    <div class="grid-nilai">
+      ${[0,1,2,3,4].map(i => `<div><label>${tps[i] ? esc(tps[i].kode) : "S" + (i+1)}${tps[i] ? " · " + esc(tps[i].teks.slice(0, 18)) + "…" : ""}</label>
+        <input type="number" inputmode="decimal" min="0" max="100" value="${angka(n.s[i])}" data-field="s${i+1}" onchange="simpanField(this)"></div>`).join("")}
+    </div>
+    <div class="grid-dua">
+      <div><label>ASTS</label><input type="number" inputmode="decimal" min="0" max="100" value="${angka(n.asts)}" data-field="asts" onchange="simpanField(this)"></div>
+      <div><label>ASAT</label><input type="number" inputmode="decimal" min="0" max="100" value="${angka(n.asat)}" data-field="asat" onchange="simpanField(this)"></div>
+    </div>
+    <div class="grid-dua">
+      <div><label>TH — Total Tidak Hadir (hari)</label><input type="number" inputmode="numeric" min="0" step="1" value="${n.th ?? 0}" data-field="th" onchange="simpanField(this)"></div>
+      <div><label>Karakter</label><select data-field="karakter" onchange="simpanField(this)">
+        <option value="" ${!n.karakter ? "selected" : ""}>— biasa —</option>
+        <option value="A" ${n.karakter === "A" ? "selected" : ""}>A — Amat Baik (+10)</option></select></div>
+    </div>
+    <label>Catatan (bebas)</label>
+    <textarea data-field="catatan" onchange="simpanField(this)">${esc(n.catatan || "")}</textarea>
+    <p class="status" id="status-simpan"></p>
+    <hr>
+    <div class="baris"><span>RT-S</span><b>${h.rtS ?? "—"}</b></div>
+    <div class="baris"><span>NR (0,7·RT-S + 0,15·ASTS + 0,15·ASAT)</span><b>${h.nr ?? "—"}</b></div>
+    <div class="baris"><span>Nilai Akhir (NA)</span><span class="nilai-besar">${h.na ?? "—"}</span></div>
+    <div class="baris"><span>Predikat</span><b>${h.predikat ? `<span class="pil ${h.predikat === "Kurang" ? "kurang" : h.predikat === "Cukup" ? "cukup" : ""}">${esc(h.predikat)}</span>` : "—"}</b></div>
+    ${h.na !== null && n.th > data.pengaturan.batasTh ? `<p class="peringatan">TH ${n.th} &gt; batas ${data.pengaturan.batasTh} hari → NA dipatok ${data.pengaturan.patokTh}.</p>` : ""}
+    ${n.karakter === "A" ? `<p class="muted">Karakter Amat Baik: +${data.pengaturan.bonusKarakter} (maks 99).</p>` : ""}
+  </div>`;
+  el("btn-prev").disabled = daftar.indexOf(r) === 0;
+  el("btn-next").disabled = daftar.indexOf(r) === daftar.length - 1;
+  window._daftar = daftar; window._pos = daftar.indexOf(r);
+}
+function geser(d) {
+  const daftar = window._daftar || [];
+  idx = Math.max(0, Math.min(daftar.length - 1, (window._pos ?? 0) + d));
+  tampilKartu();
+  window.scrollTo({ top: 0 });
+}
+async function simpanField(inp) {
+  const r = (window._daftar || [])[window._pos];
+  if (!r) return;
+  const field = inp.dataset.field;
+  let v = inp.value;
+  if (field === "catatan" || field === "karakter") { /* teks */ }
+  else v = v === "" ? null : Number(v);
+  el("status-simpan").textContent = "Menyimpan…";
+  try {
+    await api("/api/nilai", { method: "POST", body: JSON.stringify({
+      siswa_id: r.siswa.id, mapel_id: data.mapel_id, semester: data.semester, tahun_ajaran: data.tahun_ajaran, [field]: v }) });
+    el("status-simpan").textContent = "Tersimpan ✓";
+    await muat();
+  } catch (e) { el("status-simpan").textContent = "Gagal: " + e.message; }
+}
+async function muatAwal() {
+  mapelList = await api("/api/mapel");
+  kelasList = await api("/api/kelas");
+  el("pilih-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
+  el("pilih-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  const simpan = bacaLokal("dafnil-input", null);
+  if (simpan) {
+    if (mapelList.some(m => m.id === simpan.mapelId)) el("pilih-mapel").value = simpan.mapelId;
+    if (kelasList.some(k => k.id === simpan.kelasId)) el("pilih-kelas").value = simpan.kelasId;
+  }
+  bangunGabung();
+  await muat();
+}
+function bangunGabung() {
+  const tingkat = (kelasList.find(k => k.id === Number(el("pilih-kelas").value)) || {}).tingkat;
+  const selevel = kelasList.filter(k => k.tingkat === tingkat);
+  el("lingkup-gabung").innerHTML = selevel.map(k =>
+    `<label style="display:inline-block;margin:4px 8px 4px 0;font-weight:400"><input type="checkbox" class="cb-gabung" value="${k.id}" ${k.id === Number(el("pilih-kelas").value) ? "checked" : ""} onchange="muat()" style="width:auto"> ${esc(k.nama)}</label>`).join("");
+}
+(async () => { await butuhLogin(); await muatAwal(); })();
+el("pilih-mapel").addEventListener("change", () => { idx = 0; muat(); });
+el("pilih-kelas").addEventListener("change", () => { idx = 0; bangunGabung(); muat(); });
+</script>
+</body>
+</html>

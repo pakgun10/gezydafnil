@@ -1,0 +1,20 @@
+# GezyDafnil — contoh unit systemd (SESUAIKAN path & user di VPS).
+# Pasang: salin ke /etc/systemd/system/gezydafnil.service,
+# lalu: systemctl daemon-reload && systemctl enable --now gezydafnil
+# Env (DB_*, PORT) dibaca dari /etc/gezydafnil.env — JANGAN commit berkas itu.
+[Unit]
+Description=GezyDafnil — Daftar Nilai & Deskripsi Raport SMPN 1 Punggur
+After=network.target mariadb.service
+Requires=mariadb.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/opt/gezydafnil
+EnvironmentFile=/etc/gezydafnil.env
+ExecStart=/usr/local/bin/bun server.ts
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

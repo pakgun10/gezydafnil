@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rekap — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Rekap — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html" class="aktif">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="kartu">
+    <div class="grid-dua">
+      <div><label for="pilih-mapel">Mapel</label><select id="pilih-mapel"></select></div>
+      <div><label for="pilih-kelas">Kelas</label><select id="pilih-kelas"></select></div>
+    </div>
+    <label>Lingkup konversi</label>
+    <div id="lingkup-gabung"></div>
+    <p><button onclick="unduhCsv()">⬇ Unduh Rekap CSV</button></p>
+    <p class="muted">CSV berisi: NISN, Nama, S1–S5, RT-S, ASTS, ASAT, NR, NA, Predikat, TH, Karakter, CHAR, Deskripsi.</p>
+  </div>
+  <div class="kartu"><div class="pembungkus-tabel"><table class="rekap">
+    <thead><tr><th>Nama</th><th>RT-S</th><th>NR</th><th>NA</th><th>Predikat</th><th>TH</th><th>Kar.</th></tr></thead>
+    <tbody id="tubuh"></tbody>
+  </table></div></div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+let data = null, mapelList = [], kelasList = [];
+function lingkupKelas() {
+  const c = [...document.querySelectorAll(".cb-gabung:checked")].map(x => Number(x.value));
+  return c.length ? c : [Number(el("pilih-kelas").value)];
+}
+async function muat() {
+  data = await api(`/api/nilai?mapel_id=${el("pilih-mapel").value}&kelas_ids=${lingkupKelas().join(",")}`);
+  el("tubuh").innerHTML = data.rows.map(r => `<tr>
+    <td>${esc(r.siswa.nama)}<br><span class="muted">${esc(r.siswa.kelas_nama)}</span></td>
+    <td>${r.hasil.rtS ?? "—"}</td><td>${r.hasil.nr ?? "—"}</td>
+    <td><b>${r.hasil.na ?? "—"}</b></td><td>${esc(r.hasil.predikat || "—")}</td>
+    <td>${r.nilai.th ?? 0}</td><td>${esc(r.nilai.karakter || "")}</td></tr>`).join("");
+}
+function unduhCsv() {
+  location.href = `/api/rekap.csv?mapel_id=${el("pilih-mapel").value}&kelas_ids=${lingkupKelas().join(",")}`;
+}
+function bangunGabung() {
+  const tingkat = (kelasList.find(k => k.id === Number(el("pilih-kelas").value)) || {}).tingkat;
+  el("lingkup-gabung").innerHTML = kelasList.filter(k => k.tingkat === tingkat).map(k =>
+    `<label style="display:inline-block;margin:4px 8px 4px 0;font-weight:400"><input type="checkbox" class="cb-gabung" value="${k.id}" ${k.id === Number(el("pilih-kelas").value) ? "checked" : ""} onchange="muat()" style="width:auto"> ${esc(k.nama)}</label>`).join("");
+}
+(async () => {
+  await butuhLogin();
+  mapelList = await api("/api/mapel"); kelasList = await api("/api/kelas");
+  el("pilih-mapel").innerHTML = mapelList.map(m => `<option value="${m.id}">${esc(m.nama)}</option>`).join("");
+  el("pilih-kelas").innerHTML = kelasList.map(k => `<option value="${k.id}">${esc(k.nama)}</option>`).join("");
+  bangunGabung(); await muat();
+})();
+el("pilih-mapel").addEventListener("change", muat);
+el("pilih-kelas").addEventListener("change", () => { bangunGabung(); muat(); });
+</script>
+</body>
+</html>

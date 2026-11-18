@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beranda — GezyDafnil</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><h1>GezyDafnil</h1><p>Daftar Nilai &amp; Deskripsi Raport — <span id="nama-pengguna"></span></p></header>
+<nav class="menu">
+  <a href="/" class="aktif">Beranda</a>
+  <a href="/pengaturan.html">Pengaturan</a>
+  <a href="/input.html">Input Nilai</a>
+  <a href="/deskripsi.html">Deskripsi</a>
+  <a href="/rekap.html">Rekap</a>
+  <a href="/master.html" id="menu-master">Master Data</a>
+  <a href="/admin.html" id="menu-admin">Admin</a>
+  <a href="#" onclick="keluar();return false;">Keluar</a>
+</nav>
+<main>
+  <div class="kartu">
+    <h2>Semester Ganjil 2026/2027</h2>
+    <div class="baris"><span>Total murid</span><b id="stat-murid">…</b></div>
+    <div class="baris"><span>Kelas</span><b id="stat-kelas">…</b></div>
+    <div class="baris"><span>Mapel aktif</span><b id="stat-mapel">…</b></div>
+    <div class="baris"><span>Akun guru</span><b id="stat-guru">…</b></div>
+    <p><a class="tombol" href="/input.html">Lanjut Input Nilai →</a>
+       <a class="tombol sekunder" href="/pengaturan.html">Pengaturan Awal</a></p>
+  </div>
+  <div class="kartu">
+    <h2>Progres input nilai (Matematika, Ganjil 2026/2027)</h2>
+    <div id="progres">Memuat…</div>
+  </div>
+  <div class="kartu">
+    <h2>Cara pakai (3 langkah)</h2>
+    <ol>
+      <li><b>Pengaturan:</b> isi profil guru, konteks ajar (mapel, kelas, semester), TP, dan daftar murid.</li>
+      <li><b>Input Nilai:</b> isi nilai S1–S5, ASTS, ASAT, TH, dan Karakter per murid — tersimpan otomatis.</li>
+      <li><b>Deskripsi &amp; Rekap:</b> deskripsi muncul otomatis, salin per murid, lalu unduh rekap CSV.</li>
+    </ol>
+    <p class="muted">Nilai akhir (NA) dihitung ulang dari nilai mentah setiap kali dibuka — mengubah lingkup (per kelas / gabungan kelas) langsung mengubah hasil.</p>
+  </div>
+</main>
+<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<script src="/js/common.js"></script>
+<script>
+(async () => {
+  await butuhLogin();
+  const d = await api("/api/dashboard");
+  el("stat-murid").textContent = d.murid;
+  el("stat-kelas").textContent = d.kelas;
+  el("stat-mapel").textContent = d.mapel;
+  el("stat-guru").textContent = d.guru;
+  el("progres").innerHTML = d.progres.map((p) => {
+    const persen = p.total ? Math.round((p.terisi / p.total) * 100) : 0;
+    return `<div class="baris"><span>Kelas ${esc(p.kelas)}</span><b>${p.terisi}/${p.total} (${persen}%)</b></div>
+    <div class="progres"><div style="width:${persen}%"></div></div>`;
+  }).join("") || "<p class='muted'>Belum ada kelas.</p>";
+})();
+</script>
+</body>
+</html>
