@@ -262,6 +262,8 @@ app.get("/api/dashboard", requireRole("admin", "guru"), async (c) => {
     murid,
     guru,
     progres,
+    semester: SEMESTER_DEFAULT,
+    tahunAjaran: TAHUN_DEFAULT,
     // PERBAIKAN bug 18 Nov 2026: sebelumnya kunci `kelas` dan `mapel` ditulis
     // dua kali (jumlah lalu daftar) sehingga jumlah tertimpa array objek dan
     // beranda menampilkan "[object Object]". Kini jumlah dan daftar punya

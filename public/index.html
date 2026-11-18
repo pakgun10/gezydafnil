@@ -29,7 +29,7 @@
        <a class="tombol sekunder" href="/pengaturan.html">Pengaturan Awal</a></p>
   </div>
   <div class="kartu">
-    <h2>Progres input nilai (Matematika, Ganjil 2026/2027)</h2>
+    <h2 id="judul-progres">Progres input nilai</h2>
     <div id="progres">Memuat…</div>
   </div>
   <div class="kartu">
@@ -53,6 +53,11 @@
     el("stat-kelas").textContent = d.jumlahKelas;
     el("stat-mapel").textContent = d.jumlahMapel;
     el("stat-guru").textContent = d.guru;
+    // Judul progres mengikuti mapel pertama yang aktif — sebelumnya
+    // tertulis tetap "(Matematika, ...)" sehingga terkesan terkunci
+    // hanya untuk Matematika, padahal aplikasi multi-mapel.
+    el("judul-progres").textContent =
+      `Progres input nilai (${(d.daftarMapel && d.daftarMapel[0] && d.daftarMapel[0].nama) || "—"}, ${d.semester} ${d.tahunAjaran})`;
     el("progres").innerHTML = d.progres.map((p) => {
       const persen = p.total ? Math.round((p.terisi / p.total) * 100) : 0;
       return `<div class="baris"><span>Kelas ${esc(p.kelas)}</span><b>${p.terisi}/${p.total} (${persen}%)</b></div>
