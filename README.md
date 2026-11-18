@@ -89,18 +89,19 @@ Per murid, per mapel, per semester:
   mengubah hasil.
 - **Predikat**: ≥90 Amat Baik, 80–89 Baik, 70–79 Cukup, <70 Kurang.
 
-### Mode skala — BACA DULU (Pertanyaan #1 untuk Pak Gun)
+### Mode skala — keputusan Pak Gun (18 Nov 2026, 20.39 WIB): `murni`
 
-Ada dua mode (pengaturan per mapel+semester, default **`excel`**):
+Ada dua mode (pengaturan per mapel+semester, default **`murni`**):
 
-- `excel` (default, setia pada file): batas MIN/MAX efektif sama seperti rumus
+- `murni` (default): MIN/MAX hanya dari nilai yang terisi.
+  Mode ini **mengubah NA dibanding file Excel** — hanya 2/22 yang sama
+  dengan cache Excel (mis. Aditya NR 65,2 → 86, bukan 88), karena angka
+  di file dihitung dengan quirk kolom penuh (lihat mode `excel`).
+- `excel` (setia pada file): batas MIN/MAX efektif sama seperti rumus
   kolom penuh Excel — MIN(N:N) ikut menghitung sel N8 = jumlah bobot (=1) dan
   MIN/MAX(F:J) ikut menghitung bobot terkecil (0,15) dan batas atas (95).
   Dengan mode ini **NA 22/22 dan deskripsi 22/22 sama persis dengan cache Excel**.
-- `murni` (koreksi yang diminta 18 Nov): MIN/MAX hanya dari nilai yang terisi.
-  Mode ini **mengubah NA** — hanya 2/22 yang sama dengan cache Excel
-  (mis. Aditya NR 65,2 → 86, bukan 88). Karena itu mode ini TIDAK dijadikan
-  default sebelum Pak Gun memutuskan.
+  Tetap tersedia per mapel+semester bila ingin membandingkan dengan file lama.
 
 ## Fitur
 
@@ -218,9 +219,9 @@ Backup: Admin → Unduh Backup JSON (berkala). Restore: Admin → Pulihkan
 
 ## Pertanyaan untuk Pak Gun (mengubah hasil — jangan ditebak)
 
-1. **Mode skala**: pertahankan `excel` (default, NA sama dengan file) atau
-   pindah ke `murni` (MIN/MAX hanya nilai terisi; NA berubah, mis. Aditya
-   88 → 86)? Pengaturan sudah ada per mapel+semester, tinggal dipilih.
+1. **Mode skala**: SUDAH DIPUTUSKAN Pak Gun 18 Nov 2026, 20.39 WIB — pakai
+   `murni` (default; migrasi 003 mengubah baris pengaturan yang ada).
+   Mode `excel` tetap tersedia per mapel+semester untuk perbandingan.
 2. **Aturan TH bertingkat**: saat ini mode "patok" (TH > 10 → NA dipatok 70,
    seperti Excel). Apakah mau bertingkat (mis. makin banyak tidak hadir makin
    besar potongan)? Bila ya, perlu batas dan potongannya.

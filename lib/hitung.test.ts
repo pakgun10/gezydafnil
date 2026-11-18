@@ -124,14 +124,16 @@ describe("kasus tepi", () => {
 
   test("TH=10 tidak dipatok, TH=11 dipatok 70", () => {
     const dasar: NilaiMentah = { s: [90, 90, 90, null, null], asts: 90, asat: 90, th: 10, karakter: null };
-    const batas = hitungBatas([90], [90, 90, 90], DEFAULT_PENGATURAN);
+    // Batas dihitung dengan konfigurasi yang sama dengan cfg (excel);
+    // DEFAULT_PENGATURAN kini "murni" (keputusan Pak Gun 18 Nov 2026).
+    const batas = hitungBatas([90], [90, 90, 90], { ...DEFAULT_PENGATURAN, modeSkala: "excel" });
     expect(hitungSatu(dasar, TP, batas, cfg).na).toBe(95);
     expect(hitungSatu({ ...dasar, th: 11 }, TP, batas, cfg).na).toBe(70);
   });
 
   test("Karakter A dengan NA 95 -> 99, bukan 105", () => {
     const n: NilaiMentah = { s: [90, 90, 90, null, null], asts: 90, asat: 90, th: 0, karakter: "A" };
-    const batas = hitungBatas([90], [90, 90, 90], DEFAULT_PENGATURAN);
+    const batas = hitungBatas([90], [90, 90, 90], { ...DEFAULT_PENGATURAN, modeSkala: "excel" });
     expect(hitungSatu(n, TP, batas, cfg).na).toBe(99);
   });
 

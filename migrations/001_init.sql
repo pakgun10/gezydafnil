@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS pengaturan (
   patok_th DECIMAL(5,2) NOT NULL DEFAULT 70,
   bonus_karakter DECIMAL(5,2) NOT NULL DEFAULT 10,
   hari_efektif INT NOT NULL DEFAULT 110,
-  mode_skala VARCHAR(20) NOT NULL DEFAULT 'excel' CHECK (mode_skala IN ('excel', 'murni')),
+  mode_skala VARCHAR(20) NOT NULL DEFAULT 'murni' CHECK (mode_skala IN ('excel', 'murni')),
   mode_th VARCHAR(20) NOT NULL DEFAULT 'patok' CHECK (mode_th IN ('patok')),
   UNIQUE (mapel_id, semester, tahun_ajaran),
   FOREIGN KEY (mapel_id) REFERENCES mapel(id)

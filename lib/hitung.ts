@@ -13,22 +13,23 @@
  *          hasil > ambang (85) -> "sangat baik", <= ambang -> "perlu
  *          peningkatan". Deskripsi final = gabungan keduanya.
  *
- * PENTING — dua mode skala (lihat PERTANYAAN UNTUK PAK GUN #1 di README):
- *   - "excel" (DEFAULT, setia pada file Excel): batas MIN/MAX efektif sama
- *     seperti rumus kolom penuh Excel. Di Excel, MIN(N:N) ikut menghitung
- *     sel N8 = jumlah bobot (=1) dan MIN(F:J) ikut menghitung bobot
- *     terkecil (=0,15) serta MAX(F:J) ikut menghitung batas atas F7 (=95).
+ * PENTING — dua mode skala (keputusan Pak Gun 18 Nov 2026, 20.39 WIB: default "murni"):
+ *   - "murni" (DEFAULT): MIN/MAX hanya dari nilai yang terisi, tanpa sel
+ *     parameter apa pun. Mode ini MENGUBAH NA dibanding cache Excel (hanya
+ *     2/22 yang sama — mis. Aditya 65,2 -> 86, bukan 88), karena cache Excel
+ *     memakai quirk kolom penuh (lihat mode "excel"). Inilah yang diputuskan
+ *     Pak Gun: MIN/MAX hanya dari nilai yang terisi.
+ *   - "excel" (setia pada file Excel): batas MIN/MAX efektif sama seperti
+ *     rumus kolom penuh Excel. Di Excel, MIN(N:N) ikut menghitung sel N8 =
+ *     jumlah bobot (=1) dan MIN(F:J) ikut menghitung bobot terkecil (=0,15)
+ *     serta MAX(F:J) ikut menghitung batas atas F7 (=95).
  *     Maka: nrMin = min(jumlahBobot, min NR terisi),
  *           nrMax = max NR terisi,
  *           tpMin = min(bobotTerkecil, min S terisi),
  *           tpMax = max(batasAtas, max S terisi).
  *     Dengan mode ini NA 22 murid kelas 7.1 SAMA PERSIS dengan cache Excel
- *     (22/22) — dibuktikan lib/hitung.test.ts.
- *   - "murni" (koreksi yang diminta Pak Gun 18 Nov 2026): MIN/MAX hanya
- *     dari nilai yang terisi, tanpa sel parameter apa pun. Mode ini
- *     MENGUBAH NA: hanya 2/22 yang sama dengan cache Excel (mis. Aditya
- *     65,2 -> 86, bukan 88). Karena itu mode ini TIDAK dijadikan default
- *     sebelum Pak Gun memutuskan — lihat README.
+ *     (22/22) — dibuktikan lib/hitung.test.ts. Tersedia sebagai pilihan
+ *     per mapel+semester bila Pak Gun ingin membandingkan dengan file lama.
  */
 
 export type ModeSkala = "excel" | "murni";
@@ -43,7 +44,7 @@ export interface PengaturanHitung {
   batasTh?: number; // default 10
   patokTh?: number; // default 70
   bonusKarakter?: number; // default 10
-  modeSkala?: ModeSkala; // default "excel"
+  modeSkala?: ModeSkala; // default "murni" (keputusan Pak Gun 18 Nov 2026)
 }
 
 export const DEFAULT_PENGATURAN: Required<PengaturanHitung> = {
@@ -56,7 +57,7 @@ export const DEFAULT_PENGATURAN: Required<PengaturanHitung> = {
   batasTh: 10,
   patokTh: 70,
   bonusKarakter: 10,
-  modeSkala: "excel",
+  modeSkala: "murni",
 };
 
 export function lengkapiPengaturan(

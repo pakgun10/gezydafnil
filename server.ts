@@ -57,7 +57,7 @@ async function ambilPengaturan(mapelId: number, semester: string, tahun: string)
     patokTh: Number(row?.patok_th ?? 70),
     bonusKarakter: Number(row?.bonus_karakter ?? 10),
     hariEfektif: Number((row as any)?.hari_efektif ?? 110),
-    modeSkala: row?.mode_skala ?? "excel",
+    modeSkala: row?.mode_skala ?? "murni",
   } as any;
   return { row, cfg: lengkapiPengaturan(cfg), hariEfektif: Number((row as any)?.hari_efektif ?? 110) };
 }
@@ -1266,7 +1266,7 @@ app.post("/api/admin/import/:jenis", requireRole("admin"), async (c) => {
       const patokTh = angka(r[10], "PatokTH", baris);
       const bonus = angka(r[11], "BonusKarakter", baris);
       const hari = angka(r[12], "HariEfektif", baris);
-      const mode = (r[13] ?? "excel").trim().toLowerCase();
+      const mode = (r[13] ?? "murni").trim().toLowerCase();
       if (mode !== "excel" && mode !== "murni") { gagal.push({ baris, alasan: `ModeSkala harus excel/murni, dapat "${r[13]}"` }); continue; }
       if (gagal.length > sebelum) continue;
       const lama = await one("SELECT id FROM pengaturan WHERE mapel_id=? AND semester=? AND tahun_ajaran=?", [m.id, semester, tahun]);
