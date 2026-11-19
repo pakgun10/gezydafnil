@@ -4,21 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pengaturan — GezyDafnil</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261119a">
 </head>
 <body>
-<header class="top"><h1>GezyDafnil</h1><p>Pengaturan awal — <span id="nama-pengguna"></span></p></header>
-<nav class="menu">
-  <a href="/">Beranda</a>
-  <a href="/pengaturan.html" class="aktif">Pengaturan</a>
-  <a href="/input.html">Input Nilai</a>
-  <a href="/deskripsi.html">Deskripsi</a>
-  <a href="/rekap.html">Rekap</a>
-  <a href="/master.html" id="menu-master">Master Data</a>
-  <a href="/admin.html" id="menu-admin">Admin</a>
-  <a href="#" onclick="keluar();return false;">Keluar</a>
-</nav>
-<main>
+<header class="topbar">
+  <div class="brand">📊 GezyDafnil <small>SMP Negeri 1 Punggur</small></div>
+  <nav>
+    <a href="/">Beranda</a>
+    <a href="/pengaturan.html" class="aktif">Pengaturan</a>
+    <a href="/input.html">Input Nilai</a>
+    <a href="/deskripsi.html">Deskripsi</a>
+    <a href="/rekap.html">Rekap</a>
+    <a href="/master.html" id="menu-master">Master Data</a>
+    <a href="/admin.html" id="menu-admin">Admin</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="userinfo" id="nama-pengguna"></span>
+  <button class="btn small" onclick="keluar()">Keluar</button>
+</header>
+<main class="container">
   <div class="langkah"><span data-l="1" class="aktif">1 · Guru</span><span data-l="2">2 · Konteks</span><span data-l="3">3 · TP</span><span data-l="4">4 · Murid</span></div>
 
   <div class="kartu" id="langkah-1">
@@ -127,7 +131,7 @@
     <a class="tombol" href="/input.html">Selesai → Input Nilai</a></p>
   </div>
 </main>
-<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<footer class="global-footer">© 2026 GezyTech App · Dikembangkan oleh <b>PakGun</b><div class="foot-sub">GezyDafnil — SMP Negeri 1 Punggur</div></footer>
 <script src="/js/common.js"></script>
 <script>
 let mapelList = [], kelasList = [];

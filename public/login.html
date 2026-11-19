@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Masuk — GezyDafnil</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261119a">
 </head>
 <body>
-<header class="top"><h1>GezyDafnil</h1><p>Daftar Nilai &amp; Deskripsi Raport — SMP Negeri 1 Punggur</p></header>
-<main>
-  <div class="kartu">
-    <h2>Masuk</h2>
+<div class="login-wrap">
+  <div class="login-card">
+    <h1>📊 GezyDafnil</h1>
+    <p class="sub">Daftar Nilai &amp; Deskripsi Raport<br>SMP Negeri 1 Punggur</p>
     <p class="peringatan"><b>Akun bawaan admin hanya untuk instalasi pertama.</b><br>
     <b>Segera ganti kata sandi admin setelah login pertama</b> (Admin → Ganti Kata Sandi). Jangan dipakai di produksi apa adanya. Kata sandi bawaan tercantum di README, bukan di halaman ini.</p>
     <form id="form-login">
@@ -19,12 +19,11 @@
       <label for="password">Kata sandi</label>
       <input id="password" type="password" autocomplete="current-password" required>
       <p class="galat" id="galat"></p>
-      <button class="penuh" type="submit">Masuk</button>
+      <button class="btn gold penuh" type="submit">Masuk</button>
     </form>
     <p class="muted">Login memakai username + kata sandi (pola GezyRaport). NIP guru <b>bukan</b> kata sandi — NIP hanya data identitas.</p>
   </div>
-</main>
-<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+</div>
 <script src="/js/common.js"></script>
 <script>
 document.getElementById("form-login").addEventListener("submit", async (e) => {

@@ -138,6 +138,10 @@ Ada dua mode (pengaturan per mapel+semester, default **`murni`**):
   lewat wizard Pengaturan: guru boleh menyimpan rumus & TP untuk mapel yang
   diampunya, dan menambah murid di kelas yang diampunya — di luar itu server
   menolak dengan 403.
+- **Tampilan**: mengikuti GezyRaport (navy `#1e3a5f` + emas `#d4a017`,
+  topbar lengket berisi merek + menu + pengguna + tombol Keluar, kartu
+  putih, footer global; halaman login gradasi navy). CSS di
+  `public/css/style.css?v=...` (naikkan versi tiap ubah tampilan).
 - **Admin**: kelola akun guru, ganti kata sandi sendiri, Backup & Restore JSON
   (termasuk hash kata sandi), Log Aktivitas.
 

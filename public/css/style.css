@@ -1,28 +1,112 @@
-/* GezyDafnil — mobile-first, polos & cepat (gaya MVP GezyAsko/GezyRaport). */
+/* GezyDafnil — tampilan mengikuti GezyRaport (navy #1e3a5f + emas,
+   topbar + kartu). Diselaraskan 19 Nov 2026 atas permintaan Pak Gun. */
+:root {
+  --navy: #1e3a5f;
+  --navy-dark: #142a46;
+  --gold: #d4a017;
+  --gold-light: #f5e6bd;
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #6b7280;
+  --border: #e2e8f0;
+  --green: #15803d;
+  --red: #b91c1c;
+  --blue: #1d4ed8;
+}
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f4f6f8; color: #1c2733; font-size: 16px; line-height: 1.45; }
-a { color: #0b5cad; }
-header.top { background: #0b3d66; color: #fff; padding: 12px 16px; position: sticky; top: 0; z-index: 10; }
-header.top h1 { margin: 0; font-size: 19px; }
-header.top p { margin: 2px 0 0; font-size: 13px; opacity: .85; }
-nav.menu { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 12px; background: #fff; border-bottom: 1px solid #d8dee3; position: sticky; top: 56px; z-index: 9; }
-nav.menu a { padding: 8px 12px; border-radius: 999px; text-decoration: none; color: #0b3d66; border: 1px solid #c9d4dd; font-size: 14px; font-weight: 600; }
-nav.menu a.aktif { background: #0b3d66; color: #fff; border-color: #0b3d66; }
-main { max-width: 720px; margin: 0 auto; padding: 14px 12px 40px; }
-.kartu { background: #fff; border: 1px solid #d8dee3; border-radius: 12px; padding: 14px; margin-bottom: 12px; }
-.kartu h2, .kartu h3 { margin: 0 0 8px; font-size: 17px; }
-.muted { color: #5b6b7a; font-size: 13px; }
-label { display: block; font-weight: 600; font-size: 14px; margin: 10px 0 4px; }
-input, select, textarea { width: 100%; padding: 11px 12px; font-size: 16px; border: 1px solid #b9c6d0; border-radius: 9px; background: #fff; color: inherit; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.45;
+}
+a { color: var(--blue); }
+
+/* ---- Topbar ala GezyRaport: merek + menu + pengguna dalam satu bar ---- */
+.topbar {
+  background: var(--navy);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { font-weight: 700; font-size: 1.15rem; color: var(--gold); }
+.brand small { color: #cbd5e1; font-weight: 400; font-size: 0.8rem; }
+.topbar nav { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.topbar nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+.topbar nav a:hover, .topbar nav a.aktif { background: var(--navy-dark); color: var(--gold); }
+.topbar .spacer { flex: 1; }
+.userinfo { font-size: 0.88rem; color: #cbd5e1; }
+
+main.container, main { max-width: 1080px; margin: 1.2rem auto; padding: 0 1rem 40px; }
+
+/* ---- Kartu ---- */
+.kartu {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.kartu h2, .kartu h3 { margin-top: 0; color: var(--navy); font-size: 1.15rem; }
+.muted { color: var(--muted); font-size: 0.88rem; }
+
+/* ---- Form ---- */
+label { display: block; font-weight: 600; font-size: 0.9rem; margin: 10px 0 4px; }
+input, select, textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
 input[type="number"] { font-variant-numeric: tabular-nums; }
 textarea { min-height: 90px; resize: vertical; }
-button, .tombol { display: inline-block; padding: 11px 18px; font-size: 16px; font-weight: 700; border: 0; border-radius: 9px; background: #0b5cad; color: #fff; cursor: pointer; text-decoration: none; text-align: center; }
-button.sekunder, .tombol.sekunder { background: #e8edf1; color: #0b3d66; }
-button.bahaya { background: #b3261e; }
-button:disabled { opacity: .55; }
+
+/* ---- Tombol ---- */
+button, .tombol {
+  font: inherit;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+button:hover, .tombol:hover { background: var(--navy-dark); }
+button.sekunder, .tombol.sekunder { background: #e8edf1; color: var(--navy); }
+button.bahaya { background: var(--red); }
+button.gold, .tombol.gold { background: var(--gold); color: #1a1a1a; }
+button.gold:hover { background: #b8890f; }
+button.small, .tombol.small { padding: 0.3rem 0.6rem; font-size: 0.85rem; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
 button.penuh { width: 100%; margin-top: 10px; }
+
+/* ---- Grid & baris (wizard, input nilai) ---- */
 .grid-nilai { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-.grid-nilai label, .grid-dua label { margin: 6px 0 3px; font-size: 13px; }
+.grid-nilai label, .grid-dua label, .grid-tiga label { margin: 6px 0 3px; font-size: 0.85rem; }
 .grid-dua { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .grid-tiga { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 .pil { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; background: #e3f0e3; color: #1d5c1d; }
@@ -31,18 +115,64 @@ button.penuh { width: 100%; margin-top: 10px; }
 .baris { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
 .nilai-besar { font-size: 30px; font-weight: 800; }
 .progres { height: 10px; background: #e2e8ec; border-radius: 999px; overflow: hidden; }
-.progres > div { height: 100%; background: #1d7a3d; }
+.progres > div { height: 100%; background: var(--green); }
 .tombol-nav { display: flex; gap: 8px; margin-top: 12px; }
 .tombol-nav button { flex: 1; }
-.status { font-size: 13px; color: #1d7a3d; min-height: 18px; }
-.galat { color: #b3261e; font-size: 14px; }
+.status { font-size: 13px; color: var(--green); min-height: 18px; }
+.galat { color: var(--red); font-size: 14px; }
 .deskripsi { background: #f7f9fb; border: 1px dashed #b9c6d0; border-radius: 9px; padding: 10px 12px; white-space: pre-wrap; }
-table.rekap { width: 100%; border-collapse: collapse; font-size: 14px; }
-table.rekap th, table.rekap td { border-bottom: 1px solid #e2e8ec; padding: 8px 6px; text-align: left; vertical-align: top; }
+
+/* ---- Tabel rekap ---- */
+table.rekap { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+table.rekap th, table.rekap td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.rekap th { background: var(--navy); color: #fff; }
+table.rekap tr:nth-child(even) td { background: #f8fafc; }
 .pembungkus-tabel { overflow-x: auto; }
+
 .peringatan { background: #fff3cd; border: 1px solid #e0a800; border-radius: 9px; padding: 10px 12px; font-size: 14px; }
 .langkah { display: flex; gap: 6px; margin-bottom: 12px; }
-.langkah span { flex: 1; text-align: center; padding: 7px 4px; border-radius: 8px; background: #e8edf1; font-size: 13px; font-weight: 700; color: #5b6b7a; }
-.langkah span.aktif { background: #0b3d66; color: #fff; }
-footer { text-align: center; color: #5b6b7a; font-size: 12px; padding: 18px; }
+.langkah span { flex: 1; text-align: center; padding: 7px 4px; border-radius: 8px; background: #e8edf1; font-size: 13px; font-weight: 700; color: var(--muted); }
+.langkah span.aktif { background: var(--navy); color: #fff; }
+
+/* ---- Login ala GezyRaport ---- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 60%, #0f2038 100%);
+}
+.login-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+.login-card h1 { color: var(--navy); margin: 0 0 0.3rem; font-size: 1.5rem; }
+.login-card p.sub { color: var(--muted); margin-top: 0; font-size: 0.92rem; }
+.login-card .btn { width: 100%; margin-top: 0.6rem; }
+
+/* ---- Footer global ala GezyRaport ---- */
+.global-footer {
+  text-align: center; color: var(--muted); font-size: 0.82rem;
+  padding: 1.6rem 1rem 1.4rem; margin-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.global-footer .foot-sub { font-size: 0.75rem; margin-top: 0.25rem; }
+
 @media (max-width: 420px) { .grid-nilai { grid-template-columns: repeat(3, 1fr); } }
+@media print {
+  .topbar, .global-footer { display: none !important; }
+  body { background: #fff; }
+  main.container, main { max-width: 100%; margin: 0; padding: 0; }
+  .kartu { box-shadow: none; border: none; }
+  a { text-decoration: none; color: inherit; }
+}

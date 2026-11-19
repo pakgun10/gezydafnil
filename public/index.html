@@ -4,21 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Beranda — GezyDafnil</title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261119a">
 </head>
 <body>
-<header class="top"><h1>GezyDafnil</h1><p>Daftar Nilai &amp; Deskripsi Raport — <span id="nama-pengguna"></span></p></header>
-<nav class="menu">
-  <a href="/" class="aktif">Beranda</a>
-  <a href="/pengaturan.html">Pengaturan</a>
-  <a href="/input.html">Input Nilai</a>
-  <a href="/deskripsi.html">Deskripsi</a>
-  <a href="/rekap.html">Rekap</a>
-  <a href="/master.html" id="menu-master">Master Data</a>
-  <a href="/admin.html" id="menu-admin">Admin</a>
-  <a href="#" onclick="keluar();return false;">Keluar</a>
-</nav>
-<main id="konten" hidden>
+<header class="topbar">
+  <div class="brand">📊 GezyDafnil <small>SMP Negeri 1 Punggur</small></div>
+  <nav>
+    <a href="/" class="aktif">Beranda</a>
+    <a href="/pengaturan.html">Pengaturan</a>
+    <a href="/input.html">Input Nilai</a>
+    <a href="/deskripsi.html">Deskripsi</a>
+    <a href="/rekap.html">Rekap</a>
+    <a href="/master.html" id="menu-master">Master Data</a>
+    <a href="/admin.html" id="menu-admin">Admin</a>
+  </nav>
+  <div class="spacer"></div>
+  <span class="userinfo" id="nama-pengguna"></span>
+  <button class="btn small" onclick="keluar()">Keluar</button>
+</header>
+<main class="container" id="konten" hidden>
   <div class="kartu">
     <h2>Semester Ganjil 2026/2027</h2>
     <div class="baris"><span>Total murid</span><b id="stat-murid">…</b></div>
@@ -42,7 +46,7 @@
     <p class="muted">Nilai akhir (NA) dihitung ulang dari nilai mentah setiap kali dibuka — mengubah lingkup (per kelas / gabungan kelas) langsung mengubah hasil.</p>
   </div>
 </main>
-<footer>© 2026 GezyTech App · Dikembangkan oleh PakGun</footer>
+<footer class="global-footer">© 2026 GezyTech App · Dikembangkan oleh <b>PakGun</b><div class="foot-sub">GezyDafnil — SMP Negeri 1 Punggur</div></footer>
 <script src="/js/common.js"></script>
 <script>
 (async () => {
