@@ -58,6 +58,7 @@ async function ambilPengaturan(mapelId: number, semester: string, tahun: string)
     bonusKarakter: Number(row?.bonus_karakter ?? 10),
     hariEfektif: Number((row as any)?.hari_efektif ?? 110),
     modeSkala: row?.mode_skala ?? "murni",
+    modeTh: (row as any)?.mode_th ?? "bertingkat",
   } as any;
   return { row, cfg: lengkapiPengaturan(cfg), hariEfektif: Number((row as any)?.hari_efektif ?? 110) };
 }
@@ -423,25 +424,26 @@ app.put("/api/pengaturan", requireRole("admin", "guru"), async (c) => {
     return c.json({ error: "Mapel ini bukan mapel yang Anda ampu." }, 403);
   const semester = b.semester || SEMESTER_DEFAULT;
   const tahun = b.tahun_ajaran || TAHUN_DEFAULT;
-  const cfg = lengkapiPengaturan(b as PengaturanHitung);
+  const modeTh = b.modeTh === "patok" ? "patok" : "bertingkat";
+  const cfg = lengkapiPengaturan({ ...(b as PengaturanHitung), modeTh });
   await run(
     `INSERT INTO pengaturan
      (mapel_id, semester, tahun_ajaran, rendah, tinggi, bobot_s, bobot_asts, bobot_asat,
-      ambang, batas_th, patok_th, bonus_karakter, hari_efektif, mode_skala)
-     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+      ambang, batas_th, patok_th, bonus_karakter, hari_efektif, mode_skala, mode_th)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
      ON DUPLICATE KEY UPDATE
       rendah=VALUES(rendah), tinggi=VALUES(tinggi), bobot_s=VALUES(bobot_s),
       bobot_asts=VALUES(bobot_asts), bobot_asat=VALUES(bobot_asat),
       ambang=VALUES(ambang), batas_th=VALUES(batas_th), patok_th=VALUES(patok_th),
       bonus_karakter=VALUES(bonus_karakter), hari_efektif=VALUES(hari_efektif),
-      mode_skala=VALUES(mode_skala)`,
+      mode_skala=VALUES(mode_skala), mode_th=VALUES(mode_th)`,
     [
       mapelId, semester, tahun, cfg.rendah, cfg.tinggi, cfg.bobotS, cfg.bobotAsts,
       cfg.bobotAsat, cfg.ambang, cfg.batasTh, cfg.patokTh, cfg.bonusKarakter,
-      Number(b.hari_efektif ?? 110), cfg.modeSkala,
+      Number(b.hari_efektif ?? 110), cfg.modeSkala, modeTh,
     ]
   );
-  void catatLog(c, "simpan_pengaturan", `mapel#${mapelId} ${semester} ${tahun} mode=${cfg.modeSkala}`);
+  void catatLog(c, "simpan_pengaturan", `mapel#${mapelId} ${semester} ${tahun} mode=${cfg.modeSkala} th=${modeTh}`);
   return c.json({ ok: true });
 });
 
@@ -1110,11 +1112,11 @@ app.get("/api/admin/export/:jenis", requireRole("admin"), async (c) => {
     for (const t of rows as any[])
       lines.push([t.mapel_kode, t.kode, t.tingkat, t.semester, t.tahun_ajaran, t.teks].map(csvField).join(","));
   } else if (jenis === "pengaturan") {
-    lines = [["Mapel", "Semester", "TahunAjaran", "Rendah", "Tinggi", "BobotS", "BobotASTS", "BobotASAT", "Ambang", "BatasTH", "PatokTH", "BonusKarakter", "HariEfektif", "ModeSkala"].map(csvField).join(",")];
+    lines = [["Mapel", "Semester", "TahunAjaran", "Rendah", "Tinggi", "BobotS", "BobotASTS", "BobotASAT", "Ambang", "BatasTH", "PatokTH", "BonusKarakter", "HariEfektif", "ModeSkala", "ModeTH"].map(csvField).join(",")];
     for (const p of (await all(
       `SELECT pg.*, m.kode AS mapel_kode FROM pengaturan pg JOIN mapel m ON m.id=pg.mapel_id ORDER BY m.nama`
     )) as any[])
-      lines.push([p.mapel_kode, p.semester, p.tahun_ajaran, p.rendah, p.tinggi, p.bobot_s, p.bobot_asts, p.bobot_asat, p.ambang, p.batas_th, p.patok_th, p.bonus_karakter, p.hari_efektif, p.mode_skala].map(csvField).join(","));
+      lines.push([p.mapel_kode, p.semester, p.tahun_ajaran, p.rendah, p.tinggi, p.bobot_s, p.bobot_asts, p.bobot_asat, p.ambang, p.batas_th, p.patok_th, p.bonus_karakter, p.hari_efektif, p.mode_skala, p.mode_th].map(csvField).join(","));
   } else if (jenis === "periode") {
     lines = [["Semester", "TahunAjaran", "Aktif"].map(csvField).join(",")];
     for (const p of (await all("SELECT * FROM periode ORDER BY tahun_ajaran, semester")) as any[])
@@ -1137,7 +1139,7 @@ app.get("/api/admin/template/:jenis", requireRole("admin"), (c) => {
     kelas: "Nama,Tingkat,Wali\n7.9,7,siti.asiyah",
     mapel: "Nama,Kode,Aktif\nMatematika,MTK,1",
     tp: "Mapel,Kode,Tingkat,Semester,TahunAjaran,Teks\nMTK,S1,7,Ganjil,2026/2027,menentukan hasil operasi hitung bilangan bulat.",
-    pengaturan: "Mapel,Semester,TahunAjaran,Rendah,Tinggi,BobotS,BobotASTS,BobotASAT,Ambang,BatasTH,PatokTH,BonusKarakter,HariEfektif,ModeSkala\nMTK,Ganjil,2026/2027,70,95,0.7,0.15,0.15,85,10,70,10,110,excel",
+    pengaturan: "Mapel,Semester,TahunAjaran,Rendah,Tinggi,BobotS,BobotASTS,BobotASAT,Ambang,BatasTH,PatokTH,BonusKarakter,HariEfektif,ModeSkala,ModeTH\nMTK,Ganjil,2026/2027,70,95,0.7,0.15,0.15,85,10,70,10,110,excel,bertingkat",
     periode: "Semester,TahunAjaran,Aktif\nGenap,2026/2027,0",
   };
   if (!contoh[jenis]) return c.json({ error: "Jenis tidak dikenal" }, 400);
@@ -1336,19 +1338,21 @@ app.post("/api/admin/import/:jenis", requireRole("admin"), async (c) => {
       const hari = angka(r[12], "HariEfektif", baris);
       const mode = (r[13] ?? "murni").trim().toLowerCase();
       if (mode !== "excel" && mode !== "murni") { gagal.push({ baris, alasan: `ModeSkala harus excel/murni, dapat "${r[13]}"` }); continue; }
+      const modeTh = ((r[14] ?? "bertingkat").trim().toLowerCase() || "bertingkat");
+      if (modeTh !== "patok" && modeTh !== "bertingkat") { gagal.push({ baris, alasan: `ModeTH harus patok/bertingkat, dapat "${r[14]}"` }); continue; }
       if (gagal.length > sebelum) continue;
       const lama = await one("SELECT id FROM pengaturan WHERE mapel_id=? AND semester=? AND tahun_ajaran=?", [m.id, semester, tahun]);
-      const vals = [rendah ?? 70, tinggi ?? 95, bS ?? 0.7, bA ?? 0.15, bAt ?? 0.15, ambang ?? 85, batasTh ?? 10, patokTh ?? 70, bonus ?? 10, hari ?? 110, mode];
+      const vals = [rendah ?? 70, tinggi ?? 95, bS ?? 0.7, bA ?? 0.15, bAt ?? 0.15, ambang ?? 85, batasTh ?? 10, patokTh ?? 70, bonus ?? 10, hari ?? 110, mode, modeTh];
       if (lama) {
         await run(
-          `UPDATE pengaturan SET rendah=?, tinggi=?, bobot_s=?, bobot_asts=?, bobot_asat=?, ambang=?, batas_th=?, patok_th=?, bonus_karakter=?, hari_efektif=?, mode_skala=? WHERE id=?`,
+          `UPDATE pengaturan SET rendah=?, tinggi=?, bobot_s=?, bobot_asts=?, bobot_asat=?, ambang=?, batas_th=?, patok_th=?, bonus_karakter=?, hari_efektif=?, mode_skala=?, mode_th=? WHERE id=?`,
           [...vals, lama.id]
         );
         diubah++;
       } else {
         await run(
-          `INSERT INTO pengaturan (mapel_id, semester, tahun_ajaran, rendah, tinggi, bobot_s, bobot_asts, bobot_asat, ambang, batas_th, patok_th, bonus_karakter, hari_efektif, mode_skala)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+          `INSERT INTO pengaturan (mapel_id, semester, tahun_ajaran, rendah, tinggi, bobot_s, bobot_asts, bobot_asat, ambang, batas_th, patok_th, bonus_karakter, hari_efektif, mode_skala, mode_th)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
           [m.id, semester, tahun, ...vals]
         );
         masuk++;

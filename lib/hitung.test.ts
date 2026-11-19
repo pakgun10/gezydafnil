@@ -122,13 +122,36 @@ describe("kasus tepi", () => {
     expect(hasil[0].na).toBeNull();
   });
 
-  test("TH=10 tidak dipatok, TH=11 dipatok 70", () => {
+  test("TH patok (mode lama): TH=10 tidak dipatok, TH=11 dipatok 70", () => {
     const dasar: NilaiMentah = { s: [90, 90, 90, null, null], asts: 90, asat: 90, th: 10, karakter: null };
     // Batas dihitung dengan konfigurasi yang sama dengan cfg (excel);
     // DEFAULT_PENGATURAN kini "murni" (keputusan Pak Gun 18 Nov 2026).
     const batas = hitungBatas([90], [90, 90, 90], { ...DEFAULT_PENGATURAN, modeSkala: "excel" });
-    expect(hitungSatu(dasar, TP, batas, cfg).na).toBe(95);
-    expect(hitungSatu({ ...dasar, th: 11 }, TP, batas, cfg).na).toBe(70);
+    const patok = { ...cfg, modeTh: "patok" as const };
+    expect(hitungSatu(dasar, TP, batas, patok).na).toBe(95);
+    expect(hitungSatu({ ...dasar, th: 11 }, TP, batas, patok).na).toBe(70);
+  });
+
+  test("TH bertingkat (keputusan Pak Gun 19 Nov 2026, opsi B): tier batas atas NA", () => {
+    // naSkala = 95 untuk semua kasus ini (NR 90, batas excel 1..90).
+    const dasar: NilaiMentah = { s: [90, 90, 90, null, null], asts: 90, asat: 90, th: 0, karakter: null };
+    const batas = hitungBatas([90], [90, 90, 90], { ...DEFAULT_PENGATURAN, modeSkala: "excel" });
+    const bertingkat = { ...cfg, modeTh: "bertingkat" as const };
+    const na = (th: number, karakter: string | null = null) =>
+      hitungSatu({ ...dasar, th, karakter }, TP, batas, bertingkat).na;
+    expect(na(0)).toBe(95);
+    expect(na(5)).toBe(95); // tanpa batas
+    expect(na(6)).toBe(90);
+    expect(na(10)).toBe(90);
+    expect(na(11)).toBe(80);
+    expect(na(15)).toBe(80);
+    expect(na(16)).toBe(75);
+    expect(na(25)).toBe(75);
+    expect(na(26)).toBe(70);
+    expect(na(30)).toBe(70); // Afif: sama seperti aturan Excel lama
+    // Bonus Karakter A tetap dihitung SESUDAH pemotongan TH.
+    expect(na(12, "A")).toBe(90); // 80 + 10
+    expect(na(30, "A")).toBe(80); // 70 + 10
   });
 
   test("Karakter A dengan NA 95 -> 99, bukan 105", () => {

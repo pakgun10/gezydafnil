@@ -76,8 +76,11 @@ Per murid, per mapel, per semester:
 - **Skala** `skala(x, min, max, rendah=70, tinggi=95)`: x bila x > tinggi,
   bila tidak ROUND(70 + (x−min)/(max−min)×25). Bila min == max, kembalikan
   ROUND(x) (hindari bagi nol).
-- **NA** = skala(NR) → bila TH > batas TH (default 10) dipatok ke 70 →
-  bila Karakter "A" (Amat Baik) ditambah 10, maks 99. Urutan ini wajib.
+- **NA** = skala(NR) → aturan TH → bila Karakter "A" (Amat Baik) ditambah
+  10, maks 99. Urutan ini wajib. Aturan TH default `bertingkat` (keputusan
+  Pak Gun 19 Nov 2026, opsi B): TH 0–5 tanpa batas, 6–10 NA maks 90, 11–15
+  maks 80, 16–25 maks 75, >25 maks 70. Mode `patok` (TH > batas TH,
+  default 10, dipatok ke 70) tetap tersedia per mapel+semester.
 - **Deskripsi per TP**: tiap nilai S dikonversi dengan skala yang sama;
   hasil > ambang (85) → "Murid sangat baik dalam …", ≤ ambang →
   "Murid perlu peningkatan kemampuan …". Deskripsi final = gabungan keduanya;
@@ -225,7 +228,10 @@ Backup: Admin → Unduh Backup JSON (berkala). Restore: Admin → Pulihkan
 1. **Mode skala**: SUDAH DIPUTUSKAN Pak Gun 18 Nov 2026, 20.39 WIB — pakai
    `murni` (default; migrasi 003 mengubah baris pengaturan yang ada).
    Mode `excel` tetap tersedia per mapel+semester untuk perbandingan.
-2. **Aturan TH bertingkat**: saat ini mode "patok" (TH > 10 → NA dipatok 70,
-   seperti Excel). Apakah mau bertingkat (mis. makin banyak tidak hadir makin
-   besar potongan)? Bila ya, perlu batas dan potongannya.
+2. **Aturan TH bertingkat**: SUDAH DIPUTUSKAN Pak Gun 19 Nov 2026 — opsi B,
+   mode `bertingkat` (default; migrasi 004 mengubah baris pengaturan yang
+   ada). Tier: TH 0–5 tanpa batas, 6–10 NA maks 90, 11–15 maks 80, 16–25
+   maks 75, >25 maks 70. Mode `patok` (TH > 10 → NA dipatok 70, seperti
+   Excel) tetap tersedia per mapel+semester. Bonus Karakter A dihitung
+   sesudah pemotongan TH.
 3. **SSO**: tetap proyek terpisah setelah live (sudah disepakati).

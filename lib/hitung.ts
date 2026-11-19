@@ -34,6 +34,40 @@
 
 export type ModeSkala = "excel" | "murni";
 
+/** Aturan TH (keputusan Pak Gun 19 Nov 2026: "B — pakai draf bertingkat"). */
+export type ModeTh = "patok" | "bertingkat";
+
+/**
+ * Tier aturan TH bertingkat (draf yang disetujui Pak Gun, opsi B).
+ * Batas atas NA per rentang TH; null = tanpa batas. Bonus Karakter A
+ * tetap dihitung SESUDAH pemotongan ini (lihat hitungSatu).
+ */
+export interface TierTh {
+  sampai: number; // TH s.d. nilai ini (inklusif)
+  maksNA: number | null;
+}
+
+export const TIER_TH_BERTINGKAT: TierTh[] = [
+  { sampai: 5, maksNA: null },
+  { sampai: 10, maksNA: 90 },
+  { sampai: 15, maksNA: 80 },
+  { sampai: 25, maksNA: 75 },
+  { sampai: Number.POSITIVE_INFINITY, maksNA: 70 },
+];
+
+/** Terapkan aturan TH ke NA hasil skala. */
+export function terapkanTh(
+  naSkala: number,
+  th: number,
+  cfg: Required<PengaturanHitung>
+): number {
+  if (cfg.modeTh === "patok") return th > cfg.batasTh ? cfg.patokTh : naSkala;
+  for (const t of TIER_TH_BERTINGKAT) {
+    if (th <= t.sampai) return t.maksNA === null ? naSkala : Math.min(naSkala, t.maksNA);
+  }
+  return naSkala;
+}
+
 export interface PengaturanHitung {
   rendah?: number; // default 70
   tinggi?: number; // default 95
@@ -41,10 +75,11 @@ export interface PengaturanHitung {
   bobotAsts?: number; // default 0.15
   bobotAsat?: number; // default 0.15
   ambang?: number; // default 85
-  batasTh?: number; // default 10
-  patokTh?: number; // default 70
+  batasTh?: number; // default 10 (hanya mode "patok")
+  patokTh?: number; // default 70 (hanya mode "patok")
   bonusKarakter?: number; // default 10
   modeSkala?: ModeSkala; // default "murni" (keputusan Pak Gun 18 Nov 2026)
+  modeTh?: ModeTh; // default "bertingkat" (keputusan Pak Gun 19 Nov 2026, opsi B)
 }
 
 export const DEFAULT_PENGATURAN: Required<PengaturanHitung> = {
@@ -58,6 +93,7 @@ export const DEFAULT_PENGATURAN: Required<PengaturanHitung> = {
   patokTh: 70,
   bonusKarakter: 10,
   modeSkala: "murni",
+  modeTh: "bertingkat",
 };
 
 export function lengkapiPengaturan(
@@ -210,10 +246,10 @@ export function hitungSatu(
   if (nr !== null && batas.nrMin !== null && batas.nrMax !== null) {
     naSkala = skala(nr, batas.nrMin, batas.nrMax, cfg.rendah, cfg.tinggi);
     na = naSkala;
-    // 1) Patok TH (mode "patok" — aturan Excel; aturan bertingkat
-    //    masih menunggu keputusan Pak Gun, lihat README).
+    // 1) Aturan TH — "bertingkat" (default, keputusan Pak Gun 19 Nov 2026,
+    //    opsi B) atau "patok" (aturan Excel lama: TH > batas -> patok).
     const th = n.th ?? 0;
-    if (th > cfg.batasTh) na = cfg.patokTh;
+    na = terapkanTh(naSkala, th, cfg);
     // 2) Bonus Karakter A ("Amat Baik").
     if ((n.karakter ?? "") === "A") na = Math.min(99, na + cfg.bonusKarakter);
   }

@@ -51,8 +51,23 @@
       <div><label for="ctx-ba">Bobot ASTS</label><input id="ctx-ba" type="number" step="0.01" value="0.15"></div>
       <div><label for="ctx-bat">Bobot ASAT</label><input id="ctx-bat" type="number" step="0.01" value="0.15"></div>
     </div>
-    <div class="grid-tiga">
+    <div class="grid-dua">
       <div><label for="ctx-ambang">Ambang deskripsi</label><input id="ctx-ambang" type="number" value="85"></div>
+      <div><label for="ctx-modeth">Aturan TH</label>
+        <select id="ctx-modeth">
+          <option value="bertingkat">Bertingkat — batas atas NA per rentang TH (default)</option>
+          <option value="patok">Patok — TH lewat batas langsung dipatok (aturan Excel)</option>
+        </select></div>
+    </div>
+    <div id="tier-th">
+      <p class="muted">Tier bertingkat (keputusan Pak Gun 19 Nov 2026, opsi B):</p>
+      <div class="baris"><span>TH 0–5</span><b>tanpa batas</b></div>
+      <div class="baris"><span>TH 6–10</span><b>NA maks 90</b></div>
+      <div class="baris"><span>TH 11–15</span><b>NA maks 80</b></div>
+      <div class="baris"><span>TH 16–25</span><b>NA maks 75</b></div>
+      <div class="baris"><span>TH di atas 25</span><b>NA maks 70</b></div>
+    </div>
+    <div class="grid-dua" id="patok-th" hidden>
       <div><label for="ctx-batasth">Batas TH (hari)</label><input id="ctx-batasth" type="number" value="10"></div>
       <div><label for="ctx-patokth">Patok NA bila TH lewat</label><input id="ctx-patokth" type="number" value="70"></div>
     </div>
@@ -134,6 +149,12 @@ async function muatAwal() {
   el("ctx-bs").value = p.bobotS; el("ctx-ba").value = p.bobotAsts; el("ctx-bat").value = p.bobotAsat;
   el("ctx-ambang").value = p.ambang; el("ctx-batasth").value = p.batasTh; el("ctx-patokth").value = p.patokTh;
   el("ctx-bonus").value = p.bonusKarakter; el("ctx-hari").value = p.hari_efektif; el("ctx-mode").value = p.modeSkala;
+  el("ctx-modeth").value = p.modeTh || "bertingkat"; tampilAturanTh();
+}
+function tampilAturanTh() {
+  const bertingkat = el("ctx-modeth").value !== "patok";
+  el("tier-th").hidden = !bertingkat;
+  el("patok-th").hidden = bertingkat;
 }
 async function simpanGuru() {
   try {
@@ -149,7 +170,7 @@ async function simpanKonteks() {
       rendah: Number(el("ctx-rendah").value), tinggi: Number(el("ctx-tinggi").value),
       bobotS: Number(el("ctx-bs").value), bobotAsts: Number(el("ctx-ba").value), bobotAsat: Number(el("ctx-bat").value),
       ambang: Number(el("ctx-ambang").value), batasTh: Number(el("ctx-batasth").value), patokTh: Number(el("ctx-patokth").value),
-      bonusKarakter: Number(el("ctx-bonus").value), hari_efektif: Number(el("ctx-hari").value), modeSkala: el("ctx-mode").value }) });
+      bonusKarakter: Number(el("ctx-bonus").value), hari_efektif: Number(el("ctx-hari").value), modeSkala: el("ctx-mode").value, modeTh: el("ctx-modeth").value }) });
     el("status-2").textContent = "Tersimpan.";
     tampilLangkah(3);
   } catch (e) {
@@ -196,9 +217,11 @@ async function imporCsv() {
 (async () => { await butuhLogin(); await muatAwal(); })();
 el("murid-kelas").addEventListener("change", muatMurid);
 el("tp-tingkat").addEventListener("change", muatTp);
+el("ctx-modeth").addEventListener("change", tampilAturanTh);
 el("ctx-mapel").addEventListener("change", async () => {
   const p = await api(`/api/pengaturan?mapel_id=${el("ctx-mapel").value}`);
   el("ctx-mode").value = p.modeSkala;
+  el("ctx-modeth").value = p.modeTh || "bertingkat"; tampilAturanTh();
 });
 </script>
 </body>
